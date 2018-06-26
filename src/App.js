@@ -111,9 +111,9 @@ class App extends Component {
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
 
-          <RadialBarChart width={500} height={500} cx={300} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
+          <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='right' align="right" />
+          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
           </RadialBarChart>
 
           <AreaChart width={600} height={400} data={data4} margin={{top: 10, right: 30, left: 0, bottom: 0}}>
