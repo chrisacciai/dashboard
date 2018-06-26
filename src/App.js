@@ -59,9 +59,9 @@ class App extends Component {
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
 
-          <RadialBarChart width={500} height={300} cx={300} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
+          <RadialBarChart width={500} height={500} cx={300} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend />
           </RadialBarChart>
         </div>
         <div class = "column">
