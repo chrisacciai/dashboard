@@ -85,22 +85,13 @@ const data5 = [
   {name: '40', uv: -50, pv: 186}
 ];
 
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: '24px'
-};
-
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Corporate Dashboard Beta</h1>
-          <p>
-            <Button bsStyle="warning">Edit data...</Button>
-          </p>
+          <h1 className="App-title">Corporate Dashboard Beta<break /><Button bsStyle="warning">Edit data...</Button></h1>
         </header>
       <div class = "row">
         <div class = "column">
