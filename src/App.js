@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import {BarChart, RadialBarChart, RadialBar, LineChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+import {BarChart, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, LineChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import './App.css';
 
 const data = [
@@ -21,6 +21,15 @@ const data2 = [
   {name: '40-49', uv: 8.63, pv: 3908, fill: '#a4de6c'},
   {name: '50+', uv: 2.63, pv: 4800, fill: '#d0ed57'},
   {name: 'unknow', uv: 6.67, pv: 4800, fill: '#ffc658'}
+];
+
+const data3 = [
+  { subject: 'Math', A: 120, B: 110, fullMark: 150 },
+  { subject: 'Chinese', A: 98, B: 130, fullMark: 150 },
+  { subject: 'English', A: 86, B: 130, fullMark: 150 },
+  { subject: 'Geography', A: 99, B: 100, fullMark: 150 },
+  { subject: 'Physics', A: 85, B: 90, fullMark: 150 },
+  { subject: 'History', A: 65, B: 85, fullMark: 150 },
 ];
 
 const style = {
@@ -66,6 +75,13 @@ class App extends Component {
           <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
           </LineChart>
+
+          <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data3}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" />
+          <PolarRadiusAxis/>
+          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
+          </RadarChart>
         </div>
       </div>
       </div>
