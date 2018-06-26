@@ -32,12 +32,6 @@ const data3 = [
   { subject: 'History', A: 65, B: 85, fullMark: 150 },
 ];
 
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: '24px'
-};
-
 class App extends Component {
   render() {
     return (
@@ -61,7 +55,7 @@ class App extends Component {
 
           <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
-          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' wrapperStyle={style}/>
+          <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle'/>
           </RadialBarChart>
         </div>
         <div class = "column">
