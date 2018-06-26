@@ -61,7 +61,6 @@ class App extends Component {
 
           <RadialBarChart width={500} height={500} cx={300} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
-          <Legend />
           </RadialBarChart>
         </div>
         <div class = "column">
