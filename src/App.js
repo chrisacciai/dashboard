@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { Button } from 'react-bootstrap';
-import { ButtonGroup } from 'react-bootstrap';
+import HideButtonGroup from "./HideButtonGroup.js";
 import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, LineChart, AreaChart, Area, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import './App.css';
 
@@ -87,26 +86,7 @@ const data5 = [
 ];
 
 class App extends Component {
-  constructor() {
-		super();
-		this.state = {
-			shown: true,
-		};
-	}	
-	
-	toggle() {
-		this.setState({
-			shown: !this.state.shown
-		});
-	}
   render() {
-    var shown = {
-			display: this.state.shown ? "block" : "none"
-		};
-		
-		var hidden = {
-			display: this.state.shown ? "none" : "block"
-		}
     return (
       <div className="App">
         <header className="App-header">
@@ -129,10 +109,7 @@ class App extends Component {
           </BarChart>
           </p>
           <p style={ hidden }>Edit Data Here...</p>
-          <ButtonGroup>
-            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-            <Button>Update</Button>
-          </ButtonGroup>
+          <HideButtonGroup/>
 
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
@@ -164,10 +141,7 @@ class App extends Component {
           </LineChart>
           </p>
           <p style={ hidden }>Edit Data Here...</p>
-          <ButtonGroup>
-            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-            <Button>Update</Button>
-          </ButtonGroup>
+          <HideButtonGroup/>
 
           <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data3}>
           <PolarGrid />
@@ -189,7 +163,7 @@ class App extends Component {
           </BarChart>
         </div>
       </div>
-      </div>
+    </div>
     );
   }
 }
