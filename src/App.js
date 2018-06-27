@@ -114,7 +114,7 @@ class App extends Component {
         </header>
       <div class = "row">
         <div class = "column">
-          <h2 style={ shown }>
+          <p style={ shown }>
           <BarChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
@@ -125,7 +125,7 @@ class App extends Component {
           <Bar dataKey="pv" fill="#8884d8" />
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
-          </h2>
+          </p>
           <h2 style={ hidden }>Edit Data Here...</h2>
           <h1 className="Button"><Button onClick={this.toggle.bind(this)} bsStyle="warning">Edit Data</Button></h1>
 
