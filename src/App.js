@@ -114,6 +114,7 @@ class App extends Component {
         </header>
       <div class = "row">
         <div class = "column">
+          <br/>
           <p style={ shown }>
           <BarChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
@@ -145,6 +146,7 @@ class App extends Component {
           </AreaChart>
         </div>
         <div class = "column">
+          <br/>
           <LineChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
