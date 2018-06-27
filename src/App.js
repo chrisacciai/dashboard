@@ -91,7 +91,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Corporate Dashboard Beta<br /><Button bsStyle="primary" bsSize="large">Edit data...</Button></h1>
+          <h1 className="App-title">Corporate Dashboard Beta<br /><Button bsStyle="warning" bsSize="medium">Edit data...</Button></h1>
         </header>
       <div class = "row">
         <div class = "column">
