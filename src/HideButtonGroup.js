@@ -28,13 +28,6 @@ export default class HideButtonGroup extends Component {
 
   // render method
   render() {
-      var shown = {
-        display: this.state.shown ? "block" : "none"
-      };
-      var hidden = {
-        display: this.state.shown ? "none" : "block"
-      }
-
     return (
       <div>
         <ButtonGroup>
