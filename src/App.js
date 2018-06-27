@@ -114,6 +114,7 @@ class App extends Component {
         </header>
       <div class = "row">
         <div class = "column">
+          <h2 style={ shown }>
           <BarChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
@@ -124,7 +125,9 @@ class App extends Component {
           <Bar dataKey="pv" fill="#8884d8" />
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
-          <h1 className="Button"><Button bsStyle="warning">Edit Data</Button></h1>
+          </h2>
+          <h2 style={ hidden }>Edit Data Here...</h2>
+          <h1 className="Button"><Button onClick={this.toggle.bind(this)} bsStyle="warning">Edit Data</Button></h1>
 
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
