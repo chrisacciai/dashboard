@@ -35,6 +35,12 @@
   left: 16px;
 }
 
+.Button {
+  position: absolute;
+  top: 85px;
+  right: 16px;
+}
+
 .App-intro {
   font-size: large;
 }
