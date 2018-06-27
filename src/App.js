@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
 import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, LineChart, AreaChart, Area, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import './App.css';
 
@@ -128,7 +129,10 @@ class App extends Component {
           </BarChart>
           </p>
           <h2 style={ hidden }>Edit Data Here...</h2>
-          <h1 className="Button"><Button onClick={this.toggle.bind(this)} bsStyle="warning">Edit Data</Button></h1>
+          <ButtonGroup>
+            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
+            <Button>Update</Button>
+          </ButtonGroup>
 
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
