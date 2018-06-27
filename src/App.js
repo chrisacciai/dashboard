@@ -128,8 +128,8 @@ class App extends Component {
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
           </p>
--          <h2 style={ hidden }>Edit Data Here...</h2>
-+          <p style={ hidden }>Edit Data Here...</p>
+          <h2 style={ hidden }>Edit Data Here...</h2>
+          <p style={ hidden }>Edit Data Here...</p>
           <ButtonGroup>
             <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
             <Button>Update</Button>
@@ -152,7 +152,7 @@ class App extends Component {
         </div>
         <div class = "column">
           <br/>
-+          <p style={ shown }>
+          <p style={ shown }>
           <LineChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
@@ -163,12 +163,12 @@ class App extends Component {
           <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
           </LineChart>
-+          </p>
-+          <p style={ hidden }>Edit Data Here...</p>
-+          <ButtonGroup>
-+            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-+            <Button>Update</Button>
-+          </ButtonGroup>
+          </p>
+          <p style={ hidden }>Edit Data Here...</p>
+          <ButtonGroup>
+            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
+            <Button>Update</Button>
+          </ButtonGroup>
 
           <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data3}>
           <PolarGrid />
