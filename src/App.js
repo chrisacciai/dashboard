@@ -87,12 +87,12 @@ const data5 = [
 
 class App extends Component {
   render() {
-    
+
     var shown = {
-      display: this.state.shown ? "block" : "none"
+      display: HideButtonGroup.state.shown ? "block" : "none"
     };
     var hidden = {
-      display: this.state.shown ? "none" : "block"
+      display: HideButtonGroup.state.shown ? "none" : "block"
     }
 
     return (

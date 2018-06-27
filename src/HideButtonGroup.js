@@ -19,7 +19,7 @@ export default class HideButtonGroup extends Component {
 		};
 	}	
 
-  // other metohds
+  // other methods
 	toggle() {
 		this.setState({
 			shown: !this.state.shown
