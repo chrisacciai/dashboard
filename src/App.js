@@ -86,13 +86,31 @@ const data5 = [
 ];
 
 class App extends Component {
+  constructor() {
+		super();
+		this.state = {
+			shown: true,
+		};
+	}	
+	
+	toggle() {
+		this.setState({
+			shown: !this.state.shown
+		});
+	}
   render() {
+    var shown = {
+			display: this.state.shown ? "block" : "none"
+		};
+		
+		var hidden = {
+			display: this.state.shown ? "none" : "block"
+		}
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Corporate Dashboard Beta</h1>
-          <h1 className="Button"><Button bsStyle="warning">Edit Data</Button></h1>
         </header>
       <div class = "row">
         <div class = "column">
@@ -106,6 +124,7 @@ class App extends Component {
           <Bar dataKey="pv" fill="#8884d8" />
           <Bar dataKey="uv" fill="#82ca9d" />
           </BarChart>
+          <h1 className="Button"><Button bsStyle="warning">Edit Data</Button></h1>
 
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
