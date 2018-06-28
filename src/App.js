@@ -5,6 +5,7 @@ import './App.css';
 import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
 import {Button} from 'react-bootstrap';
+import {Tabs, tab} from 'react-bootstrap';
 
 const data2 = [
   {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
@@ -86,6 +87,8 @@ class App extends Component {
           <h1 className="App-title">[BETA] Corporate Dashboard</h1>
           <Button className="Button1" bsStyle="primary">Export as PDF</Button>
         </header>
+      <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+      <Tab eventKey={1} title="Tab 1">
       <div class = "row">
         <div class = "column">
           <br/>
@@ -130,6 +133,8 @@ class App extends Component {
           </BarChart>
         </div>
       </div>
+      </Tab>
+      </Tabs>
       </div>
     );
   }
