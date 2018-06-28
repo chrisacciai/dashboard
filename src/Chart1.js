@@ -35,9 +35,10 @@ export default class Chart1 extends Component {
           display: this.state.shown ? "none" : "block"
         }
 
-        return ( 
-            <div>
-            <p style={ shown }>
+        return (
+          <div>
+            <h2>Healthcare Average TAT</h2> 
+          <p style={ shown }>
             <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 15, bottom: 5}}>
             <XAxis dataKey="month"/>
