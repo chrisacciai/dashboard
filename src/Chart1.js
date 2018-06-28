@@ -13,7 +13,7 @@ const data = [
     {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
   ];
 
-class Chart1 extends Component {
+export default class Chart1 extends Component {
     constructor() {
         super();
         this.state = {
@@ -59,5 +59,3 @@ class Chart1 extends Component {
         );
     }
 }
-
-export default Chart1
