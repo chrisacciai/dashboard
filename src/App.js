@@ -83,7 +83,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Corporate Dashboard Beta</h1>
+          <h1 className="App-title">[BETA] Corporate Dashboard</h1>
           <Button className="Button1" bsStyle="primary">Export as PDF</Button>
         </header>
       <div class = "row">
