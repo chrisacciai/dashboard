@@ -37,13 +37,15 @@ export default class Chart1 extends Component {
 
         return ( 
             <div>
+            <p style="font-size: 1.3em; text-align:center">Healthcare Average TAT</p>
             <p style={ shown }>
             <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 20, bottom: 5}}>
             <XAxis dataKey="month"/>
-            <YAxis/>
+            <YAxis label={{ value: 'Hours', angle: -90, position: 'insideLeft', textAnchor: 'middle' }} />
             <CartesianGrid strokeDasharray="3 3"/>
             <Tooltip/>
+            <ReferenceLine y={96} label="96 Hour Goal" stroke="blue" strokeDasharray="3 3" />
             <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
             </LineChart>
             </p>
