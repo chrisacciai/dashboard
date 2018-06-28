@@ -37,6 +37,7 @@ export default class Chart1 extends Component {
 
         return (
           <div>
+            <br/>
             <div>
               <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
