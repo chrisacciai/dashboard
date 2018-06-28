@@ -37,7 +37,11 @@ export default class Chart1 extends Component {
 
         return (
           <div>
-            <h2>Healthcare Average TAT</h2> 
+            <p style="font-size:14px">Healthcare Average TAT</p>
+            <ButtonGroup>
+                <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
+                <Button>Update</Button>
+            </ButtonGroup> 
           <p style={ shown }>
             <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 15, bottom: 5}}>
@@ -50,10 +54,6 @@ export default class Chart1 extends Component {
             </LineChart>
             </p>
             <p style={ hidden }>Edit Data Here...</p>
-            <ButtonGroup>
-                <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-                <Button>Update</Button>
-            </ButtonGroup>
             </div>
         );
     }
