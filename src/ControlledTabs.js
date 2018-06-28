@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
-import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, AreaChart, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
 

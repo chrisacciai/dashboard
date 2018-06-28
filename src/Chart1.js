@@ -40,7 +40,7 @@ export default class Chart1 extends Component {
             <div>
             <p style={ shown }>
             <BarChart width={600} height={300} data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+            margin={{top: 5, right: 30, left: 20, bottom: 10}}>
             <XAxis dataKey="name"/>
             <YAxis/>
             <CartesianGrid strokeDasharray="3 3"/>
