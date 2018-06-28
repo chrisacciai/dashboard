@@ -37,12 +37,15 @@ export default class Chart1 extends Component {
 
         return (
           <div>
-            <p>Healthcare Average TAT
-            <ButtonGroup>
-                <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-                <Button>Update</Button>
-            </ButtonGroup> 
-            </p>
+            <div>
+              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignright">
+                <ButtonGroup bsSize="xs">
+                  <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
+                  <Button>Update</Button>
+                </ButtonGroup> 
+              </p>
+            </div>
           <p style={ shown }>
             <LineChart width={600} height={300} data={data}
             margin={{top: 5, right: 30, left: 15, bottom: 5}}>
