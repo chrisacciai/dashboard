@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, LineChart, AreaChart, Area, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import './App.css';
-import {Button} from 'react-bootstrap';
-import {ButtonGroup} from 'react-bootstrap';
-
-const data = [
-  {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-  {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-  {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-  {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-  {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-  {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-  {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
-];
+import {Chart1} from './Chart1.js';
 
 const data2 = [
   {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
@@ -87,26 +76,7 @@ const data5 = [
 ];
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      shown: true,
-    };
-  }	
-  
-  toggle() {
-    this.setState({
-      shown: !this.state.shown
-    });
-  }
   render() {
-    var shown = {
-      display: this.state.shown ? "block" : "none"
-    };
-    
-    var hidden = {
-      display: this.state.shown ? "none" : "block"
-    }
     return (
       <div className="App">
         <header className="App-header">
@@ -116,25 +86,8 @@ class App extends Component {
       <div class = "row">
         <div class = "column">
           <br/>
-          <p style={ shown }>
-          <BarChart width={600} height={300} data={data}
-          margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-          <XAxis dataKey="name"/>
-          <YAxis/>
-          <CartesianGrid strokeDasharray="3 3"/>
-          <Tooltip/>
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-          </BarChart>
-          </p>
-          <h2 style={ hidden }>Edit Data Here...</h2>
-          <p style={ hidden }>Edit Data Here...</p>
-          <ButtonGroup>
-            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-            <Button>Update</Button>
-          </ButtonGroup>
-
+          <Chart1/>
+          
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
