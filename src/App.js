@@ -5,7 +5,6 @@ import './App.css';
 import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
 import {Button} from 'react-bootstrap';
-import {Tabs, Tab} from 'react-bootstrap';
 
 const data2 = [
   {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
@@ -97,8 +96,6 @@ class App extends Component {
 
   render() {
     return (
-    <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example">
-      <Tab eventKey={1} title="Tab 1">
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -150,10 +147,6 @@ class App extends Component {
           </div>
         </div>
       </div>
-      </Tab>
-      <Tab eventKey={2} title="Tab 2">
-      </Tab>
-    </Tabs>
     );
   }
 }
