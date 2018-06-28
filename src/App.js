@@ -150,6 +150,8 @@ class App extends Component {
           </div>
         </div>
         </Tab>
+        <Tab eventKey={2} title="Tab 2">
+        </Tab>
       </Tabs>
       </div>
     );
