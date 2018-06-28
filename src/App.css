@@ -2,9 +2,16 @@
   text-align: center;
 }
 
-.column {
-  float: left;
-  width: 50%;
+.column-left {
+  float: left; width: 33%; 
+}
+
+.column-right {
+  float: right; width: 33%;
+}
+
+.column-center {
+  display: inline-block; width: 33%; 
 }
 
 .row:after {
