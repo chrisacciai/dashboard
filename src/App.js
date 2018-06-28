@@ -97,14 +97,14 @@ class App extends Component {
 
   render() {
     return (
+    <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example">
+      <Tab eventKey={1} title="Tab 1">
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">[BETA] Corporate Dashboard</h1>
           <Button className="Button1" bsStyle="primary">Export as PDF</Button>
         </header>
-      <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example">
-        <Tab eventKey={1} title="Tab 1">
         <div class = "row">
           <div class = "column">
             <br/>
@@ -149,11 +149,11 @@ class App extends Component {
             </BarChart>
           </div>
         </div>
-        </Tab>
-        <Tab eventKey={2} title="Tab 2">
-        </Tab>
-      </Tabs>
       </div>
+      </Tab>
+      <Tab eventKey={2} title="Tab 2">
+      </Tab>
+    </Tabs>
     );
   }
 }
