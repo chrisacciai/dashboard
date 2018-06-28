@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Tab, Tabs} from 'react-bootstrap';
+import {Tab, Tabs} from 'react-bootstrap-tabs';
 import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, RadialBarChart, RadialBar, AreaChart, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
@@ -25,8 +25,8 @@ export default class ControlledTabs extends Component {
         <Tabs
           activeKey={this.state.key}
           onSelect={this.handleSelect}
-          id="controlled-tab-example"
-        >
+          id="controlled-tab-example">
+          
           <Tab eventKey={1} title="Tab 1">
           <div class = "row">
           <div class = "column">
@@ -75,9 +75,6 @@ export default class ControlledTabs extends Component {
           </Tab>
           <Tab eventKey={2} title="Tab 2">
             Tab 2 content
-          </Tab>
-          <Tab eventKey={3} title="Tab 3" disabled>
-            
           </Tab>
         </Tabs>
       );
