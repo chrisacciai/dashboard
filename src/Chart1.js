@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine, Legend} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 
@@ -46,7 +46,6 @@ export default class Chart1 extends Component {
             <Tooltip/>
             <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
             <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-            <Legend margin={{ top: 60, left: 0, right: 0, bottom: 0 }}/>
             </LineChart>
             </p>
             <p style={ hidden }>Edit Data Here...</p>
