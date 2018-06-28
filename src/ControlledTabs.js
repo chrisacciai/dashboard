@@ -41,6 +41,18 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={3} title="Finance">
             Tab 3 content
           </Tab>
+          <Tab eventKey={4} title="Research &amp; Development">
+            Tab 2 content
+          </Tab>
+          <Tab eventKey={5} title="Safety">
+            Tab 3 content
+          </Tab>
+          <Tab eventKey={6} title="PMO">
+            Tab 2 content
+          </Tab>
+          <Tab eventKey={7} title="Human Resources">
+            Tab 3 content
+          </Tab>
         </Tabs>
       );
     }
