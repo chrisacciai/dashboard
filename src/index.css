@@ -5,9 +5,10 @@ body {
 }
 p.alignleft {
   float: left;
-  margin-left: 30px;
+  margin-left: 60px;
+  font-size: 15px;
 }
 p.alignright {
   float: right;
-  margin-right: 30px;
+  margin-right: 45px;
 }
