@@ -87,7 +87,7 @@ class App extends Component {
         <div class = "column">
           <br/>
           <Chart1/>
-          
+
           <RadialBarChart width={500} height={500} cx={200} cy={250} innerRadius={20} outerRadius={140} barSize={10} data={data2}>
           <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise={true} dataKey='uv'/>
           <Legend iconSize={10} width={120} height={140} layout='vertical' verticalAlign='middle' align="right" />
@@ -105,7 +105,6 @@ class App extends Component {
         </div>
         <div class = "column">
           <br/>
-          <p style={ shown }>
           <LineChart width={600} height={300} data={data}
           margin={{top: 5, right: 30, left: 20, bottom: 5}}>
           <XAxis dataKey="name"/>
@@ -116,12 +115,6 @@ class App extends Component {
           <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
           </LineChart>
-          </p>
-          <p style={ hidden }>Edit Data Here...</p>
-          <ButtonGroup>
-            <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-            <Button>Update</Button>
-          </ButtonGroup>
 
           <RadarChart cx={300} cy={250} outerRadius={150} width={600} height={500} data={data3}>
           <PolarGrid />
