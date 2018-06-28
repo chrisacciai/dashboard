@@ -4,6 +4,7 @@ import {BarChart, Radar, Brush, ReferenceLine, RadarChart, PolarGrid, PolarAngle
 import './App.css';
 import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
+import {Button} from 'react-bootstrap';
 
 const data2 = [
   {name: '18-24', uv: 31.47, pv: 2400, fill: '#8884d8'},
