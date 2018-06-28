@@ -37,7 +37,7 @@ export default class Chart1 extends Component {
 
         return (
           <div>
-            <p style="font-size:14px">Healthcare Average TAT</p>
+            <p>Healthcare Average TAT</p>
             <ButtonGroup>
                 <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
                 <Button>Update</Button>
