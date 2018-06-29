@@ -1,5 +1,6 @@
 import {Table} from 'react-bootstrap';
 import React, { Component } from 'react';
+import DataForm from './DataForm';
 
 const data = [
     {month: 'Jan-18', pv: 74},
@@ -23,7 +24,7 @@ export default class Table1 extends Component {
             </thead>
                 <tbody>
                     <tr>
-                        <td>Jan-18</td>
+                        <td><DataForm/></td>
                         <td>74</td>
                     </tr>
                     <tr>
