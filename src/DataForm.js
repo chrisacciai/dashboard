@@ -6,23 +6,22 @@ export default class DataForm extends Component {
       this.state = {value: ''};
   
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleUpdate = this.handleUpdate.bind(this);
     }
   
     handleChange(event) {
       this.setState({value: event.target.value});
     }
   
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
+    handleUpdate(event) {
+      alert('New Month: ' + this.state.value);
       event.preventDefault();
     }
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleUpdate}>
           <label>
-            Name:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />

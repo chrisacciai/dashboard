@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import Chart1 from './Chart1.js';
+import Test from './Test.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -35,7 +36,7 @@ export default class ControlledTabs extends Component {
             </div>
           </Tab>
           <Tab eventKey={2} title="Business Development">
-            Tab 2 content
+            <Test/>
           </Tab>
           <Tab eventKey={3} title="Finance">
             Tab 3 content
