@@ -7,8 +7,12 @@
   width: 50%;
 }
 
-.center {
-  text-align: center;
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row:after {
