@@ -12,7 +12,8 @@ p.alignright {
   float: right;
   margin-right: 45px;
 }
-table {
+
+#table {
   width: 80%;
   text-align: center;
 }

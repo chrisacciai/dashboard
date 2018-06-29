@@ -13,8 +13,8 @@ const data = [
 export default class Table1 extends Component {
       render() {
         return (
-        <div id="container">
-          <Table bsClass='table' striped bordered condensed hover>
+        <div id="table">
+          <Table striped bordered condensed hover>
             <thead>
                 <tr>
                     <th>Month</th>
