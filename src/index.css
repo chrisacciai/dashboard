@@ -13,7 +13,6 @@ p.alignright {
   margin-right: 45px;
 }
 table {
-  margin-right: 50px;
-  margin-left: 50px;
-  margin-bottom: 5px;
+  width: 80%;
+  text-align: center;
 }
