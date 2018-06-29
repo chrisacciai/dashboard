@@ -49,16 +49,18 @@ export default class Chart1 extends Component {
             </div>
             <br/>
             <p style={ shown }>
-            <ResponsiveContainer>
-              <LineChart data={data}
-              margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-              <XAxis dataKey="month"/>
-              <YAxis/>
-              <CartesianGrid strokeDasharray="3 3"/>
-              <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
-              <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-              </LineChart>
-            </ResponsiveContainer>
+            <div class = "container">
+              <ResponsiveContainer>
+                <LineChart data={data}
+                margin={{top: 0, right: 30, left: 15, bottom: 5}}>
+                <XAxis dataKey="month"/>
+                <YAxis/>
+                <CartesianGrid strokeDasharray="3 3"/>
+                <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
+                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
             </p>
             <p style={ hidden }>Edit Data Here...</p>
           </div>
