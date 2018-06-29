@@ -63,7 +63,7 @@ export default class Chart1 extends Component {
               </ResponsiveContainer>
             </div>
             </p>
-            <p style={ hidden }><br/><Table1/></p>
+            <p style={ hidden }><Table1/></p>
           </div>
         );
     }
