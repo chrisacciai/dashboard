@@ -49,7 +49,6 @@ export default class Chart1 extends Component {
             </div>
             <br/>
             <p style={ shown }>
-            <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
@@ -60,7 +59,6 @@ export default class Chart1 extends Component {
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
                 </LineChart>
               </ResponsiveContainer>
-            </div>
             </p>
             <p style={ hidden }>Edit Data Here...</p>
           </div>
