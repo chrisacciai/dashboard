@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
+import Table1 from './Table1.js'
 
 const data = [
     {month: 'Jan-18', pv: 74},
@@ -62,7 +63,7 @@ export default class Chart1 extends Component {
               </ResponsiveContainer>
             </div>
             </p>
-            <p style={ hidden }>Edit Data Here...</p>
+            <p style={ hidden }><Table1/></p>
           </div>
         );
     }
