@@ -48,9 +48,9 @@ export default class Chart1 extends Component {
               </p>
             </div>
           <p style={ shown }>
-              <LineChart width={420} height={170} data={data}
+              <LineChart width={600} height={400} data={data}
               margin={{top: 10, right: 30, left: 15, bottom: 5}}>
-              <XAxis dataKey="month" fontSize="10"/>
+              <XAxis dataKey="month"/>
               <YAxis/>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
