@@ -27,10 +27,10 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={1} title="Operations">
             <div class = "row">
               <div class = "column">
-                <Chart1/>
+                <div class = "center"><Chart1/></div>
               </div>
               <div class = "column">
-                <Chart1/>
+                <div class = "center"><Chart1/></div>
               </div>
             </div>
           </Tab>
