@@ -49,7 +49,6 @@ export default class Chart1 extends Component {
             </div>
             <br/>
             <p style={ shown }>
-              <ResponsiveContainer>
                 <LineChart width={600} height={300} data={data}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey="month"/>
@@ -58,7 +57,6 @@ export default class Chart1 extends Component {
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
                 </LineChart>
-              </ResponsiveContainer>
             </p>
             <p style={ hidden }>Edit Data Here...</p>
           </div>
