@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import Chart1 from './Chart1.js';
-import Chart2 from './Chart2.js';
+import {ResponsiveContainer} from 'recharts';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -28,13 +28,19 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={1} title="Operations">
             <div class = "row">
                 <div class = "column-left">
+                  <ResponsiveContainer width="80%" height="40%" >
                     <Chart1/>
+                  </ResponsiveContainer>
                 </div>
                 <div class = "column-center">
+                  <ResponsiveContainer width="80%" height="40%" >
                     <Chart1/>
+                  </ResponsiveContainer>
                 </div>
                 <div class = "column-right">
+                  <ResponsiveContainer width="80%" height="40%" >
                     <Chart1/>
+                  </ResponsiveContainer>
                 </div>
             </div>
           </Tab>
