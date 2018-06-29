@@ -48,15 +48,7 @@ export default class Chart1 extends Component {
               </p>
             </div>
           <p style={ shown }>
-              <LineChart width={600} height={300} data={data}
-              margin={{top: 29, right: 30, left: 15, bottom: 5}}>
-              <XAxis dataKey="month"/>
-              <YAxis/>
-              <CartesianGrid strokeDasharray="3 3"/>
-              <Tooltip/>
-              <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
-              <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
-              </LineChart>
+
             </p>
             <p style={ hidden }>Edit Data Here...</p>
             </div>
