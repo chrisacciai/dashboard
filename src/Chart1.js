@@ -51,7 +51,7 @@ export default class Chart1 extends Component {
             <p style={ shown }>
             <div class = "container">
               <ResponsiveContainer>
-                <LineChart data={data}
+                <LineChart width={600} height={300} data={data}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey="month"/>
                 <YAxis/>
