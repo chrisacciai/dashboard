@@ -15,5 +15,6 @@ p.alignright {
 
 #table {
   width: 80%;
-  text-align: center;
+  margin: auto;
+  height: 300px;
 }
