@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
+import {Text} from 'recharts';
 
 const data = [
     {month: 'Jan-18', pv: 74},
@@ -50,8 +51,10 @@ export default class Chart1 extends Component {
           <p style={ shown }>
               <LineChart width={420} height={170} data={data}
               margin={{top: 10, right: 30, left: 15, bottom: 5}}>
-              <XAxis dataKey="month"/>
+              <XAxis dataKey="month" />
+                <Text scaleToFit="true"/>
               <YAxis/>
+                <Text scaleToFit="true"/>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
               <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
