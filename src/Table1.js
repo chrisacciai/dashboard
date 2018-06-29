@@ -14,7 +14,7 @@ export default class Table1 extends Component {
       render() {
         return (
         <div id="container">
-          <Table responsive striped bordered condensed hover>
+          <Table bsClass='table' responsive striped bordered condensed hover>
             <thead>
                 <tr>
                     <th>Month</th>
