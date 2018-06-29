@@ -8,8 +8,8 @@
 }
 
 #container {
-  height: 600px;
-  width: 300px;
+  height: auto;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
