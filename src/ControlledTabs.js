@@ -26,15 +26,15 @@ export default class ControlledTabs extends Component {
 
           <Tab eventKey={1} title="Operations">
             <div class = "row">
-                <div class = "column-left">
-                  <Chart1/>
-                </div>
-                <div class = "column-center">
-                  <Chart1/>
-                </div>
-                <div class = "column-right">
-                  <Chart1/>
-                </div>
+              <div class = "column-left">
+                <Chart1/>
+              </div>
+              <div class = "column-center">
+                <Chart1/>
+              </div>
+              <div class = "column-right">
+                <Chart1/>
+              </div>
             </div>
           </Tab>
           <Tab eventKey={2} title="Business Development">
