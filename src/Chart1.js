@@ -21,10 +21,15 @@ export default class Chart1 extends Component {
         };
       }	
       
-      toggle() {
+      hide() {
         this.setState({
-          shown: !this.state.shown
+          shown: false
         });
+      }
+      show() {
+        this.setState({
+          shown: true
+        })
       }
       render() {
         
@@ -43,8 +48,8 @@ export default class Chart1 extends Component {
               <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
-                  <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-                  <Button>Update</Button>
+                  <Button onClick={this.hide.bind(this)}>Edit Data</Button>
+                  <Button onClick={this.show.bind(this)}>Update</Button>
                 </ButtonGroup> 
               </p>
             </div>
