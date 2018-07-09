@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
-import Table1 from './Table1.js'
+import {Table} from 'react-bootstrap';
 
 const data = [
     {month: 'Jan-18', pv: 74},
@@ -68,7 +68,44 @@ export default class Chart1 extends Component {
               </ResponsiveContainer>
             </div>
             </p>
-            <p style={ hidden }><Table1/></p>
+            <p style={ hidden }>
+              <div id="table">
+                <Table striped bordered condensed hover>
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Average TAT</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                    <tr>
+                        <td>Feb-18</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <td>Feb-18</td>
+                        <td>87</td>
+                    </tr>
+                    <tr>
+                        <td>Mar-18</td>
+                        <td>92</td>
+                    </tr>
+                    <tr>
+                        <td>Apr-18</td>
+                        <td>112</td>
+                    </tr>
+                    <tr>
+                        <td>May-18</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>MTD 6/25/18</td>
+                        <td>139</td>
+                    </tr>
+                  </tbody>
+                </Table>
+                </div>
+              </p>
           </div>
         );
     }
