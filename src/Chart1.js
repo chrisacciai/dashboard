@@ -18,7 +18,11 @@ export default class Chart1 extends Component {
         super();
         this.state = {
           shown: true,
+          value: '',
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
       }	
       
       hide() {
@@ -31,6 +35,16 @@ export default class Chart1 extends Component {
           shown: true
         })
       }
+
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleUpdate(event) {
+        alert('New Month: ' + this.state.value);
+        event.preventDefault();
+      }
+
       render() {
         
         var shown = {
@@ -79,7 +93,14 @@ export default class Chart1 extends Component {
                 </thead>
                   <tbody>
                     <tr>
-                        <td>Feb-18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>74</td>
                     </tr>
                     <tr>
