@@ -104,23 +104,58 @@ export default class Chart1 extends Component {
                         <td>74</td>
                     </tr>
                     <tr>
-                        <td>Feb-18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>87</td>
                     </tr>
                     <tr>
-                        <td>Mar-18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>92</td>
                     </tr>
                     <tr>
-                        <td>Apr-18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>112</td>
                     </tr>
                     <tr>
-                        <td>May-18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>160</td>
                     </tr>
                     <tr>
-                        <td>MTD 6/25/18</td>
+                        <td>
+                          <form onSubmit={this.handleUpdate}>
+                            <label>
+                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                            </label>
+                              <input type="submit" value="Submit" />
+                          </form>
+                        </td>
                         <td>139</td>
                     </tr>
                   </tbody>
