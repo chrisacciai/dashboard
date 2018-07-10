@@ -34,6 +34,9 @@ export default class Chart1 extends Component {
         this.setState({
           shown: false
         });
+
+        alert('New Month: ' + this.state.value3);
+        event.preventDefault();
       }
       show() {
         this.setState({
@@ -43,11 +46,6 @@ export default class Chart1 extends Component {
 
       handleChange(event) {
         this.setState({ [event.target.name] : event.target.value });
-      }
-
-      handleUpdate(event) {
-        alert('New Month: ' + this.state.value3);
-        event.preventDefault();
       }
 
       render() {
