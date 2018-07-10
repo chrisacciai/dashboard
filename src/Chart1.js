@@ -4,7 +4,7 @@ import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 
-const data = [
+const data1 = [
     {month: 'Jan-18', pv: 74},
     {month: 'Feb-18', pv: 87},
     {month: 'Mar-18', pv: 92},
@@ -12,6 +12,14 @@ const data = [
     {month: 'May-18', pv: 160},
     {month: 'MTD 6/18/18', pv: 136},
   ];
+
+function stringifyFormData(formData) {
+  const data = {};
+  for (let key of formData.keys()) {
+    data[key] = fd.get(key);
+  }
+  return JSON.stringify(data, null, 2);
+}
 
 export default class Chart1 extends Component {
     constructor() {
@@ -46,8 +54,12 @@ export default class Chart1 extends Component {
       }
 
       handleSubmit(event) {
-        alert('New month: ' + this.state.value3);
         event.preventDefault();
+        const data = new FormData(event.target);
+
+        this.setState({
+          res: stringifyFormData(data),
+        });
       }
 
       render() {
@@ -67,8 +79,8 @@ export default class Chart1 extends Component {
               <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
-                  <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button onClick={this.show.bind(this)}>Chart</Button>
+                  <Button onClick={this.hide.bind(this)}>Chart View</Button>
+                  <Button onClick={this.show.bind(this)}>Edit Data</Button>
                   <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
                 </ButtonGroup>
               </p>
@@ -77,7 +89,7 @@ export default class Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}
+                <LineChart data={data1}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey="month"/>
                 <YAxis/>
@@ -152,6 +164,14 @@ export default class Chart1 extends Component {
                 </form>
                 </div>
               </p>
+
+              {this.state.res && (
+                <div className="res-block">
+                  <h1>Data to be sent:</h1>
+                  <p>FormData {this.state.res}</p>
+                </div>
+              )}
+
           </div>
         );
     }

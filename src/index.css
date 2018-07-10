@@ -18,3 +18,7 @@ p.alignright {
   margin: auto;
   height: 300px;
 }
+
+.res-block {
+  display: inline-block;
+}
