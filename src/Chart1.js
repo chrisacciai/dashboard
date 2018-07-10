@@ -13,10 +13,10 @@ const data1 = [
     {month: 'MTD 6/18/18', pv: 136},
   ];
 
-function stringifyFormData(formData) {
+function stringifyFormData(data) {
   const data = {};
-  for (let key of formData.keys()) {
-    data[key] = fd.get(key);
+  for (let key of data.keys()) {
+    data[key] = data.get(key);
   }
   return JSON.stringify(data, null, 2);
 }
