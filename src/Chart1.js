@@ -18,7 +18,12 @@ export default class Chart1 extends Component {
         super();
         this.state = {
           shown: true,
-          value: '',
+          value1: '',
+          value2: '',
+          value3: '',
+          value4: '',
+          value5: '',
+          value6: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -37,11 +42,11 @@ export default class Chart1 extends Component {
       }
 
       handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({ [event.target.name] : event.target.value });
       }
     
       handleUpdate(event) {
-        alert('New Month: ' + this.state.value);
+        alert('New Month: ' + this.state.value3);
         event.preventDefault();
       }
 
@@ -96,7 +101,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" name="value1" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
@@ -107,7 +112,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" name="value2" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
@@ -118,7 +123,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" name="value3" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
@@ -129,7 +134,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" name="value4" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
@@ -140,7 +145,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" vanme="value5" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
@@ -151,7 +156,7 @@ export default class Chart1 extends Component {
                         <td>
                           <form onSubmit={this.handleUpdate}>
                             <label>
-                              <input type="text" value={this.state.value} onChange={this.handleChange} />
+                              <input type="text" name="value6" onChange={this.handleChange} />
                             </label>
                               <input type="submit" value="Submit" />
                           </form>
