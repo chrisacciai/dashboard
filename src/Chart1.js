@@ -41,11 +41,6 @@ export default class Chart1 extends Component {
         })
       }
 
-      onClick(event) {
-        handleUpdate(event);
-        show();
-      }
-
       handleChange(event) {
         this.setState({ [event.target.name] : event.target.value });
       }
@@ -73,7 +68,7 @@ export default class Chart1 extends Component {
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button onClick={this.onClick} >Update</Button>
+                  <Button onClick={this.show.bind(this)}>Update</Button>
                 </ButtonGroup> 
               </p>
             </div>
