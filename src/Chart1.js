@@ -28,7 +28,6 @@ export default class Chart1 extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
       }	
       
       hide() {
@@ -39,16 +38,6 @@ export default class Chart1 extends Component {
       show() {
         this.setState({
           shown: true
-        })
-      }
-
-      handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-
-        fetch('/api/form-submit-url', {
-          method: 'POST',
-          body: data,
         })
       }
 
@@ -105,11 +94,10 @@ export default class Chart1 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleSubmit}>
+                          <form>
                             <label>
                               <input type="text" name="value1" onChange={this.handleChange} />
                             </label>
-                            <button>Send data!</button>
                           </form>
                         </td>
                         <td>74</td>
