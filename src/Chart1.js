@@ -77,7 +77,7 @@ export default class Chart1 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-                <XAxis dataKey="month"/>
+                <XAxis/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
