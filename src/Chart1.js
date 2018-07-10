@@ -27,7 +27,7 @@ export default class Chart1 extends Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }	
       
       hide() {
@@ -45,7 +45,7 @@ export default class Chart1 extends Component {
         this.setState({ [event.target.name] : event.target.value });
       }
 
-      handleUpdate(event) {
+      handleSubmit(event) {
         alert('New month: ' + this.state.value3);
         event.preventDefault();
       }
@@ -90,7 +90,7 @@ export default class Chart1 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form id="form1">
+                <form id="form1" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
