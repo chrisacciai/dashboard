@@ -68,9 +68,9 @@ export default class Chart1 extends Component {
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button onClick={this.show.bind(this)}>Update</Button>
+                  <Button onClick={this.show.bind(this)}>Chart</Button>
+                  <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
                 </ButtonGroup>
-                <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
               </p>
             </div>
             <br/>
