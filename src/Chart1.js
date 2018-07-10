@@ -23,7 +23,7 @@ export default class Chart1 extends Component {
           value4: '',
           value5: '',
           value6: '',
-          data : [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136},],
+          chartData: [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -81,7 +81,7 @@ export default class Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={data}
+                <LineChart data ={this.props.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey="month"/>
                 <YAxis/>
