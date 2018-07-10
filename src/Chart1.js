@@ -17,7 +17,7 @@ export default class Chart1 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month1: 'Jan-18', pv1: 74},{month2: 'Feb-18', pv2: 87},{month3: 'Mar-18', pv3: 92},{month4: 'Apr-18', pv4: 112},{month5: 'May-18', pv5: 160},{month6: 'MTD 6/18/18', pv6: 136}],
+          chartData: [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -77,7 +77,7 @@ export default class Chart1 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-                <XAxis/>
+                <XAxis dataKey='month'/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
