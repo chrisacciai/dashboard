@@ -4,15 +4,6 @@ import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 
-var data = [
-    {month: 'Jan-18', pv: 74},
-    {month: 'Feb-18', pv: 87},
-    {month: 'Mar-18', pv: 92},
-    {month: 'Apr-18', pv: 112},
-    {month: 'May-18', pv: 160},
-    {month: 'MTD 6/18/18', pv: 136},
-  ];
-
 function stringifyFormData(fd) {
   const data = {};
   for (let key of fd.keys()) {
@@ -32,6 +23,7 @@ export default class Chart1 extends Component {
           value4: '',
           value5: '',
           value6: '',
+          data : [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136},],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -55,7 +47,7 @@ export default class Chart1 extends Component {
 
       handleSubmit(event) {
         event.preventDefault();
-        const data = new FormData(event.target);
+        data = new FormData(event.target);
 
         this.setState({
           res: stringifyFormData(data),
