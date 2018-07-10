@@ -49,7 +49,7 @@ export default class Chart1 extends Component {
         alert('New month: ' + this.state.value3);
         event.preventDefault();
       }
-      
+
       render() {
         
         var shown = {
@@ -89,6 +89,7 @@ export default class Chart1 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table">
+                <form>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
@@ -99,66 +100,55 @@ export default class Chart1 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" name="value1" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>74</td>
                     </tr>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" name="value2" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>87</td>
                     </tr>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" name="value3" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>92</td>
                     </tr>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" name="value4" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>112</td>
                     </tr>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" vanme="value5" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>160</td>
                     </tr>
                     <tr>
                         <td>
-                          <form>
                             <label>
                               <input type="text" name="value6" onChange={this.handleChange} />
                             </label>
-                          </form>
                         </td>
                         <td>139</td>
                     </tr>
                   </tbody>
                 </Table>
+                </form>
                 </div>
               </p>
           </div>
