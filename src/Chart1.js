@@ -70,7 +70,7 @@ export default class Chart1 extends Component {
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button onClick={this.show.bind(this)}>Update</Button>
                 </ButtonGroup>
-                <input type="submit" form="form1" /> 
+                <Button bsStyle="primary"><input type="submit" form="form1" /></Button> 
               </p>
             </div>
             <br/>
