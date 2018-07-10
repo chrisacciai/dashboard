@@ -28,19 +28,27 @@ export default class Chart1 extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }	
       
       hide() {
         this.setState({
           shown: false
         });
-
-        alert('New Month: ' + this.state.value3);
-        event.preventDefault();
       }
       show() {
         this.setState({
           shown: true
+        })
+      }
+
+      handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+
+        fetch('/api/form-submit-url', {
+          method: 'POST',
+          body: data,
         })
       }
 
@@ -97,17 +105,18 @@ export default class Chart1 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form onSubmit={this.handleSubmit}>
                             <label>
                               <input type="text" name="value1" onChange={this.handleChange} />
                             </label>
+                            <button>Send data!</button>
                           </form>
                         </td>
                         <td>74</td>
                     </tr>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form>
                             <label>
                               <input type="text" name="value2" onChange={this.handleChange} />
                             </label>
@@ -117,7 +126,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form >
                             <label>
                               <input type="text" name="value3" onChange={this.handleChange} />
                             </label>
@@ -127,7 +136,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form >
                             <label>
                               <input type="text" name="value4" onChange={this.handleChange} />
                             </label>
@@ -137,7 +146,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form >
                             <label>
                               <input type="text" vanme="value5" onChange={this.handleChange} />
                             </label>
@@ -147,7 +156,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form id="1">
+                          <form >
                             <label>
                               <input type="text" name="value6" onChange={this.handleChange} />
                             </label>
