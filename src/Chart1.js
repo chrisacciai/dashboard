@@ -81,7 +81,7 @@ export default class Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.props.chartData}
+                <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey="month"/>
                 <YAxis/>
