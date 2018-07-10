@@ -79,8 +79,8 @@ export default class Chart1 extends Component {
               <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
-                  <Button onClick={this.hide.bind(this)}>Chart View</Button>
-                  <Button onClick={this.show.bind(this)}>Edit Data</Button>
+                  <Button onClick={this.show.bind(this)}>Chart View</Button>
+                  <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
                 </ButtonGroup>
               </p>
@@ -146,7 +146,7 @@ export default class Chart1 extends Component {
                     <tr>
                         <td>
                             <label>
-                              <input type="text" vanme="value5" onChange={this.handleChange} />
+                              <input type="text" name="value5" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>160</td>
