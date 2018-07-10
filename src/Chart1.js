@@ -69,7 +69,8 @@ export default class Chart1 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button onClick={this.show.bind(this)}>Update</Button>
-                </ButtonGroup> 
+                </ButtonGroup>
+                <input type="submit" form="form1" /> 
               </p>
             </div>
             <br/>
@@ -89,7 +90,7 @@ export default class Chart1 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form>
+                <form id="form1">
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
