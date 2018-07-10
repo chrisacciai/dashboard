@@ -45,6 +45,11 @@ export default class Chart1 extends Component {
         this.setState({ [event.target.name] : event.target.value });
       }
 
+      handleUpdate(event) {
+        alert('New month: ' + this.state.value3);
+        event.preventDefault();
+      }
+      
       render() {
         
         var shown = {
@@ -114,7 +119,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form >
+                          <form>
                             <label>
                               <input type="text" name="value3" onChange={this.handleChange} />
                             </label>
@@ -124,7 +129,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form >
+                          <form>
                             <label>
                               <input type="text" name="value4" onChange={this.handleChange} />
                             </label>
@@ -134,7 +139,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form >
+                          <form>
                             <label>
                               <input type="text" vanme="value5" onChange={this.handleChange} />
                             </label>
@@ -144,7 +149,7 @@ export default class Chart1 extends Component {
                     </tr>
                     <tr>
                         <td>
-                          <form >
+                          <form>
                             <label>
                               <input type="text" name="value6" onChange={this.handleChange} />
                             </label>
