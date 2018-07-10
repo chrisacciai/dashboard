@@ -68,7 +68,7 @@ export default class Chart1 extends Component {
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button onClick={this.show.bind(this)}>Update</Button>
+                  <Button onClick={this.show.bind(this)} form= "1">Update</Button>
                 </ButtonGroup> 
               </p>
             </div>
@@ -99,66 +99,60 @@ export default class Chart1 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" name="value1" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>74</td>
                     </tr>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" name="value2" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>87</td>
                     </tr>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" name="value3" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>92</td>
                     </tr>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" name="value4" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>112</td>
                     </tr>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" vanme="value5" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>160</td>
                     </tr>
                     <tr>
                         <td>
-                          <form onSubmit={this.handleUpdate}>
+                          <form id="1">
                             <label>
                               <input type="text" name="value6" onChange={this.handleChange} />
                             </label>
-                              <input type="submit" value="Submit" />
                           </form>
                         </td>
                         <td>139</td>
