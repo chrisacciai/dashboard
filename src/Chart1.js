@@ -100,72 +100,72 @@ export default class Chart1 extends Component {
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month1" onChange={this.handleChange} />
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv1" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month2" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv2" onChange={this.handleChange} />
+                              <input type="text" name="pv" onChange={this.handleChange} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month3" onChange={this.handleChange} />
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv3" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month4" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv4" onChange={this.handleChange} />
+                              <input type="text" name="pv" onChange={this.handleChange} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month5" onChange={this.handleChange} />
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv5" onChange={this.handleChange} />
+                              <input type="text" name="pv" onChange={this.handleChange} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month6" onChange={this.handleChange} />
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv6" onChange={this.handleChange} />
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
                             </label>
                         </td>
                     </tr>
