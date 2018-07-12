@@ -76,9 +76,6 @@ export default class PMOChart extends Component {
                     fill="#8884d8" 
                     label
                   >
-                    {
-                      data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
-                    }
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>
