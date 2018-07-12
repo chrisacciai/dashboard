@@ -11,10 +11,6 @@
   height: 300px;
   width: 100%;
 }
-#pie_container {
-  height: 300px;
-  width:300px;
-}
 
 .row:after {
   content: "";

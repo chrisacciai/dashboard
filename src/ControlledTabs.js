@@ -57,7 +57,7 @@ export default class ControlledTabs extends Component {
             Tab 3 content
           </Tab>
           <Tab eventKey={6} title="PMO">
-          <div class = "row">
+            <div class = "row">
               <div class = "column">
                 <PMOChart/>
               </div>
