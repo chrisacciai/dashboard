@@ -64,12 +64,10 @@ export default class PMOChart extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-    	          <PieChart margin={{top: 0, right: 30, left: 15, bottom: 5}}>
+    	          <PieChart width='100%' height='300'>
                   <Pie
                     data={this.state.chartData} 
                     dataKey='value'
-                    startAngle={180}
-                    endAngle={0}
                     outerRadius={80} 
                     fill="#8884d8" 
                     label
