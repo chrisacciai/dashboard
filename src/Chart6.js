@@ -13,7 +13,7 @@ export default class Chart5 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: '14', pv: .0098},{month: '15', pv: .0114},{month: '16', p0085},{month: '17', pv: .0096},{month: '18', pv: .0098},{month: '19', pv: .0107},{month: '20', pv: .0113},{month: '21', pv: .0109},{month: '22', pv: .0112},{month: '23', pv: .0146},{month: '24', pv: .0156},{month: '25', pv: .0156}],
+          chartData: [{month: '14', pv: .0098},{month: '15', pv: .0114},{month: '16', pv: .0085},{month: '17', pv: .0096},{month: '18', pv: .0098},{month: '19', pv: .0107},{month: '20', pv: .0113},{month: '21', pv: .0109},{month: '22', pv: .0112},{month: '23', pv: .0146},{month: '24', pv: .0156},{month: '25', pv: .0156}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -39,9 +39,6 @@ export default class Chart5 extends Component {
         event.preventDefault();
         const data = new FormData(event.target);
 
-        this.setState({
-          res: stringifyFormData(data),
-        });
       }
 
       render() {
