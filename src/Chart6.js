@@ -74,7 +74,7 @@ export default class Chart5 extends Component {
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
-                  <LabelList dataKey='pv' position='top' valueAccessor={toPercent} />
+                  <LabelList position='top' valueAccessor={toPercent} />
                 </Area>
                 </AreaChart>
               </ResponsiveContainer>
