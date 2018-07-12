@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie, Tooltip} from 'recharts';
+import {ResponsiveContainer, PieChart, Pie, Cell} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default class PMOChart extends Component {
     constructor() {
@@ -64,10 +66,20 @@ export default class PMOChart extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie isAnimationActive={false} data={this.state.chartData} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
-                  <Pie data={this.state.chartData} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
-                <Tooltip/>
+    	          <PieChart>
+                  <Pie
+                    data={this.state.chartData} 
+                    dataKey='value'
+                    startAngle={180}
+                    endAngle={0}
+                    outerRadius={80} 
+                    fill="#8884d8" 
+                    label
+                  >
+                    {
+                      data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                    }
+                  </Pie>
                 </PieChart>
               </ResponsiveContainer>
             </div>
