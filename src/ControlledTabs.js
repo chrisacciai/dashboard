@@ -62,6 +62,7 @@ export default class ControlledTabs extends Component {
                 <PMOChart/>
               </div>
               <div class = "column">
+                <PMOChart/>
               </div>
             </div>
           </Tab>
