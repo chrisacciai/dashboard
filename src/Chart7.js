@@ -7,8 +7,8 @@ import {Table} from 'react-bootstrap';
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
 const style = {
-  top: 0,
-  left: 350,
+  top: 100,
+  left: 500,
   lineHeight: '24px'
 };
 
@@ -72,7 +72,7 @@ export default class Chart7 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.chartData} cx='50%' cy='40%' outerRadius={110} fill="#8884d8" label>
+                  <Pie data={this.state.chartData} cx='60%' cy='650%' outerRadius={110} fill="#8884d8" label>
                     {
           	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
