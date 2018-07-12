@@ -35,9 +35,6 @@ export default class Chart4 extends Component {
         event.preventDefault();
         const data = new FormData(event.target);
 
-        this.setState({
-          res: stringifyFormData(data),
-        });
       }
 
       render() {

@@ -34,10 +34,6 @@ export default class Chart1 extends Component {
       handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
-
-        this.setState({
-          res: stringifyFormData(data),
-        });
       }
 
       render() {
