@@ -62,8 +62,8 @@ export default class PMOChart extends Component {
             </div>
             <br/>
             <p style={ shown }>
-            <div id="container">
-              <ResponsiveContainer width="100%" height="100%">
+            <div id="pie_container">
+              <ResponsiveContainer>
     	          <PieChart>
                   <Pie
                     data={this.state.chartData} 
