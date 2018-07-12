@@ -6,6 +6,12 @@ import {Table} from 'react-bootstrap';
 
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
+const style = {
+  top: 0,
+  left: 350,
+  lineHeight: '24px'
+};
+
 export default class Chart7 extends Component {
     constructor() {
         super();
@@ -71,7 +77,7 @@ export default class Chart7 extends Component {
           	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
-                  <Legend layout="vertical"/>
+                  <Legend layout="vertical" wrapperStyle={style}/>
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -89,8 +95,7 @@ export default class Chart7 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                            <label>Completed
                             </label>
                         </td>
                         <td>
@@ -101,8 +106,7 @@ export default class Chart7 extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                            <label>Active
                             </label>
                         </td>
                         <td>
@@ -113,8 +117,7 @@ export default class Chart7 extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                            <label>Approved/Pending Start
                             </label>
                         </td>
                         <td>
@@ -125,32 +128,7 @@ export default class Chart7 extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                            <label>Cancelled
                             </label>
                         </td>
                         <td>
