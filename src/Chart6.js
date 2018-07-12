@@ -8,6 +8,10 @@ const toPercent = (decimal, fixed = 2) => {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
+const toPercentAxis = (decimal, fixed = 1) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
+
 export default class Chart5 extends Component {
     constructor() {
         super();
@@ -71,7 +75,7 @@ export default class Chart5 extends Component {
                 <AreaChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />

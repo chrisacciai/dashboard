@@ -64,7 +64,7 @@ export default class Chart7 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.chartData} cx={200} cy={200} outerRadius={150} fill="#8884d8" label/>
+                  <Pie data={this.state.chartData} cx='50%' cy='50%' outerRadius={150} fill="#8884d8" label/>
                 </PieChart>
               </ResponsiveContainer>
             </div>
