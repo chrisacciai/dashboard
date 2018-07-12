@@ -64,7 +64,7 @@ export default class PMOChart extends Component {
             <p style={ shown }>
             <div id="container">
               <PieChart width={800} height={400}>
-                <Pie isAnimationActive={false} data={data01} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
+                <Pie isAnimationActive={false} data={this.state.chartData} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
                 <Pie data={this.state.chartData} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
               </PieChart>
             </div>
