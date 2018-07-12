@@ -60,13 +60,9 @@ export default class ControlledTabs extends Component {
             <div class = "row">
                 <div class = "column">
                   <Chart7/>
-                  <Chart3/>
-                  <Chart5/>
                 </div>
                 <div class = "column">
-                  <Chart2/>
-                  <Chart4/>
-                  <Chart6/>
+                  <Chart7/>
                 </div>
               </div>
           </Tab>
