@@ -4,6 +4,7 @@ import Chart1 from './Chart1.js';
 import Chart2 from './Chart2.js';
 import Chart3 from './Chart3.js';
 import Chart4 from './Chart4.js';
+import Chart5 from './Chart5.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -32,6 +33,7 @@ export default class ControlledTabs extends Component {
               <div class = "column">
                 <Chart1/>
                 <Chart3/>
+                <Chart5/>
               </div>
               <div class = "column">
                 <Chart2/>

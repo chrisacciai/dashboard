@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
+
+const toPercent = (decimal, fixed = 0) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
 
 export default class Chart5 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jul-17', pv: 7},{month: 'Aug-17', pv: 7},{month: 'Sep-17', pv: 3},{month: 'Oct-17', pv: 12},{month: 'Nov-17', pv: 16},{month: 'Dec-17', pv: 7},{month: 'Jan-18', pv: 29},{month: 'Feb-18', pv: 3},{month: 'Mar-18', pv: 13},{month: 'Apr-18', pv: 32},{month: 'May-18', pv: 21},{month: 'MTD 6/25/18', pv: 26}],
+          chartData: [{month: '14', pv: .0098},{month: '15', pv: .0114},{month: '16', p0085},{month: '17', pv: .0096},{month: '18', pv: .0098},{month: '19', pv: .0107},{month: '20', pv: .0113},{month: '21', pv: .0109},{month: '22', pv: .0112},{month: '23', pv: .0146},{month: '24', pv: .0156},{month: '25', pv: .0156}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -67,15 +71,15 @@ export default class Chart5 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.chartData}
+                <AreaChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' />
-                </Line>
-                </LineChart>
+                <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
+                  <LabelList dataKey='pv' position='top' />
+                </Area>
+                </AreaChart>
               </ResponsiveContainer>
             </div>
             </p>
@@ -86,7 +90,7 @@ export default class Chart5 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Errors</th>
+                    <th>Aliquots/FTE</th>
                   </tr>
                 </thead>
                   <tbody>
