@@ -4,7 +4,11 @@ import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 
-const toPercent = (decimal, fixed = 2) => {
+const toPercentLabels = (decimal, fixed = 2) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
+
+const toPercentTicks = (decimal, fixed = 1) => {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
@@ -71,10 +75,10 @@ export default class Chart5 extends Component {
                 <AreaChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis tickFormatter={toPercentTicks}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
-                  <LabelList dataKey='pv' position='top' formatter={toPercent} />
+                  <LabelList dataKey='pv' position='top' formatter={toPercentLabels} />
                 </Area>
                 </AreaChart>
               </ResponsiveContainer>
