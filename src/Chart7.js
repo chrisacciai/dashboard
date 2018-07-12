@@ -68,7 +68,7 @@ export default class Chart7 extends Component {
                 <PieChart>
                   <Pie data={this.state.chartData} cx='50%' cy='50%' outerRadius={110} fill="#8884d8" label>
                     {
-          	          chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
                 </PieChart>
