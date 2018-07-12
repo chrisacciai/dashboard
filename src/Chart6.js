@@ -4,7 +4,7 @@ import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 
-const toPercent = (decimal, fixed = 0) => {
+const toPercent = (decimal, fixed = 2) => {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
