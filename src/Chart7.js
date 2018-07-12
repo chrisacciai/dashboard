@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie} from 'recharts';
+import {ResponsiveContainer, PieChart, Pie, Cell} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
+
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default class Chart7 extends Component {
     constructor() {
@@ -64,7 +66,11 @@ export default class Chart7 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.chartData} cx='50%' cy='50%' outerRadius={150} fill="#8884d8" label/>
+                  <Pie data={this.state.chartData} cx='50%' cy='50%' outerRadius={110} fill="#8884d8" label>
+                    {
+          	          data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                    }
+                  </Pie>
                 </PieChart>
               </ResponsiveContainer>
             </div>
