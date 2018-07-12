@@ -4,12 +4,12 @@ import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 
-export default class PMOChart extends Component {
+export default class Chart7 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
-          chartData: [{projectStatus: 'Completed', pv: 7},{projectStatus: 'Active', pv: 12},{projectStatus: 'Approved/Pending Start', pv: 2},{projectStatus: 'Cancelled', pv: 0}],
+          chartData: [{name: 'Completed', value: 7},{name: 'Active', value: 12},{name: 'Approved/Pending Start', value: 2},{name: 'Cancelled', value: 0}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -34,7 +34,6 @@ export default class PMOChart extends Component {
       handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
-
       }
 
       render() {
@@ -62,11 +61,12 @@ export default class PMOChart extends Component {
             </div>
             <br/>
             <p style={ shown }>
-            <div id="piecontainer">
-              <PieChart width={800} height={400}>
-                <Pie isAnimationActive={false} data={this.state.chartData} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
-                <Pie data={this.state.chartData} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d"/>
-              </PieChart>
+            <div id="container">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={this.state.chartData} cx={200} cy={200} outerRadius={80} fill="#8884d8" label/>
+                </PieChart>
+              </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
@@ -82,7 +82,8 @@ export default class PMOChart extends Component {
                   <tbody>
                     <tr>
                         <td>
-                            <label>Completed
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
@@ -93,7 +94,8 @@ export default class PMOChart extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>Active
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
@@ -104,7 +106,8 @@ export default class PMOChart extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>Approved/Pending Start
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>
@@ -115,7 +118,32 @@ export default class PMOChart extends Component {
                     </tr>
                     <tr>
                         <td>
-                            <label>Cancelled
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
                             </label>
                         </td>
                         <td>

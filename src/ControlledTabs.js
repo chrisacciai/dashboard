@@ -59,7 +59,7 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={6} title="PMO">
             <div class = "row">
                 <div class = "column">
-                  <Chart1/>
+                  <Chart7/>
                   <Chart3/>
                   <Chart5/>
                 </div>
