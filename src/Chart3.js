@@ -85,8 +85,9 @@ export default class Chart2 extends Component {
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
+                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                     <LabelList dataKey='pv' position='top' />
+                </Line>
                 </LineChart>
               </ResponsiveContainer>
             </div>
