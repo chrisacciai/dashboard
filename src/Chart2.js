@@ -178,14 +178,6 @@ export default class Chart2 extends Component {
                 </form>
                 </div>
               </p>
-
-              {this.state.res && (
-                <div className="res-block">
-                  <h1>Data to be sent:</h1>
-                  <p>FormData {this.state.res}</p>
-                </div>
-              )}
-
           </div>
         );
     }

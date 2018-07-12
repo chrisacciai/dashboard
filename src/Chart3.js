@@ -12,12 +12,16 @@ function stringifyFormData(fd) {
   return JSON.stringify(data, null, 2);
 }
 
-export default class Chart1 extends Component {
+const toPercent = (decimal, fixed = 0) => {
+  return `${(decimal * 100).toFixed(fixed)}%`;
+}
+
+export default class Chart2 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136}],
+          chartData: [{month: 'Jan-18', pv: .94},{month: 'Feb-18', pv: .94},{month: 'Mar-18', pv: .95},{month: 'Apr-18', pv: .90},{month: 'May-18', pv: .83},{month: 'MTD 6/18/18', pv: .83}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -62,7 +66,7 @@ export default class Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignleft">Healthcare Labor Efficiency</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
@@ -78,7 +82,7 @@ export default class Chart1 extends Component {
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
@@ -93,7 +97,7 @@ export default class Chart1 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>% Labor Efficiency</th>
                   </tr>
                 </thead>
                   <tbody>
