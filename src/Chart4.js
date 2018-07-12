@@ -12,16 +12,12 @@ function stringifyFormData(fd) {
   return JSON.stringify(data, null, 2);
 }
 
-const toPercent = (decimal, fixed = 0) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
-export default class Chart3 extends Component {
+export default class Chart4 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: .94},{month: 'Feb-18', pv: .94},{month: 'Mar-18', pv: .95},{month: 'Apr-18', pv: .90},{month: 'May-18', pv: .83},{month: 'MTD 6/18/18', pv: .83}],
+          chartData: [{month: 'Aug-17', pv: 3997},{month: 'Sep-17', pv: 3758},{month: 'Oct-17', pv: 3712},{month: 'Nov-17', pv: 2989},{month: 'Dec-17', pv: 2962},{month: 'Jan-18', pv: 2949},{month: 'Feb-18', pv: 2946},{month: 'Mar-18', pv: 3368},{month: 'Apr-18', pv: 4041},{month: 'May-18', pv: 4392}],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -66,7 +62,7 @@ export default class Chart3 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Labor Efficiency</p>
+              <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
@@ -81,12 +77,12 @@ export default class Chart3 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-                <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <XAxis dataKey='month' tick={{ angle: 45 }}/>
+                <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                    <LabelList dataKey='pv' position='bottom' />
+                  <LabelList dataKey='pv' position='bottom' />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
@@ -99,7 +95,7 @@ export default class Chart3 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>% Labor Efficiency</th>
+                    <th>Average TAT</th>
                   </tr>
                 </thead>
                   <tbody>
