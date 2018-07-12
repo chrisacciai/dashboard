@@ -72,7 +72,7 @@ export default class Chart7 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.chartData} cx='60%' cy='650%' outerRadius={110} fill="#8884d8" label>
+                  <Pie data={this.state.chartData} cx='60%' cy='65%' outerRadius={110} fill="#8884d8" label>
                     {
           	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
