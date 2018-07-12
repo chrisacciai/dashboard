@@ -21,7 +21,7 @@ export default class Chart2 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: .2},{month: 'Feb-18', pv: .6},{month: 'Mar-18', pv: .9},{month: 'Apr-18', pv: .44},{month: 'May-18', pv: .76},{month: 'MTD 6/18/18', pv: .60}],
+          chartData: [{month: 'Jan-18', pv: .02},{month: 'Feb-18', pv: .06},{month: 'Mar-18', pv: .09},{month: 'Apr-18', pv: .44},{month: 'May-18', pv: .76},{month: 'MTD 6/18/18', pv: .60}],
         };
 
         this.handleChange = this.handleChange.bind(this);
