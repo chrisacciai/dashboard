@@ -1,31 +1,57 @@
 import React, { Component } from 'react';
-import {BarChart, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
 
-const data = [
-    {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-    {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-    {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-    {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-    {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-    {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-    {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
-  ];
+function stringifyFormData(fd) {
+  const data = {};
+  for (let key of fd.keys()) {
+    data[key] = fd.get(key);
+  }
+  return JSON.stringify(data, null, 2);
+}
+
+const toPercent = (decimal, fixed = 0) => {
+  return `${(decimal * 100).toFixed(fixed)}%`;
+}
 
 export default class Chart2 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
+          chartData: [{month: 'Jan-18', pv: 2},{month: 'Feb-18', pv: 6},{month: 'Mar-18', pv: 9},{month: 'Apr-18', pv: 44},{month: 'May-18', pv: 76},{month: 'MTD 6/18/18', pv: 60}],
         };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }	
       
-      toggle() {
+      hide() {
         this.setState({
-          shown: !this.state.shown
+          shown: false
         });
       }
+      show() {
+        this.setState({
+          shown: true
+        })
+      }
+
+      handleChange(event) {
+        this.setState({ [event.target.name] : event.target.value });
+      }
+
+      handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+
+        this.setState({
+          res: stringifyFormData(data),
+        });
+      }
+
       render() {
         
         var shown = {
@@ -36,23 +62,131 @@ export default class Chart2 extends Component {
           display: this.state.shown ? "none" : "block"
         }
 
-        return ( 
+        return (
+          <div>
+            <br/>
             <div>
-            <p style={ shown }>
-            <BarChart width={600} height={300} data={data}
-            margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-            <XAxis dataKey="name"/>
-            <YAxis/>
-            <CartesianGrid strokeDasharray="3 3"/>
-            <Tooltip/>
-            </BarChart>
-            </p>
-            <p style={ hidden }>Edit Data Here...</p>
-            <ButtonGroup>
-                <Button onClick={this.toggle.bind(this)}>Edit Data</Button>
-                <Button>Update</Button>
-            </ButtonGroup>
+              <p class="alignleft">Healthcare % Over TAT</p>
+              <p class="alignright">
+                <ButtonGroup bsSize="xs">
+                  <Button onClick={this.show.bind(this)}>Chart View</Button>
+                  <Button onClick={this.hide.bind(this)}>Edit Data</Button>
+                  <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
+                </ButtonGroup>
+              </p>
             </div>
+            <br/>
+            <p style={ shown }>
+            <div id="container">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data ={this.state.chartData}
+                margin={{top: 0, right: 30, left: 15, bottom: 5}}>
+                <XAxis dataKey='month'/>
+                <YAxis tickFormatter={toPercent}/>
+                <CartesianGrid strokeDasharray="3 3"/>
+                <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
+                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}/>
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            </p>
+            <p style={ hidden }>
+              <div id="table">
+                <form id="form1" onSubmit={this.handleSubmit}>
+                <Table striped bordered condensed hover>
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>% Over TAT</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="month" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="pv" onChange={this.handleChange} />
+                            </label>
+                        </td>
+                    </tr>
+                  </tbody>
+                </Table>
+                </form>
+                </div>
+              </p>
+
+              {this.state.res && (
+                <div className="res-block">
+                  <h1>Data to be sent:</h1>
+                  <p>FormData {this.state.res}</p>
+                </div>
+              )}
+
+          </div>
         );
     }
 }

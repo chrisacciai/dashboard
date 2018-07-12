@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import Chart1 from './Chart1.js';
+import Chart2 from './Chart2.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -30,7 +31,7 @@ export default class ControlledTabs extends Component {
                 <Chart1/>
               </div>
               <div class = "column">
-                <Chart1/>
+                <Chart2/>
               </div>
             </div>
           </Tab>
