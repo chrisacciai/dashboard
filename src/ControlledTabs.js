@@ -57,7 +57,18 @@ export default class ControlledTabs extends Component {
             Tab 3 content
           </Tab>
           <Tab eventKey={6} title="PMO">
-            <PMOChart/>
+            <div class = "row">
+                <div class = "column">
+                  <Chart1/>
+                  <Chart3/>
+                  <Chart5/>
+                </div>
+                <div class = "column">
+                  <Chart2/>
+                  <Chart4/>
+                  <Chart6/>
+                </div>
+              </div>
           </Tab>
           <Tab eventKey={7} title="Human Resources">
             Tab 3 content
