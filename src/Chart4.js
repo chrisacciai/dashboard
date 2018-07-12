@@ -62,7 +62,7 @@ export default class Chart4 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignleft">Healthcare Productivity: Aliquots/FTE</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
@@ -77,10 +77,9 @@ export default class Chart4 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-                <XAxis dataKey='month' tick={{ angle: 45 }}/>
+                <XAxis dataKey='month'/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
@@ -95,7 +94,7 @@ export default class Chart4 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>Aliquots/FTE</th>
                   </tr>
                 </thead>
                   <tbody>
