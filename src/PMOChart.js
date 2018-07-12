@@ -67,8 +67,6 @@ export default class PMOChart extends Component {
     	          <PieChart>
                   <Pie
                     data={this.state.chartData} 
-                    dataKey='value'
-                    outerRadius={80} 
                     fill="#8884d8" 
                     label
                   >
