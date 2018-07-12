@@ -86,7 +86,7 @@ export default class Chart2 extends Component {
                 <CartesianGrid strokeDasharray="3 3"/>
                 <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                    <LabelList dataKey='pv' position='top' />
+                    <LabelList dataKey='pv' position='right' />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
