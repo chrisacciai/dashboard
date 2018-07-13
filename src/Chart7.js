@@ -77,6 +77,7 @@ export default class Chart7 extends Component {
           	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
+                  <Legend layout="vertical"/>
                 </PieChart>
               </ResponsiveContainer>
             </div>
