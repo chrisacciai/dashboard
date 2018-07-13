@@ -32,7 +32,6 @@ export default class Chart1 extends Component {
           lineFiveData: 160,
           lineSixMonth: 'MTD 6/18/18',
           lineSixData: 136,
-          chartOneData: [],
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -85,31 +84,6 @@ export default class Chart1 extends Component {
           lineFiveData: this.state.lineFiveData,
           lineSixMonth: this.state.lineSixMonth,
           lineSixData: this.state.lineSixData,
-        });
-      }
-
-      componentDidMount() {
-        const dataRef = firebase.database().ref('chartOneData');
-        dataRef.on('value', (snapshot) => {
-          let chartOneData = snapshot.val();
-          let newState = [];
-          newState.push({
-          month1: chartOneData.lineOneMonth,
-          value1: chartOneData.lineOneData,
-          month2: chartOneData.lineTwoMonth,
-          value2: chartOneData.lineTwoData,
-          month3: chartOneData.lineThreeMonth,
-          value3: chartOneData.lineThreeData,
-          month4: chartOneData.lineFourMonth,
-          value4: chartOneData.lineFourData,
-          month5: chartOneData.lineFiveMonth,
-          value5: chartOneData.lineFiveData,
-          month6: chartOneData.lineSixMonth,
-          value6: chartOneData.lineSixData,
-          });
-          this.setState({
-            chartOneData: newState
-          });
         });
       }
 
