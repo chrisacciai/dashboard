@@ -9,7 +9,7 @@ export default class Chart4 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Aug-17', pv: 3997},{month: 'Sep-17', pv: 3758},{month: 'Oct-17', pv: 3712},{month: 'Nov-17', pv: 2989},{month: 'Dec-17', pv: 2962},{month: 'Jan-18', pv: 2949},{month: 'Feb-18', pv: 2946},{month: 'Mar-18', pv: 3368},{month: 'Apr-18', pv: 4041},{month: 'May-18', pv: 4392}],
+          chartData: [{month: 'Aug-17', pv: 832},{month: 'Sep-17', pv: 392},{month: 'Oct-17', pv: 360},{month: 'Nov-17', pv: 292},{month: 'Dec-17', pv: 138},{month: 'Jan-18', pv: 843},{month: 'Feb-18', pv: 921},{month: 'Mar-18', pv: 482},{month: 'Apr-18', pv: 842},{month: 'May-18', pv: 912}],
         };
 
         this.handleChange = this.handleChange.bind(this);

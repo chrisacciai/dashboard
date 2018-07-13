@@ -9,7 +9,7 @@ export default class Chart5 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jul-17', pv: 7},{month: 'Aug-17', pv: 7},{month: 'Sep-17', pv: 3},{month: 'Oct-17', pv: 12},{month: 'Nov-17', pv: 16},{month: 'Dec-17', pv: 7},{month: 'Jan-18', pv: 29},{month: 'Feb-18', pv: 3},{month: 'Mar-18', pv: 13},{month: 'Apr-18', pv: 32},{month: 'May-18', pv: 21},{month: 'MTD 6/25/18', pv: 26}],
+          chartData: [{month: 'Jul-17', pv: 2},{month: 'Aug-17', pv: 9},{month: 'Sep-17', pv: 10},{month: 'Oct-17', pv: 3},{month: 'Nov-17', pv: 9},{month: 'Dec-17', pv: 10},{month: 'Jan-18', pv: 12},{month: 'Feb-18', pv: 2},{month: 'Mar-18', pv: 3},{month: 'Apr-18', pv: 6},{month: 'May-18', pv: 9},{month: 'MTD 6/25/18', pv: 3}],
         };
 
         this.handleChange = this.handleChange.bind(this);

@@ -13,7 +13,7 @@ export default class Chart3 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: .94},{month: 'Feb-18', pv: .94},{month: 'Mar-18', pv: .95},{month: 'Apr-18', pv: .90},{month: 'May-18', pv: .83},{month: 'MTD 6/18/18', pv: .83}],
+          chartData: [{month: 'Jan-18', pv: .83},{month: 'Feb-18', pv: .18},{month: 'Mar-18', pv: .71},{month: 'Apr-18', pv: .34},{month: 'May-18', pv: .71},{month: 'MTD 6/18/18', pv: .43}],
         };
 
         this.handleChange = this.handleChange.bind(this);

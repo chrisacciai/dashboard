@@ -11,7 +11,7 @@ export default class Chart7 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{name: 'Completed', value: 7},{name: 'Active', value: 12},{name: 'Approved/Pending Start', value: 2},{name: 'Cancelled', value: 0}],
+          chartData: [{name: 'Completed', value: 27},{name: 'Active', value: 15},{name: 'Approved/Pending Start', value: 5},{name: 'Cancelled', value: 7}],
         };
 
         this.handleChange = this.handleChange.bind(this);
