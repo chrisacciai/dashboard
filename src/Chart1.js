@@ -151,7 +151,7 @@ export default class Chart1 extends Component {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            this.state.chartOneData
+            {this.state.chartOneData}
             </p>
             <p style={ hidden }>
               <div id="table">
