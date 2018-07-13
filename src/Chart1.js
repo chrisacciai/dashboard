@@ -94,19 +94,18 @@ export default class Chart1 extends Component {
           let chartOneData = snapshot.val();
           let newState = [];
           newState.push({
-          id: item,
-          month1: chartOneData[item].lineOneMonth,
-          value1: chartOneData[item].lineOneData,
-          month2: chartOneData[item].lineTwoMonth,
-          value2: chartOneData[item].lineTwoData,
-          month3: chartOneData[item].lineThreeMonth,
-          value3: chartOneData[item].lineThreeData,
-          month4: chartOneData[item].lineFourMonth,
-          value4: chartOneData[item].lineFourData,
-          month5: chartOneData[item].lineFiveMonth,
-          value5: chartOneData[item].lineFiveData,
-          month6: chartOneData[item].lineSixMonth,
-          value6: chartOneData[item].lineSixData,
+          month1: chartOneData.lineOneMonth,
+          value1: chartOneData.lineOneData,
+          month2: chartOneData.lineTwoMonth,
+          value2: chartOneData.lineTwoData,
+          month3: chartOneData.lineThreeMonth,
+          value3: chartOneData.lineThreeData,
+          month4: chartOneData.lineFourMonth,
+          value4: chartOneData.lineFourData,
+          month5: chartOneData.lineFiveMonth,
+          value5: chartOneData.lineFiveData,
+          month6: chartOneData.lineSixMonth,
+          value6: chartOneData.lineSixData,
           });
           this.setState({
             chartOneData: newState
