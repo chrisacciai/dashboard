@@ -9,7 +9,12 @@ export default class Chart1 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: 74},{month: 'Feb-18', pv: 87},{month: 'Mar-18', pv: 92},{month: 'Apr-18', pv: 112},{month: 'May-18', pv: 160},{month: 'MTD 6/18/18', pv: 136}],
+          lineOneData: {month: 'Jan-18', pv: 74},
+          lineTwoData: {month: 'Feb-18', pv: 87},
+          lineThreeData: {month: 'Mar-18', pv: 92},
+          lineFourData: {month: 'Apr-18', pv: 112},
+          lineFiveData: {month: 'May-18', pv: 160},
+          lineSixData: {month: 'MTD 6/18/18', pv: 136},
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -63,7 +68,7 @@ export default class Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.chartData}
+                <LineChart data ={[this.state.lineOneData, this.state.lineTwoData, this.state.lineThreeData, this.state.lineFourData, this.state.lineFiveData, this.state.lineSixData]}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis/>
