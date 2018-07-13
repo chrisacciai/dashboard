@@ -70,7 +70,7 @@ export default class Chart1 extends Component {
           month6: this.state.lineSixMonth,
           value6: this.state.lineSixData,
         }
-        dataRef.push(monthDataPair);
+        dataRef.set(monthDataPair);
         this.setState({
           lineOneMonth: this.state.lineOneMonth,
           lineOneData: this.state.lineOneData,
