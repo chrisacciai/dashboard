@@ -32,7 +32,7 @@ export default class Chart1 extends Component {
           lineFiveData: 160,
           lineSixMonth: 'MTD 6/18/18',
           lineSixData: 136,
-          chartData: null
+          chartData: {}
         };
 
         this.handleChange = this.handleChange.bind(this);
