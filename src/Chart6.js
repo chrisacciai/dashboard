@@ -12,12 +12,12 @@ const toPercentAxis = (decimal, fixed = 1) => {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
-export default class Chart5 extends Component {
+export default class Chart6 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: '14', pv: 29},{month: '15', pv: 93},{month: '16', pv: 93},{month: '17', pv: 23},{month: '18', pv: 84},{month: '19', pv: 38},{month: '20', pv: 84},{month: '21', pv: 32},{month: '22', pv: 93},{month: '23', pv: 38},{month: '24', pv: 19},{month: '25', pv: 74}],
+          chartData: [{month: '14', pv: .0032},{month: '15', pv: .0093},{month: '16', pv: .0093},{month: '17', pv: .0023},{month: '18', pv: .0084},{month: '19', pv: .0038},{month: '20', pv: .0084},{month: '21', pv: .0032},{month: '22', pv: .0093},{month: '23', pv: .0038},{month: '24', pv: .0019},{month: '25', pv: .0074}],
         };
 
         this.handleChange = this.handleChange.bind(this);
