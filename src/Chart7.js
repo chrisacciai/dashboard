@@ -6,12 +6,6 @@ import {Table} from 'react-bootstrap';
 
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
-const style = {
-  top: 100,
-  left: 500,
-  lineHeight: '24px'
-};
-
 export default class Chart7 extends Component {
     constructor() {
         super();
@@ -77,7 +71,7 @@ export default class Chart7 extends Component {
           	          this.state.chartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
-                  <Legend layout="vertical"/>
+                  <Legend align="right" layout="vertical"/>
                 </PieChart>
               </ResponsiveContainer>
             </div>
