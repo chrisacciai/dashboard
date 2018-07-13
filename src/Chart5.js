@@ -55,7 +55,7 @@ export default class Chart5 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form1">Refresh</Button> 
+                  <Button type="submit" bsStyle="primary" form="form1">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -69,7 +69,7 @@ export default class Chart5 extends Component {
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' />
+                  <LabelList dataKey='pv' position='bottom' f />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
