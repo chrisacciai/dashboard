@@ -66,10 +66,10 @@ export default class Chart5 extends Component {
                 <LineChart data ={this.state.chartData}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis tick={{ angle:45}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' f />
+                  <LabelList dataKey='pv' position='bottom'/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
