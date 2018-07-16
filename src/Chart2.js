@@ -146,10 +146,10 @@ export default class Chart2 extends Component {
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis formatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='top'/>
+                  <LabelList dataKey='pv' position='top' formatter={toPercent}/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
@@ -174,7 +174,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
+                              <input type="number" step="any" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                             </label>
                         </td>
                     </tr>
@@ -186,7 +186,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
+                              <input type="number" step="any" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                             </label>
                         </td>
                     </tr>
@@ -198,7 +198,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
+                              <input type="number" step="any" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                             </label>
                         </td>
                     </tr>
@@ -210,7 +210,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
+                              <input type="number" step="any" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
                             </label>
                         </td>
                     </tr>
@@ -222,7 +222,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
+                              <input type="number" step="any" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
                             </label>
                         </td>
                     </tr>
@@ -234,7 +234,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
+                              <input type="number" step="any" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
                             </label>
                         </td>
                     </tr>
