@@ -92,6 +92,7 @@ export default class Chart1 extends Component {
         const dataRef = firebase.database().ref('chartOneData');
         dataRef.on('value', (snapshot) => {
           this.setState({chartData: snapshot.val()});
+          console.log(this.state.chartData);
         });
       }
 
