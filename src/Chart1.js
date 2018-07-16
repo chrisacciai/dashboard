@@ -22,7 +22,7 @@ export default class Chart1 extends Component {
           lineFiveData: 160,
           lineSixMonth: 'MTD 6/18/18',
           lineSixData: 136,
-          items: [{month: "Jan-18", value: 57},{month: "Feb-18", value: 68},{month: "Mar-18", value: 45},{month: "Apr-18", value: 34}, {month: "May-18", value: 49}, {month: "MTD 6/18/18", value: 74}]
+          items: [{month: "Jan-18", pv: 57},{month: "Feb-18", pv: 68},{month: "Mar-18", pv: 45},{month: "Apr-18", pv: 34}, {month: "May-18", pv: 49}, {month: "MTD 6/18/18", pv: 74}]
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -85,27 +85,27 @@ export default class Chart1 extends Component {
           let newState = [];
           newState.push({
             month: items.month1,
-            value: items.value1,
+            pv: items.value1,
           });
           newState.push({
             month: items.month2,
-            value: items.value2,
+            pv: items.value2,
           });
           newState.push({
             month: items.month3,
-            value: items.value3,
+            pv: items.value3,
           });
           newState.push({
             month: items.month4,
-            value: items.value4,
+            pv: items.value4,
           });
           newState.push({
             month: items.month5,
-            value: items.value5,
+            pv: items.value5,
           });
           newState.push({
             month: items.month6,
-            value: items.value6,
+            pv: items.value6,
           });
 
           this.setState({
