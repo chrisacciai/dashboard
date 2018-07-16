@@ -111,7 +111,7 @@ export default class Chart1 extends Component {
           this.setState({
             items: newState
           });
-          alert(items.toSource());
+          alert(JSON.stringify(items, null, 4));
         });
       }
 
