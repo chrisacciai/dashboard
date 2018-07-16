@@ -32,7 +32,7 @@ export default class Chart1 extends Component {
           lineFiveData: 160,
           lineSixMonth: 'MTD 6/18/18',
           lineSixData: 136,
-          chartData: null
+          items: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -91,9 +91,28 @@ export default class Chart1 extends Component {
       componentDidMount() {
         const dataRef = firebase.database().ref('chartOneData');
         dataRef.on('value', (snapshot) => {
-          this.setState({chartData: snapshot.val()});
-          alert(this.state.chartData);
+          let items = snapshot.val();
+          let newState = [];
+          newState.push({
+            id: items,
+            month1: items.month1,
+            value1: items.value1,
+            month2: items.month2,
+            value2: items.value2,
+            month3: items.month3,
+            value3: items.value3,
+            month4: items.month4,
+            value4: items.value4,
+            month5: items.month5,
+            value5: items.value5,
+            month6: items.month6,
+            value6: items.value6,
+          });
+          this.setState({
+            items: newState
+          });
         });
+        alert(items);
       }
 
       render() {
