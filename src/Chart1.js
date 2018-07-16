@@ -94,18 +94,28 @@ export default class Chart1 extends Component {
           let items = snapshot.val();
           let newState = [];
           newState.push({
-            month1: items.month1,
-            value1: items.value1,
-            month2: items.month2,
-            value2: items.value2,
-            month3: items.month3,
-            value3: items.value3,
-            month4: items.month4,
-            value4: items.value4,
-            month5: items.month5,
-            value5: items.value5,
-            month6: items.month6,
-            value6: items.value6,
+            month: items.month1,
+            value: items.value1,
+          });
+          newState.push({
+            month: items.month2,
+            value: items.value2,
+          });
+          newState.push({
+            month: items.month3,
+            value: items.value3,
+          });
+          newState.push({
+            month: items.month4,
+            value: items.value4,
+          });
+          newState.push({
+            month: items.month5,
+            value: items.value5,
+          });
+          newState.push({
+            month: items.month6,
+            value: items.value6,
           });
 
           this.setState({
