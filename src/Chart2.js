@@ -3,7 +3,7 @@ import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Label
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
-import firebase from './firebase.js'
+import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
@@ -25,7 +25,7 @@ export default class Chart2 extends Component {
           lineFiveMonth: null,
           lineFiveData: null,
           lineSixMonth: null,
-          lineSixData: null,
+          lineSixData: React.,
           items: null
         };
 
@@ -147,10 +147,10 @@ export default class Chart2 extends Component {
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis formatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey="pv" position='bottom'/>
+                  <LabelList dataKey="pv" position='bottom' formatter={toPercent}/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
@@ -175,7 +175,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
+                              <input type="text" pattern="[0-9]*"step="any" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                             </label>
                         </td>
                     </tr>
@@ -187,7 +187,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
+                              <input type="text" pattern="[0-9]*" step="any" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                             </label>
                         </td>
                     </tr>
@@ -199,7 +199,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
+                              <input type="text" pattern="[0-9]*" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                             </label>
                         </td>
                     </tr>
@@ -211,7 +211,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
+                              <input type="text" pattern="[0-9]*" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
                             </label>
                         </td>
                     </tr>
@@ -223,7 +223,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
+                              <input type="text" pattern="[0-9]*" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
                             </label>
                         </td>
                     </tr>
@@ -235,7 +235,7 @@ export default class Chart2 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" step="any" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
+                              <input type="text" pattern="[0-9]*" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
                             </label>
                         </td>
                     </tr>
@@ -248,3 +248,4 @@ export default class Chart2 extends Component {
         );
     }
 }
+
