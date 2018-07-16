@@ -220,7 +220,6 @@ export default class Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
-                {this.state.chartData}
                 </div>
               </p>
           </div>
