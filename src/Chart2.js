@@ -136,7 +136,7 @@ export default class Chart2 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form1">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form2">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -158,7 +158,7 @@ export default class Chart2 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form id="form1" onSubmit={this.handleSubmit}>
+                <form id="form2" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
