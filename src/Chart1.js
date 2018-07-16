@@ -122,7 +122,7 @@ export default class Chart1 extends Component {
             items: newState
           });
 
-          alert(JSON.stringify(items, null, 4));
+          alert(JSON.stringify(newState, null, 4));
         });
       }
 
