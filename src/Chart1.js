@@ -111,8 +111,8 @@ export default class Chart1 extends Component {
           this.setState({
             items: newState
           });
+          alert(items);
         });
-        alert(items);
       }
 
       render() {
