@@ -22,7 +22,7 @@ export default class Chart1 extends Component {
           lineFiveData: 160,
           lineSixMonth: 'MTD 6/18/18',
           lineSixData: 136,
-          items: [{month: "Jan-18", pv: 57},{month: "Feb-18", pv: 68},{month: "Mar-18", pv: 45},{month: "Apr-18", pv: 34}, {month: "May-18", pv: 49}, {month: "MTD 6/18/18", pv: 74}]
+          items: null
         };
 
         this.handleChange = this.handleChange.bind(this);
