@@ -15,6 +15,12 @@ const testData = [
   {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
 ];
 
+function makeArray(value) {
+  return j.map(function(a) {
+    return {[value]: a[value]};
+  });
+}
+
 export default class Chart1 extends Component {
     constructor() {
         super();
@@ -111,7 +117,7 @@ export default class Chart1 extends Component {
           this.setState({
             items: newState
           });
-          alert(JSON.stringify(items, null, 4));
+          alert(JSON.stringify(makeArray(items), null, 4));
         });
       }
 
