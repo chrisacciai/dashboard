@@ -14,18 +14,18 @@ export default class Chart2 extends Component {
         super();
         this.state = {
           shown: true,
-          lineOneMonth: 'Jan-18',
-          lineOneData: 74,
-          lineTwoMonth: 'Feb-18',
-          lineTwoData: 87,
-          lineThreeMonth: 'Mar-18',
-          lineThreeData: 92,
-          lineFourMonth: 'Apr-18',
-          lineFourData: 112,
-          lineFiveMonth: 'May-18',
-          lineFiveData: 160,
-          lineSixMonth: 'MTD 6/18/18',
-          lineSixData: 136,
+          lineOneMonth: null,
+          lineOneData: null,
+          lineTwoMonth: null,
+          lineTwoData: null,
+          lineThreeMonth: null,
+          lineThreeData: null,
+          lineFourMonth: null,
+          lineFourData: null,
+          lineFiveMonth: null,
+          lineFiveData: null,
+          lineSixMonth: null,
+          lineSixData: null,
           items: null
         };
 
@@ -113,7 +113,19 @@ export default class Chart2 extends Component {
           });
 
           this.setState({
-            items: newState
+            items: newState,
+            lineOneMonth: items.month1,
+            lineOneData: items.value1,
+            lineTwoMonth: items.month2,
+            lineTwoData: items.value2,
+            lineThreeMonth: items.month3,
+            lineThreeData: items.value3,
+            lineFourMonth: items.month4,
+            lineFourData: items.value4,
+            lineFiveMonth: items.month5,
+            lineFiveData: items.value5,
+            lineSixMonth: items.month6,
+            lineSixData: items.value6,
           });
         });
       }
