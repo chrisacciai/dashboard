@@ -66,20 +66,6 @@ export default class Chart2 extends Component {
           value6: this.state.lineSixData,
         }
         dataRef.set(monthDataPair);
-        this.setState({
-          lineOneMonth: this.state.lineOneMonth,
-          lineOneData: this.state.lineOneData,
-          lineTwoMonth: this.state.lineTwoMonth,
-          lineTwoData: this.state.lineTwoData,
-          lineThreeMonth: this.state.lineThreeMonth,
-          lineThreeData: this.state.lineThreeData,
-          lineFourMonth: this.state.lineFourMonth,
-          lineFourData: this.state.lineFourData,
-          lineFiveMonth: this.state.lineFiveMonth,
-          lineFiveData: this.state.lineFiveData,
-          lineSixMonth: this.state.lineSixMonth,
-          lineSixData: this.state.lineSixData,
-        });
       }
 
       componentDidMount() {
@@ -157,13 +143,13 @@ export default class Chart2 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.items}
+                <LineChart data={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='top' formatter={toPercent} />
+                  <LabelList dataKey='pv' position='top'/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
