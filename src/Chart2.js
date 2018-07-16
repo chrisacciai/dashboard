@@ -113,8 +113,8 @@ export default class Chart2 extends Component {
             lineSixMonth: items.month6,
             lineSixData: items.value6,
           });
+          alert(JSON.stringify(newState));
         });
-        alert(JSON.stringify(newState));
       }
 
       render() {
