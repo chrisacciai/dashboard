@@ -94,7 +94,6 @@ export default class Chart1 extends Component {
           let items = snapshot.val();
           let newState = [];
           newState.push({
-            id: items,
             month1: items.month1,
             value1: items.value1,
             month2: items.month2,
@@ -108,14 +107,12 @@ export default class Chart1 extends Component {
             month6: items.month6,
             value6: items.value6,
           });
+
           this.setState({
             items: newState
           });
-          let finalData = Object.values(items);
-          let name = 'month';
-          finalData[name] = "Jan-18";
 
-          alert(JSON.stringify(finalData, null, 4));
+          alert(JSON.stringify(items, null, 4));
         });
       }
 
