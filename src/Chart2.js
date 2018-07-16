@@ -114,7 +114,7 @@ export default class Chart2 extends Component {
             lineSixData: items.value6,
           });
         });
-        alert(JSON.stringify(items));
+        alert(JSON.stringify(newState));
       }
 
       render() {
