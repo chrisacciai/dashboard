@@ -147,10 +147,10 @@ export default class Chart2 extends Component {
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis formatter={toPercent}/>
+                <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='top' formatter={toPercent}/>
+                  <LabelList dataKey="pv" position='bottom'/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
