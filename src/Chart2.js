@@ -132,7 +132,7 @@ export default class Chart2 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignleft">Healthcare % Over TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
@@ -145,7 +145,7 @@ export default class Chart2 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.chartData}
+                <LineChart data ={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
