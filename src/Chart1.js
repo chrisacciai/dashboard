@@ -111,7 +111,11 @@ export default class Chart1 extends Component {
           this.setState({
             items: newState
           });
-          alert(JSON.stringify(Object.values(items), null, 4));
+          let finalData = Object.values(items);
+          let name = 'month';
+          finalData[name] = "Jan-18";
+
+          alert(JSON.stringify(finalData, null, 4));
         });
       }
 
