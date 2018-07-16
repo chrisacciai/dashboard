@@ -62,20 +62,6 @@ export default class Chart1 extends Component {
           value6: this.state.lineSixData,
         }
         dataRef.set(monthDataPair);
-        this.setState({
-          lineOneMonth: this.state.lineOneMonth,
-          lineOneData: this.state.lineOneData,
-          lineTwoMonth: this.state.lineTwoMonth,
-          lineTwoData: this.state.lineTwoData,
-          lineThreeMonth: this.state.lineThreeMonth,
-          lineThreeData: this.state.lineThreeData,
-          lineFourMonth: this.state.lineFourMonth,
-          lineFourData: this.state.lineFourData,
-          lineFiveMonth: this.state.lineFiveMonth,
-          lineFiveData: this.state.lineFiveData,
-          lineSixMonth: this.state.lineSixMonth,
-          lineSixData: this.state.lineSixData,
-        });
       }
 
       componentDidMount() {
