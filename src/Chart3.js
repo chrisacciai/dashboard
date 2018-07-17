@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, ReferenceLine} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
+import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
@@ -13,7 +14,19 @@ export default class Chart3 extends Component {
         super();
         this.state = {
           shown: true,
-          chartData: [{month: 'Jan-18', pv: .83},{month: 'Feb-18', pv: .18},{month: 'Mar-18', pv: .71},{month: 'Apr-18', pv: .34},{month: 'May-18', pv: .71},{month: 'MTD 6/18/18', pv: .43}],
+          lineOneMonth: null,
+          lineOneData: null,
+          lineTwoMonth: null,
+          lineTwoData: null,
+          lineThreeMonth: null,
+          lineThreeData: null,
+          lineFourMonth: null,
+          lineFourData: null,
+          lineFiveMonth: null,
+          lineFiveData: null,
+          lineSixMonth: null,
+          lineSixData: null,
+          items: null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,10 +48,72 @@ export default class Chart3 extends Component {
         this.setState({ [event.target.name] : event.target.value });
       }
 
-      handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
+      handleSubmit(e) {
+        e.preventDefault();
+        const dataRef = firebase.database().ref('chartThreeData');
+        const monthDataPair = {
+          month1: this.state.lineOneMonth,
+          value1: parseFloat(this.state.lineOneData),
+          month2: this.state.lineTwoMonth,
+          value2: parseFloat(this.state.lineTwoData),
+          month3: this.state.lineThreeMonth,
+          value3: parseFloat(this.state.lineThreeData),
+          month4: this.state.lineFourMonth,
+          value4: parseFloat(this.state.lineFourData),
+          month5: this.state.lineFiveMonth,
+          value5: parseFloat(this.state.lineFiveData),
+          month6: this.state.lineSixMonth,
+          value6: parseFloat(this.state.lineSixData),
+        }
+        dataRef.set(monthDataPair);
+      }
 
+      componentDidMount() {
+        const dataRef = firebase.database().ref('chartThreeData');
+        dataRef.on('value', (snapshot) => {
+          let items = snapshot.val();
+          let newState = [];
+          newState.push({
+            month: items.month1,
+            pv: items.value1,
+          });
+          newState.push({
+            month: items.month2,
+            pv: items.value2,
+          });
+          newState.push({
+            month: items.month3,
+            pv: items.value3,
+          });
+          newState.push({
+            month: items.month4,
+            pv: items.value4,
+          });
+          newState.push({
+            month: items.month5,
+            pv: items.value5,
+          });
+          newState.push({
+            month: items.month6,
+            pv: items.value6,
+          });
+
+          this.setState({
+            items: newState,
+            lineOneMonth: items.month1,
+            lineOneData: items.value1,
+            lineTwoMonth: items.month2,
+            lineTwoData: items.value2,
+            lineThreeMonth: items.month3,
+            lineThreeData: items.value3,
+            lineFourMonth: items.month4,
+            lineFourData: items.value4,
+            lineFiveMonth: items.month5,
+            lineFiveData: items.value5,
+            lineSixMonth: items.month6,
+            lineSixData: items.value6,
+          });
+        });
       }
 
       render() {
@@ -60,7 +135,7 @@ export default class Chart3 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form1">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form3">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -73,9 +148,8 @@ export default class Chart3 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <ReferenceLine y={96} stroke="blue" strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                    <LabelList dataKey='pv' position='bottom' formatter={toPercent} />
+                  <LabelList dataKey='pv' position='bottom' formatter={toPercent} />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
@@ -83,84 +157,84 @@ export default class Chart3 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form id="form1" onSubmit={this.handleSubmit}>
+                <form id="form3" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>% Labor Efficiency</th>
+                    <th>% Over TAT</th>
                   </tr>
                 </thead>
                   <tbody>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                              <input type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
+                              <input type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                              <input type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
+                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                              <input type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
+                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="month" onChange={this.handleChange} />
+                              <input type="text" name="lineFourMonth" onChange={this.handleChange} value={this.state.lineFourMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="pv" onChange={this.handleChange} />
+                              <input type="text" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="lineFiveMonth" onChange={this.handleChange} value={this.state.lineFiveMonth} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input type="text" name="lineSixMonth" onChange={this.handleChange} value={this.state.lineSixMonth} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
                             </label>
                         </td>
                     </tr>
