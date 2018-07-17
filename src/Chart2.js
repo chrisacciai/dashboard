@@ -113,7 +113,6 @@ export default class Chart2 extends Component {
             lineSixMonth: items.month6,
             lineSixData: items.value6,
           });
-          alert(JSON.stringify(newState));
         });
       }
 
@@ -163,7 +162,7 @@ export default class Chart2 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>% Over TAT</th>
                   </tr>
                 </thead>
                   <tbody>
