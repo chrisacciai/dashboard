@@ -143,7 +143,7 @@ export default class Chart3 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.chartData}
+                <LineChart data ={this.state.items}
                 margin={{top: 0, right: 30, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
