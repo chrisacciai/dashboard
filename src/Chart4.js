@@ -181,7 +181,7 @@ export default class Chart4 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
-                margin={{top: 0, right: 38, left: 15, bottom: 5}}>
+                margin={{top: 0, right: 45, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
