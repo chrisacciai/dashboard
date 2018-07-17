@@ -36,7 +36,6 @@ export default class ControlledTabs extends Component {
                 <Chart1/>
                 <Chart3/>
                 <Chart5/>
-                <br/>
               </div>
               <div class = "column">
                 <Chart2/>
