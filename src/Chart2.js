@@ -25,7 +25,7 @@ export default class Chart2 extends Component {
           lineFiveMonth: null,
           lineFiveData: null,
           lineSixMonth: null,
-          lineSixData: React.,
+          lineSixData: null,
           items: null
         };
 
