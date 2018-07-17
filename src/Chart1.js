@@ -170,7 +170,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
+                              <input type="text" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                             </label>
                         </td>
                     </tr>
@@ -182,7 +182,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
+                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                             </label>
                         </td>
                     </tr>
@@ -194,7 +194,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
+                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                             </label>
                         </td>
                     </tr>
@@ -206,7 +206,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
+                              <input type="text" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
                             </label>
                         </td>
                     </tr>
@@ -218,7 +218,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
+                              <input type="text" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
                             </label>
                         </td>
                     </tr>
@@ -230,7 +230,7 @@ export default class Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="number" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
+                              <input type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
                             </label>
                         </td>
                     </tr>
