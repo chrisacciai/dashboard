@@ -106,7 +106,7 @@ export default class Chart6 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form6">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form7">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -119,7 +119,7 @@ export default class Chart6 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
+                <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
                 </BarChart>
@@ -128,7 +128,7 @@ export default class Chart6 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table3">
-                <form id="form6" onSubmit={this.handleSubmit}>
+                <form id="form7" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
