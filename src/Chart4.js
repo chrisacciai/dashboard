@@ -197,7 +197,7 @@ export default class Chart4 extends Component {
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table">
+              <div id="table2">
                 <form id="form4" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>

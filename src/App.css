@@ -10,7 +10,6 @@
 #container {
   height: 300px;
   width: 100%;
-  position: relative;
 }
 #piecontainer {
   height: 800px;
@@ -22,7 +21,6 @@
   content: "";
   display: table;
   clear: both;
-  position: relative;
 }
 
 .App-logo {

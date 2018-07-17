@@ -18,6 +18,11 @@ p.alignright {
   margin: auto;
   height: 300px;
 }
+#table2 {
+  width: 90%;
+  margin: auto;
+  height: 550px;
+}
 
 .res-block {
   display: inline-block;
