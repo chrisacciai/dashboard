@@ -181,7 +181,7 @@ export default class Chart4 extends Component {
               </p>
             </div>
             <br/>
-            <p style={ show }>
+            <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
