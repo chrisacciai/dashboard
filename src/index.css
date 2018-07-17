@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 p.alignleft {
   float: left;
