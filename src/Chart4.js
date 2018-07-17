@@ -181,7 +181,7 @@ export default class Chart4 extends Component {
               </p>
             </div>
             <br/>
-            <p style={ hidden }>
+            <p style={ show }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
@@ -196,7 +196,7 @@ export default class Chart4 extends Component {
               </ResponsiveContainer>
             </div>
             </p>
-            <p style={ shown }>
+            <p style={ hidden }>
               <div id="table">
                 <form id="form4" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
