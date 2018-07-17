@@ -5,10 +5,6 @@ import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 import firebase from './firebase.js';
 
-const toPercent = (decimal, fixed = 0) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
 export default class Chart4 extends Component {
     constructor() {
         super();

@@ -21,7 +21,12 @@ p.alignright {
 #table2 {
   width: 90%;
   margin: auto;
-  height: 485px;
+  height: 470px;
+}
+#table3 {
+  width: 90%;
+  margin: auto;
+  height: 500px;
 }
 
 .res-block {
