@@ -73,7 +73,7 @@ export default class Chart6 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data ={this.state.chartData}
-                margin={{top: 0, right: 45, left: 15, bottom: 5}}>
+                margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
