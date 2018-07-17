@@ -201,8 +201,8 @@ export default class Chart5 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
-                margin={{top: 0, right: 30, left: 15, bottom: 5}}>
-                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='10' interval={0}/>
+                margin={{top: 0, right: 32, left: 15, bottom: 10}}>
+                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='11' interval={0}/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
