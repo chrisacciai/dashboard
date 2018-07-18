@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, ComposedChart, Bar, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
@@ -125,7 +125,7 @@ export default class S_Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data ={this.state.items}
+                <ComposedChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
@@ -133,7 +133,8 @@ export default class S_Chart1 extends Component {
                 <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                </BarChart>
+                <Line dataKey="uv" type="monotone" stroke="#ff7300"/>
+                </ComposedChart>
               </ResponsiveContainer>
             </div>
             </p>
