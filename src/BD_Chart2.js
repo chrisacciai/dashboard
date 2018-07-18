@@ -23,6 +23,9 @@ export default class BD_Chart2 extends Component {
           lineThreeMonth: null,
           lineThreeData1: null,
           lineThreeData2: null,
+          lineFourMonth: null,
+          lineFourData1: null,
+          lineFourData2: null,
           items: null
         };
 
@@ -58,6 +61,9 @@ export default class BD_Chart2 extends Component {
           month3: this.state.lineThreeMonth,
           lineThreeValue1: parseFloat(this.state.lineThreeData1),
           lineThreeValue2: parseFloat(this.state.lineThreeData2),
+          month4: this.state.lineFourMonth,
+          lineFourValue1: parseFloat(this.state.lineFourData1),
+          lineFourValue2: parseFloat(this.state.lineFourData2),
         }
         dataRef.set(monthDataPair);
       }
@@ -82,6 +88,11 @@ export default class BD_Chart2 extends Component {
             pv: items.lineThreeValue1,
             uv: items.lineThreeValue2,
           });
+          newState.push({
+            month: items.month4,
+            pv: items.lineFourValue1,
+            uv: items.lineFourValue2,
+          });
 
           this.setState({
             items: newState,
@@ -94,6 +105,9 @@ export default class BD_Chart2 extends Component {
             lineThreeMonth: items.month3,
             lineThreeData1: items.lineThreeValue1,
             lineThreeData2: items.lineThreeValue2,
+            lineFourMonth: items.month4,
+            lineFourData1: items.lineFourValue1,
+            lineFourData2: items.lineFourValue2,
           });
         });
       }
@@ -200,6 +214,23 @@ export default class BD_Chart2 extends Component {
                         <td>
                             <label>
                               <input width="50%" type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineFourMonth" onChange={this.handleChange} value={this.state.lineFourMonth} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineFourData1" onChange={this.handleChange} value={this.state.lineFourData1} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineFourData2" onChange={this.handleChange} value={this.state.lineFourData2} />
                             </label>
                         </td>
                     </tr>
