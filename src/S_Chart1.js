@@ -117,7 +117,7 @@ export default class S_Chart1 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form9">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -140,7 +140,7 @@ export default class S_Chart1 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table4">
-                <form id="form" onSubmit={this.handleSubmit}>
+                <form id="form9" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
