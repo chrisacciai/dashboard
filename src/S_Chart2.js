@@ -43,11 +43,11 @@ export default class S_Chart2 extends Component {
         const dataRef = firebase.database().ref('SChartTwoData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseInt(this.state.lineThreeData),
         }
         dataRef.set(monthDataPair);
       }
