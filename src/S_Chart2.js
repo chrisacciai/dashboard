@@ -104,7 +104,7 @@ export default class S_Chart2 extends Component {
                 <PieChart>
                   <Pie data={this.state.items} outerRadius={100} fill="#8884d8" label>
                     {
-          	          this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          	          data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
                   <Legend align="right" layout="vertical" verticalAlign="middle" margin={{right: 20}}/>
