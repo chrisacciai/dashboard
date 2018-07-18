@@ -114,7 +114,7 @@ export default class S_Chart2 extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                  <Legend align="right" layout="vertical" verticalAlign="middle" margin={{top: 0, left: 0, right: 30, bottom: 0}} />
+                  <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </PieChart>
               </ResponsiveContainer>
             </div>
