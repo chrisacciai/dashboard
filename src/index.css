@@ -30,6 +30,16 @@ p.alignright {
   margin: auto;
   height: 500px;
 }
+#table4 {
+  width:90%;
+  margin:auto;
+  height: 180px;
+}
+#table5 {
+  width:90%;
+  margin:auto;
+  height: 210px;
+}
 
 .res-block {
   display: inline-block;
