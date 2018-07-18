@@ -71,7 +71,7 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={5} title="Safety">
           <div class = "row">
                 <div class = "column">
-                  <S_Chart2/>
+                  <S_Chart1/>
                 </div>
                 <div class = "column">
                   <S_Chart2/>
