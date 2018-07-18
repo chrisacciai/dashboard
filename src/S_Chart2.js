@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
+import {ResponsiveContainer, PieChart, Pie, Legend} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
@@ -102,7 +102,7 @@ export default class S_Chart2 extends Component {
             <br/>
             <p style={ shown }>
             <div id="container">
-            <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie data={this.state.items} outerRadius={100} fill="#8884d8" label>
                   </Pie>
