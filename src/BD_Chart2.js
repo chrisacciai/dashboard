@@ -143,7 +143,7 @@ export default class BD_Chart2 extends Component {
             <p style={ hidden }>
               <div id="table3">
                 <form id="form8" onSubmit={this.handleSubmit}>
-                <Table striped bordered condensed hover>
+                <Table striped bordered condensed hover responsive>
                 <thead>
                   <tr>
                     <th>Month</th>
