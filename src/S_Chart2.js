@@ -57,11 +57,11 @@ export default class S_Chart2 extends Component {
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.value1,
+            value: items.value1,
           });
           newState.push({
             month: items.month2,
-            pv: items.value2,
+            value: items.value2,
           });
 
           this.setState({
