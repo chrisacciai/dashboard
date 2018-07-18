@@ -46,8 +46,6 @@ export default class S_Chart2 extends Component {
           value1: parseInt(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
           value2: parseInt(this.state.lineTwoData),
-          month3: this.state.lineThreeMonth,
-          value3: parseInt(this.state.lineThreeData),
         }
         dataRef.set(monthDataPair);
       }
