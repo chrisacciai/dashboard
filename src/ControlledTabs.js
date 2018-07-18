@@ -8,6 +8,7 @@ import Chart5 from './Chart5.js';
 import Chart6 from './Chart6.js';
 import Chart7 from './Chart7.js';
 import BD_Chart1 from './BD_Chart1.js';
+import BD_Chart2 from './BD_Chart2.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -51,7 +52,7 @@ export default class ControlledTabs extends Component {
                   <BD_Chart1/>
                 </div>
                 <div class = "column">
-                  <BD_Chart1/>
+                  <BD_Chart2/>
                 </div>
               </div>
           </Tab>

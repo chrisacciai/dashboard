@@ -9,17 +9,20 @@ const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
 }
 
-export default class BD_Chart1 extends Component {
+export default class BD_Chart2 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
           lineOneMonth: null,
-          lineOneData: null,
+          lineOneData1: null,
+          lineOneData2: null,
           lineTwoMonth: null,
-          lineTwoData: null,
+          lineTwoData1: null,
+          lineTwoData2: null,
           lineThreeMonth: null,
-          lineThreeData: null,
+          lineThreeData1: null,
+          lineThreeData2: null,
           items: null
         };
 
@@ -44,45 +47,53 @@ export default class BD_Chart1 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('BDChartOneData');
+        const dataRef = firebase.database().ref('BDChartTwoData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          lineOneValue1: parseFloat(this.state.lineOneData1),
+          lineOneValue2: parseFloat(this.state.lineOneData2),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          lineTwoValue1: parseFloat(this.state.lineTwoData1),
+          lineTwoValue2: parseFloat(this.state.lineTwoData2),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
-          
+          lineThreeValue1: parseFloat(this.state.lineThreeData1),
+          lineThreeValue2: parseFloat(this.state.lineThreeData2),
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('BDChartOneData');
+        const dataRef = firebase.database().ref('BDChartTwoData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.value1,
+            pv: items.lineOneValue1,
+            uv: items.lineOneValue2,
           });
           newState.push({
             month: items.month2,
-            pv: items.value2,
+            pv: items.lineTwoValue1,
+            uv: items.lineTwoValue2,
           });
           newState.push({
             month: items.month3,
-            pv: items.value3,
+            pv: items.lineThreeValue1,
+            uv: items.lineThreeValue2,
           });
 
           this.setState({
             items: newState,
             lineOneMonth: items.month1,
-            lineOneData: items.value1,
+            lineOneData1: items.lineOneValue1,
+            lineOneData2: items.lineOneValue2,
             lineTwoMonth: items.month2,
-            lineTwoData: items.value2,
+            lineTwoData1: items.lineTwoValue1,
+            lineTwoData2: items.lineTwoValue2,
             lineThreeMonth: items.month3,
-            lineThreeData: items.value3,
+            lineThreeData1: items.lineThreeValue1,
+            lineThreeData2: items.lineThreeValue2,
           });
         });
       }
@@ -101,12 +112,12 @@ export default class BD_Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Growth</p>
+              <p class="alignleft">Pay</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form7">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form8">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -122,18 +133,22 @@ export default class BD_Chart1 extends Component {
                 <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
+                <Bar dataKey="uv" fill="#82ca9d">
+                  <LabelList dataKey='uv' position='top' formatter={toPercent} />
+                </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table3">
-                <form id="form7" onSubmit={this.handleSubmit}>
+                <form id="form8" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Rate</th>
+                    <th>Pay 1</th>
+                    <th>Pay 2</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -145,7 +160,12 @@ export default class BD_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
+                              <input type="text"name="lineOneData1" onChange={this.handleChange} value={this.state.lineOneData1} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
                             </label>
                         </td>
                     </tr>
@@ -157,7 +177,12 @@ export default class BD_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
+                              <input type="text" name="lineTwoData1" onChange={this.handleChange} value={this.state.lineTwoData1} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
                             </label>
                         </td>
                     </tr>
@@ -169,7 +194,12 @@ export default class BD_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
+                              <input type="text" name="lineThreeData1" onChange={this.handleChange} value={this.state.lineThreeData1} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
                             </label>
                         </td>
                     </tr>
