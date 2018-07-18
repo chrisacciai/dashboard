@@ -51,13 +51,13 @@ export default class S_Chart1 extends Component {
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           lineOneValue1: parseFloat(this.state.lineOneData1),
-          lineOneValue2: parseFloat(this.statelineOneData2),
+          lineOneValue2: parseFloat(this.state.lineOneData2),
           month2: this.state.lineTwoMonth,
           lineTwoValue1: parseFloat(this.state.lineTwoData1),
-          lineTwoValue2: parseFloat(this.statelineTwoData2),
+          lineTwoValue2: parseFloat(this.state.lineTwoData2),
           month3: this.state.lineThreeMonth,
           lineThreeValue1: parseFloat(this.state.lineThreeData1),
-          lineThreeValue2: parseFloat(this.statelineThreeData2),
+          lineThreeValue2: parseFloat(this.state.lineThreeData2),
         }
         dataRef.set(monthDataPair);
       }
