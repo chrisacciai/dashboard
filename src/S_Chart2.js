@@ -50,6 +50,10 @@ export default class S_Chart2 extends Component {
         dataRef.set(monthDataPair);
       }
 
+      mapToColor() {
+        this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+      }
+
       componentDidMount() {
         const dataRef = firebase.database().ref('SChartTwoData');
         dataRef.on('value', (snapshot) => {
@@ -102,9 +106,10 @@ export default class S_Chart2 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} label>
+                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" label>
+                    if
                     {
-                        this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+          	          this.mapToColor()
                     }
                   </Pie>
                   <Legend align="right" layout="vertical" verticalAlign="middle" margin={{right: 20}}/>
