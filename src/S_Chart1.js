@@ -15,14 +15,11 @@ export default class S_Chart1 extends Component {
         this.state = {
           shown: true,
           lineOneMonth: null,
-          lineOneData1: null,
-          lineOneData2: null,
+          lineOneData: null,
           lineTwoMonth: null,
-          lineTwoData1: null,
-          lineTwoData2: null,
+          lineTwoData: null,
           lineThreeMonth: null,
-          lineThreeData1: null,
-          lineThreeData2: null,
+          lineThreeData: null,
           items: null
         };
 
@@ -50,14 +47,11 @@ export default class S_Chart1 extends Component {
         const dataRef = firebase.database().ref('SChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          lineOneValue1: parseFloat(this.state.lineOneData1),
-          lineOneValue2: parseFloat(this.state.lineOneData2),
+          value1: parseFloat(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
-          lineTwoValue1: parseFloat(this.state.lineTwoData1),
-          lineTwoValue2: parseFloat(this.state.lineTwoData2),
+          value2: parseFloat(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          lineThreeValue1: parseFloat(this.state.lineThreeData1),
-          lineThreeValue2: parseFloat(this.state.lineThreeData2),
+          value3: parseFloat(this.state.lineThreeData),
         }
         dataRef.set(monthDataPair);
       }
@@ -69,31 +63,25 @@ export default class S_Chart1 extends Component {
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.lineOneValue1,
-            uv: items.lineOneValue2,
+            pv: items.value1,
           });
           newState.push({
             month: items.month2,
-            pv: items.lineTwoValue1,
-            uv: items.lineTwoValue2,
+            pv: items.value2,
           });
           newState.push({
             month: items.month3,
-            pv: items.lineTwoValue1,
-            uv: items.lineTwoValue2,
+            pv: items.value3,
           });
 
           this.setState({
             items: newState,
             lineOneMonth: items.month1,
-            lineOneData1: items.lineOneValue1,
-            lineOneData2: items.lineOneValue2,
+            lineOneData: items.value1,
             lineTwoMonth: items.month2,
-            lineTwoData1: items.lineTwoValue1,
-            lineTwoData2: items.lineTwoValue2,
+            lineTwoData: items.value2,
             lineThreeMonth: items.month3,
-            lineThreeData1: items.lineThreeValue1,
-            lineThreeData2: items.lineThreeValue2,
+            lineThreeData: items.value3,
           });
         });
       }
@@ -125,7 +113,7 @@ export default class S_Chart1 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <ComposedChart data ={this.state.items}
+                <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
@@ -133,8 +121,8 @@ export default class S_Chart1 extends Component {
                 <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                <Line dataKey="uv" type="monotone" stroke="#ff7300"/>
-                </ComposedChart>
+                <ReferenceLine y={.4} stroke="#ff7300" label="Goal < 40%" strokeDasharray="3 3"/>
+                </BarChart>
               </ResponsiveContainer>
             </div>
             </p>
@@ -146,7 +134,6 @@ export default class S_Chart1 extends Component {
                   <tr>
                     <th>Month</th>
                     <th>Amount</th>
-                    <th>Goal</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -158,12 +145,7 @@ export default class S_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text"name="lineOneData1" onChange={this.handleChange} value={this.state.lineOneData1} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
+                              <input type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                             </label>
                         </td>
                     </tr>
@@ -175,12 +157,7 @@ export default class S_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineTwoData1" onChange={this.handleChange} value={this.state.lineTwoData1} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
+                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                             </label>
                         </td>
                     </tr>
@@ -192,12 +169,7 @@ export default class S_Chart1 extends Component {
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineThreeData1" onChange={this.handleChange} value={this.state.lineThreeData1} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
+                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                             </label>
                         </td>
                     </tr>
