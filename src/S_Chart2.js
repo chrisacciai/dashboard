@@ -51,7 +51,12 @@ export default class S_Chart2 extends Component {
       }
 
       mapToColor() {
-        this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+        if (this.state.items == null) {
+            return null;
+        }
+        else {
+            return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+        }
       }
 
       componentDidMount() {
