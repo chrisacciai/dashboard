@@ -56,11 +56,11 @@ export default class S_Chart2 extends Component {
           let items = snapshot.val();
           let newState = [];
           newState.push({
-            month: items.month1,
+            name: items.month1,
             value: items.value1,
           });
           newState.push({
-            month: items.month2,
+            name: items.month2,
             value: items.value2,
           });
 
