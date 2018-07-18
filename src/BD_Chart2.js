@@ -143,7 +143,7 @@ export default class BD_Chart2 extends Component {
             <p style={ hidden }>
               <div id="table3">
                 <form id="form8" onSubmit={this.handleSubmit}>
-                <Table striped bordered condensed hover responsive>
+                <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
@@ -155,51 +155,51 @@ export default class BD_Chart2 extends Component {
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
+                              <input width="50%" type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text"name="lineOneData1" onChange={this.handleChange} value={this.state.lineOneData1} />
+                              <input width="50%" type="text"name="lineOneData1" onChange={this.handleChange} value={this.state.lineOneData1} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
-                            </label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>
-                              <input type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="lineTwoData1" onChange={this.handleChange} value={this.state.lineTwoData1} />
-                            </label>
-                        </td>
-                        <td>
-                            <label>
-                              <input type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
+                              <input width="50%" type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
                             </label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label>
-                              <input type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
+                              <input width="50%" type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineThreeData1" onChange={this.handleChange} value={this.state.lineThreeData1} />
+                              <input width="50%" type="text" name="lineTwoData1" onChange={this.handleChange} value={this.state.lineTwoData1} />
                             </label>
                         </td>
                         <td>
                             <label>
-                              <input type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
+                              <input width="50%" type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineThreeData1" onChange={this.handleChange} value={this.state.lineThreeData1} />
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                              <input width="50%" type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
                             </label>
                         </td>
                     </tr>
