@@ -21,7 +21,7 @@ export default class S_Chart2 extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      }	
+      }
       
       hide() {
         this.setState({
@@ -102,9 +102,9 @@ export default class S_Chart2 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" label>
+                  <Pie data={this.state.items} outerRadius={100} label>
                     {
-          	          data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+                        this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
                     }
                   </Pie>
                   <Legend align="right" layout="vertical" verticalAlign="middle" margin={{right: 20}}/>
