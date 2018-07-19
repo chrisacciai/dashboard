@@ -143,6 +143,9 @@ export default class F_Chart3 extends Component {
                 <Bar dataKey="uv" fill="#82ca9d">
                   <LabelList dataKey='uv' position='top' />
                 </Bar>
+                <Bar dataKey="uv" fill="#9467bd">
+                  <LabelList dataKey='rv' position='top' />
+                </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
