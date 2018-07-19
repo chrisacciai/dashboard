@@ -14,8 +14,8 @@ import BD_Chart4 from './BD_Chart4.js';
 import HR_Chart1 from './HR_Chart1.js';
 import HR_Chart2 from './HR_Chart2.js';
 import S_Chart from './S_Chart.js';
-import RD_Chart1 from './R & D Charts/RD_Chart1'
-import RD_Chart2 from './R & D Charts/RD_Chart2'
+import RD_Chart1 from './RD_Chart1'
+import RD_Chart2 from './RD_Chart2'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {

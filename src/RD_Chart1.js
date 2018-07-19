@@ -3,7 +3,7 @@ import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
-import firebase from './firebase';
+import firebase from 'src/firebase';
 
 const COLORS = ['#00C49F','#0088FE'];
 
