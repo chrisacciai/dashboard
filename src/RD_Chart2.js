@@ -3,7 +3,7 @@ import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelLi
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
-import firebase from 'src/firebase';
+import firebase from './firebase';
 
 export default class RD_Chart2 extends Component {
     constructor() {
