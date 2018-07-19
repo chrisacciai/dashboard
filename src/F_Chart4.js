@@ -121,10 +121,10 @@ export default class F_Chart4 extends Component {
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#8884d8">
-                  <LabelList dataKey='pv' position='top' formatter={toPercent} />
+                  <LabelList dataKey='pv' position='top'/>
                 </Bar>
                 </BarChart>
               </ResponsiveContainer>
