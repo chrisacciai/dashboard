@@ -199,7 +199,7 @@ export default class RD_Chart2 extends Component {
             <div id="chartFiveContainer">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data ={this.state.items}
-                margin={{top: 0, right: 35, left: 10, bottom: 22}}>
+                margin={{top: 0, right: 50, left: 15, bottom: 22}}>
                 <XAxis dataKey='month'/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
