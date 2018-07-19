@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Button} from 'react-bootstrap';
-import {ButtonGroup} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
+import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/recharts';
+import {Button} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import {ButtonGroup} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import {Table} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
 import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {

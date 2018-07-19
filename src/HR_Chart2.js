@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
-import {Button} from 'react-bootstrap';
-import {ButtonGroup} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
-import firebase from './firebase.js';
+import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/recharts';
+import {Button} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import {ButtonGroup} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import {Table} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import firebase from './firebase';
 
 const COLORS = ['#00C49F','#0088FE'];
 
