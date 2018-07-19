@@ -53,7 +53,7 @@ export default class F_Chart3 extends Component {
           month2: this.state.lineTwoMonth,
           lineTwoValue1: parseInt(this.state.lineTwoData1),
           lineTwoValue2: parseInt(this.state.lineTwoData2),
-          lineOneValue3: parseInt(this.state.lineTwoData3),
+          lineTwoValue3: parseInt(this.state.lineTwoData3),
           month3: this.state.lineThreeMonth,
           lineThreeValue1: parseInt(this.state.lineThreeData1),
           lineThreeValue2: parseInt(this.state.lineThreeData2),
