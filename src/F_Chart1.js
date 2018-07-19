@@ -50,7 +50,7 @@ export default class F_Chart1 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('chartOneData');
+        const dataRef = firebase.database().ref('FChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           lineOneValue1: parseInt(this.state.lineOneData1),
@@ -75,7 +75,7 @@ export default class F_Chart1 extends Component {
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('chartOneData');
+        const dataRef = firebase.database().ref('FChartOneData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
