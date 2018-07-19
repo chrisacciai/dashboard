@@ -9,7 +9,7 @@ const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
 }
 
-export default class S_Chart1 extends Component {
+export default class HR_Chart1 extends Component {
     constructor() {
         super();
         this.state = {

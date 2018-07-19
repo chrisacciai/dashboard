@@ -7,7 +7,7 @@ import firebase from './firebase';
 
 const COLORS = ['#00C49F','#0088FE'];
 
-export default class S_Chart2 extends Component {
+export default class HR_Chart2 extends Component {
     constructor() {
         super();
         this.state = {

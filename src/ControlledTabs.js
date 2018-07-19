@@ -13,6 +13,7 @@ import BD_Chart3 from './BD_Chart3.js';
 import BD_Chart4 from './BD_Chart4.js';
 import HR_Chart1 from './HR_Chart1.js';
 import HR_Chart2 from './HR_Chart2.js';
+import S_Chart from '/S_Chart.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -69,6 +70,13 @@ export default class ControlledTabs extends Component {
             Tab 2 content
           </Tab>
           <Tab eventKey={5} title="Safety">
+              <div class = "row">
+                <div class = "column">
+                  <S_Chart/>
+                </div>
+                <div class = "column">
+                </div>
+              </div>
           </Tab>
           <Tab eventKey={6} title="PMO">
               <div class = "row">
