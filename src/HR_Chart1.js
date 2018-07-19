@@ -3,7 +3,7 @@ import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, Cartesi
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
-import Firebase from './Firebase.js';
+import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
@@ -44,7 +44,7 @@ export default class S_Chart1 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = Firebase.database().ref('SChartOneData');
+        const dataRef = firebase.database().ref('SChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           value1: parseFloat(this.state.lineOneData),
@@ -57,7 +57,7 @@ export default class S_Chart1 extends Component {
       }
 
       componentDidMount() {
-        const dataRef = Firebase.database().ref('SChartOneData');
+        const dataRef = firebase.database().ref('SChartOneData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
