@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Button} from 'react-bootstrap';
-import {ButtonGroup} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
@@ -139,38 +137,26 @@ export default class HR_Chart1 extends Component {
                   <tbody>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
-                            </label>
+                              <FormControl type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
-                            </label>
+                              <FormControl type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
-                            </label>
+                              <FormControl type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
-                            </label>
+                              <FormControl type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
-                            </label>
+                              <FormControl type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
-                            </label>
+                              <FormControl type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                         </td>
                     </tr>
                   </tbody>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Button} from 'react-bootstrap';
-import {ButtonGroup} from 'react-bootstrap';
-import {Table} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js';
 
 export default class S_Chart extends Component {
@@ -225,146 +223,98 @@ export default class S_Chart extends Component {
                   <tbody>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
-                            </label>
+                              <FormControl type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
-                            </label>
+                              <FormControl type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
-                            </label>
+                              <FormControl type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
-                            </label>
+                              <FormControl type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
-                            </label>
+                              <FormControl type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
-                            </label>
+                              <FormControl type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineFourMonth" onChange={this.handleChange} value={this.state.lineFourMonth} />
-                            </label>
+                              <FormControl type="text" name="lineFourMonth" onChange={this.handleChange} value={this.state.lineFourMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
-                            </label>
+                              <FormControl type="text" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineFiveMonth" onChange={this.handleChange} value={this.state.lineFiveMonth} />
-                            </label>
+                              <FormControl type="text" name="lineFiveMonth" onChange={this.handleChange} value={this.state.lineFiveMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
-                            </label>
+                              <FormControl type="text" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineSixMonth" onChange={this.handleChange} value={this.state.lineSixMonth} />
-                            </label>
+                              <FormControl type="text" name="lineSixMonth" onChange={this.handleChange} value={this.state.lineSixMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
-                            </label>
+                              <FormControl type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineSevenMonth" onChange={this.handleChange} value={this.state.lineSevenMonth} />
-                            </label>
+                              <FormControl type="text" name="lineSevenMonth" onChange={this.handleChange} value={this.state.lineSevenMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineSevenData" onChange={this.handleChange} value={this.state.lineSevenData} />
-                            </label>
+                              <FormControl type="text" name="lineSevenData" onChange={this.handleChange} value={this.state.lineSevenData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineEightMonth" onChange={this.handleChange} value={this.state.lineEightMonth} />
-                            </label>
+                              <FormControl type="text" name="lineEightMonth" onChange={this.handleChange} value={this.state.lineEightMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineEightData" onChange={this.handleChange} value={this.state.lineEightData} />
-                            </label>
+                              <FormControl type="text" name="lineEightData" onChange={this.handleChange} value={this.state.lineEightData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineNineMonth" onChange={this.handleChange} value={this.state.lineNineMonth} />
-                            </label>
+                              <FormControl type="text" name="lineNineMonth" onChange={this.handleChange} value={this.state.lineNineMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineNineData" onChange={this.handleChange} value={this.state.lineNineData} />
-                            </label>
+                              <FormControl type="text" name="lineNineData" onChange={this.handleChange} value={this.state.lineNineData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineTenMonth" onChange={this.handleChange} value={this.state.lineTenMonth} />
-                            </label>
+                              <FormControl type="text" name="lineTenMonth" onChange={this.handleChange} value={this.state.lineTenMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineTenData" onChange={this.handleChange} value={this.state.lineTenData} />
-                            </label>
+                              <FormControl type="text" name="lineTenData" onChange={this.handleChange} value={this.state.lineTenData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineElevenMonth" onChange={this.handleChange} value={this.state.lineElevenMonth} />
-                            </label>
+                              <FormControl type="text" name="lineElevenMonth" onChange={this.handleChange} value={this.state.lineElevenMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineElevenData" onChange={this.handleChange} value={this.state.lineElevenData} />
-                            </label>
+                              <FormControl type="text" name="lineElevenData" onChange={this.handleChange} value={this.state.lineElevenData} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwelveMonth" onChange={this.handleChange} value={this.state.lineTwelveMonth} />
-                            </label>
+                              <FormControl type="text" name="lineTwelveMonth" onChange={this.handleChange} value={this.state.lineTwelveMonth} />
                         </td>
                         <td>
-                            <label>
-                              <input type="text" name="lineTwelveData" onChange={this.handleChange} value={this.state.lineTwelveData} />
-                            </label>
+                              <FormControl type="text" name="lineTwelveData" onChange={this.handleChange} value={this.state.lineTwelveData} />
                         </td>
                     </tr>
                   </tbody>
