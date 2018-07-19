@@ -19,6 +19,7 @@ import RD_Chart2 from './RD_Chart2.js'
 import F_Chart1 from './F_Chart1.js'
 import F_Chart2 from './F_Chart2.js'
 import F_Chart3 from './F_Chart3.js'
+import F_Chart4 from './F_Chart4.js'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -76,6 +77,7 @@ export default class ControlledTabs extends Component {
                 </div>
                 <div class = "column">
                   <F_Chart2/>
+                  <F_Chart4/>
                 </div>
               </div>          </Tab>
           <Tab eventKey={4} title="Research &amp; Development">
