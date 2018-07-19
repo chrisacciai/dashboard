@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Button} from 'react-bootstrap';
 import {ButtonGroup} from 'react-bootstrap';
 import {Table} from 'react-bootstrap';
 import firebase from './firebase.js';
 
-export default class S_Chart extends Component {
+export default class RD_Chart2 extends Component {
     constructor() {
         super();
         this.state = {
@@ -58,7 +58,7 @@ export default class S_Chart extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('SChartData');
+        const dataRef = firebase.database().ref('RDChartTwoData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           value1: parseInt(this.state.lineOneData),
@@ -90,7 +90,7 @@ export default class S_Chart extends Component {
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('SChartData');
+        const dataRef = firebase.database().ref('RDChartTwoData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -192,7 +192,7 @@ export default class S_Chart extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form11">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form13">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -200,26 +200,26 @@ export default class S_Chart extends Component {
             <p style={ shown }>
             <div id="chartFiveContainer">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data ={this.state.items}
+                <BarChart data ={this.state.items}
                 margin={{top: 0, right: 35, left: 10, bottom: 22}}>
-                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='15' interval={0}/>
+                <XAxis dataKey='month'/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom'/>
-                </Line>
-                </LineChart>
+                <Bar dataKey="pv" fill="#8884d8" >
+                  <LabelList dataKey='pv' position='top'/>
+                </Bar>
+                </BarChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table3">
-                <form id="form11" onSubmit={this.handleSubmit}>
+                <form id="form13" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Cumulative</th>
+                    <th>Number</th>
                   </tr>
                 </thead>
                   <tbody>
