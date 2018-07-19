@@ -3,7 +3,7 @@ import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelLi
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js';
 
-export default class F_Chart2 extends Component {
+export default class F_Chart3 extends Component {
     constructor() {
         super();
         this.state = {
@@ -11,12 +11,15 @@ export default class F_Chart2 extends Component {
           lineOneMonth: null,
           lineOneData1: null,
           lineOneData2: null,
+          lineOneData3: null,
           lineTwoMonth: null,
           lineTwoData1: null,
           lineTwoData2: null,
+          lineTwoData3: null,
           lineThreeMonth: null,
           lineThreeData1: null,
           lineThreeData2: null,
+          lineThreeData3: null,
           items: null
         };
 
@@ -41,23 +44,27 @@ export default class F_Chart2 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('FChartTwoData');
+        const dataRef = firebase.database().ref('FChartThreeData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           lineOneValue1: parseInt(this.state.lineOneData1),
           lineOneValue2: parseInt(this.state.lineOneData2),
+          lineOneValue3: parseInt(this.state.lineOneData3),
           month2: this.state.lineTwoMonth,
           lineTwoValue1: parseInt(this.state.lineTwoData1),
           lineTwoValue2: parseInt(this.state.lineTwoData2),
+          lineOneValue3: parseInt(this.state.lineTwoData3),
           month3: this.state.lineThreeMonth,
           lineThreeValue1: parseInt(this.state.lineThreeData1),
           lineThreeValue2: parseInt(this.state.lineThreeData2),
+          lineThreeValue3: parseInt(this.state.lineThreeData3),
+
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartTwoData');
+        const dataRef = firebase.database().ref('FChartThreeData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -65,16 +72,19 @@ export default class F_Chart2 extends Component {
             month: items.month1,
             pv: items.lineOneValue1,
             uv: items.lineOneValue2,
+            rv: items.lineOneValue3,
           });
           newState.push({
             month: items.month2,
             pv: items.lineTwoValue1,
             uv: items.lineTwoValue2,
+            rv: items.lineTwoValue3,
           });
           newState.push({
             month: items.month3,
             pv: items.lineThreeValue1,
             uv: items.lineThreeValue2,
+            rv: items.lineThreeValue3,
           });
 
           this.setState({
@@ -82,12 +92,15 @@ export default class F_Chart2 extends Component {
             lineOneMonth: items.month1,
             lineOneData1: items.lineOneValue1,
             lineOneData2: items.lineOneValue2,
+            lineOneData3: items.lineOneValue3,
             lineTwoMonth: items.month2,
             lineTwoData1: items.lineTwoValue1,
             lineTwoData2: items.lineTwoValue2,
+            lineTwoData3: items.lineTwoValue3,
             lineThreeMonth: items.month3,
             lineThreeData1: items.lineThreeValue1,
             lineThreeData2: items.lineThreeValue2,
+            lineThreeData3: items.lineThreeValue3,
           });
         });
       }
@@ -111,7 +124,7 @@ export default class F_Chart2 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form15">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form16">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -136,13 +149,14 @@ export default class F_Chart2 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table5">
-                <form id="form15" onSubmit={this.handleSubmit}>
+                <form id="form16" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
                     <th>Pay 1</th>
                     <th>Pay 2</th>
+                    <th>Pay 3</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -156,6 +170,9 @@ export default class F_Chart2 extends Component {
                         <td>
                               <FormControl type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
                         </td>
+                        <td>
+                              <FormControl type="text"name="lineOneData3" onChange={this.handleChange} value={this.state.lineOneData3} />
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -167,6 +184,9 @@ export default class F_Chart2 extends Component {
                         <td>
                               <FormControl type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
                         </td>
+                        <td>
+                              <FormControl type="text" name="lineTwoData3" onChange={this.handleChange} value={this.state.lineTwoData3} />
+                        </td>
                     </tr>
                     <tr>
                         <td>
@@ -177,6 +197,9 @@ export default class F_Chart2 extends Component {
                         </td>
                         <td>
                               <FormControl type="text" name="lineThreeData2" onChange={this.handleChange} value={this.state.lineThreeData2} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineThreeData3" onChange={this.handleChange} value={this.state.lineThreeData3} />
                         </td>
                     </tr>
                   </tbody>
