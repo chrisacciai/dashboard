@@ -180,7 +180,8 @@ export default class F_Chart1 extends Component {
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>One</th>
+                    <th>Two</th>
                   </tr>
                 </thead>
                   <tbody>
