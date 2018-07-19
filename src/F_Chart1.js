@@ -169,6 +169,9 @@ export default class F_Chart1 extends Component {
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
+                <Line type="monotone" dataKey="uv" stroke="#8884d8" activeDot={{r: 8}}>
+                  <LabelList dataKey='uv' position='bottom' />
+                </Line>
                 </LineChart>
               </ResponsiveContainer>
             </div>
