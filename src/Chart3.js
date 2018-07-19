@@ -175,7 +175,7 @@ export default class Chart3 extends Component {
                     <tr>
                         <td>
                               <FormControl type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
-]                        </td>
+                        </td>
                         <td>
                               <FormControl type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
                         </td>
