@@ -20,6 +20,7 @@ import F_Chart1 from './F_Chart1.js'
 import F_Chart2 from './F_Chart2.js'
 import F_Chart3 from './F_Chart3.js'
 import F_Chart4 from './F_Chart4.js'
+import F_Chart5 from './F_Chart5.js'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -74,6 +75,7 @@ export default class ControlledTabs extends Component {
                 <div class = "column">
                   <F_Chart1/>
                   <F_Chart3/>
+                  <F_Chart5/>
                 </div>
                 <div class = "column">
                   <F_Chart2/>
