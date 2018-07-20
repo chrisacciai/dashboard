@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import {Tab, Tabs} from 'react-bootstrap';
-import Chart1 from './Chart1.js';
-import Chart2 from './Chart2.js';
-import Chart3 from './Chart3.js';
-import Chart4 from './Chart4.js';
-import Chart5 from './Chart5.js';
-import Chart6 from './Chart6.js';
-import Chart7 from './Chart7.js';
-import BD_Chart1 from './BD_Chart1.js';
-import BD_Chart2 from './BD_Chart2.js';
-import BD_Chart3 from './BD_Chart3.js';
-import BD_Chart4 from './BD_Chart4.js';
-import HR_Chart1 from './HR_Chart1.js';
-import HR_Chart2 from './HR_Chart2.js';
-import S_Chart from './S_Chart.js';
-import RD_Chart1 from './RD_Chart1.js'
-import RD_Chart2 from './RD_Chart2.js'
-import F_Chart1 from './F_Chart1.js'
-import F_Chart2 from './F_Chart2.js'
-import F_Chart3 from './F_Chart3.js'
-import F_Chart4 from './F_Chart4.js'
-import F_Chart5 from './F_Chart5.js'
-import F_Chart6 from './F_Chart6.js'
-import F_Chart7 from './F_Chart7.js'
+import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import {Tab, Tabs} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
+import Chart1 from './Chart1';
+import Chart2 from './Chart2';
+import Chart3 from './Chart3';
+import Chart4 from './Chart4';
+import Chart5 from './Chart5';
+import Chart6 from './Chart6';
+import Chart7 from './Chart7';
+import BD_Chart1 from './BizDev Charts/BD_Chart1';
+import BD_Chart2 from 'BD_Chart2';
+import BD_Chart3 from './BizDev Charts/BD_Chart3';
+import BD_Chart4 from './BizDev Charts/BD_Chart4';
+import HR_Chart1 from './HR_Chart1';
+import HR_Chart2 from './HR_Chart2';
+import S_Chart from './S_Chart';
+import RD_Chart1 from './RD_Chart1'
+import RD_Chart2 from './RD_Chart2'
+import F_Chart1 from './F_Chart1'
+import F_Chart2 from './F_Chart2'
+import F_Chart3 from './F_Chart3'
+import F_Chart4 from './F_Chart4'
+import F_Chart5 from './F_Chart5'
+import F_Chart6 from './F_Chart6'
+import F_Chart7 from './F_Chart7'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
