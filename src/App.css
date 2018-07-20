@@ -54,7 +54,7 @@
 }
 .MasterHeader {
   height: 27px;
-  background-color: #8884d8;
+  background-color: #488AC7;
   position: relative;
 }
 .MasterText {
@@ -82,7 +82,7 @@
 
 .tabColor ul > li > a {
   background-color: white;
-  color: #8884d8;
+  color: #488AC7;
 }
 
 @keyframes App-logo-spin {
