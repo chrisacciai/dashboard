@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import firebase from '../firebase.js';
 
+const toPercent = (decimal, fixed = 0) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
+  
 export default class M_Chart3 extends Component {
     constructor() {
         super();
