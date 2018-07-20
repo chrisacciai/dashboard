@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import M_Chart1 from './OpsChart/M_Chart1.js';
-import M_Chart2 from './OpsChart/M_Chart2.js';
-import M_Chart3 from './OpsChart/M_Chart3.js';
+import M_Chart1 from './OpsCharts/M_Chart1.js';
+import M_Chart2 from './OpsCharts/M_Chart2.js';
+import M_Chart3 from './OpsCharts/M_Chart3.js';
 
 export default class MasterView extends Component {
       render() {
