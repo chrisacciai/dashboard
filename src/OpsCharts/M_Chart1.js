@@ -54,7 +54,7 @@ export default class M_Chart1 extends Component {
               <p class="alignleft">Healthcare Average TAT</p>
             </div>
             <br/>
-            <div id="Mcontainer">
+            <div id="MContainer">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
