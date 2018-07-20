@@ -6,6 +6,11 @@ import firebase from './firebase.js';
 const toDollars = (integer) => {
   return "$" + integer.toLocaleString('en');
 }
+
+const toMil = (integer) => {
+  return "$" + integer.toString()[0] + " Mil";
+}
+
 export default class F_Chart2 extends Component {
     constructor() {
         super();
@@ -125,7 +130,7 @@ export default class F_Chart2 extends Component {
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toDollars} />
+                <YAxis tickFormatter={toMil} />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toDollars}/>
