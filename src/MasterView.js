@@ -8,7 +8,7 @@ export default class MasterView extends Component {
         return (
             <div>
                 <div class = "MasterHeader">
-                    <p>
+                    <p className = "MasterText">
                         Operations
                     </p>
                 </div>
