@@ -3,9 +3,8 @@ import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Label
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js'
 
-const toDollars = (integer) => {
-  let dollarValue = "$" + integer;
-  return dollarValue;
+const toDollars = (item) => {
+  return "$" + item.value.toLocaleString('en');
 }
 
 export default class F_Chart1 extends Component {
@@ -172,10 +171,10 @@ export default class F_Chart1 extends Component {
                 <YAxis tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' />
+                  <LabelList dataKey='pv' position='bottom' formatter={toDollars} />
                 </Line>
                 <Line type="monotone" dataKey="uv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='uv' position='bottom' />
+                  <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
