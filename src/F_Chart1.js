@@ -3,6 +3,11 @@ import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Label
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js'
 
+const toDollars = (integer) => {
+  let dollarValue = "$" + integer;
+  return dollarValue;
+}
+
 export default class F_Chart1 extends Component {
     constructor() {
         super();
@@ -164,7 +169,7 @@ export default class F_Chart1 extends Component {
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />

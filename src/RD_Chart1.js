@@ -5,6 +5,11 @@ import firebase from './firebase';
 
 const COLORS = ['#00C49F','#0088FE'];
 
+const toDollars = (integer) => {
+  let dollarValue = "$" + integer;
+  return dollarValue;
+}
+
 export default class RD_Chart1 extends Component {
     constructor() {
         super();
@@ -106,7 +111,7 @@ export default class RD_Chart1 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={true}>
+                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={toDollars}>
                     if
                     {
           	          this.mapToColor()
