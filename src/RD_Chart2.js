@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, Button, ButtonGroup} from 'react-bootstrap';
+import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/recharts';
+import {Table, FormControl, Button, ButtonGroup} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
 import firebase from './firebase';
 
 export default class RD_Chart2 extends Component {
