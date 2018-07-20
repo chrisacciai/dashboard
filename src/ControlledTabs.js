@@ -6,7 +6,7 @@ import Chart3 from './OpsCharts/Chart3.js';
 import Chart4 from './OpsCharts/Chart4.js';
 import Chart5 from './OpsCharts/Chart5.js';
 import Chart6 from './OpsCharts/Chart6.js';
-import Chart7 from './OpsCharts/Chart7.js';
+import PMOChart from './PMOCharts/PMOChart.js';
 import BD_Chart1 from './BDCharts/BD_Chart1.js';
 import BD_Chart2 from './BDCharts/BD_Chart2.js';
 import BD_Chart3 from './BDCharts/BD_Chart3.js';
@@ -108,7 +108,7 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={6} title="PMO">
               <div class = "row">
                 <div class = "column">
-                  <Chart7/>
+                  <PMOChart/>
                 </div>
                 <div class = "column">
                 </div>
