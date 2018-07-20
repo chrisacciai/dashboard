@@ -7,6 +7,7 @@ const COLORS = ['#00C49F','#0088FE'];
 
 const toDollars = (item) => {
   let dollarValue = "$" + item.value;
+  dollarValue.toLocaleString('en');
   return dollarValue;
 }
 
