@@ -124,6 +124,19 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
+          <Tab eventKey={8} title="Master PDF View">
+              <div class = "row">
+                <div class = "column">
+                  <Chart1/>
+                </div>
+                <div class = "column">
+                  <Chart1/>
+                </div>
+                <div class = "column">
+                  <Chart1/>
+                </div>
+              </div>
+          </Tab>
         </Tabs>
       );
     }
