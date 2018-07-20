@@ -52,6 +52,13 @@
   height: 150px;
   color: rgb(12, 11, 11);
 }
+.MasterHeader {
+  text-align: center;
+  color: rgb(12, 11, 11);
+  height: 30px;
+  background-color: rgb(12, 83, 177);
+  position: relative;
+}
 
 .App-title {
   font-size: 1.5em;
