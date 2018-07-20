@@ -45,13 +45,13 @@ export default class Chart7 extends Component {
       const dataRef = firebase.database().ref('ChartSevenData');
       const monthDataPair = {
         month1: this.state.lineOneMonth,
-        value1: parseInt(this.state.lineOneData, radix),
+        value1: parseInt(this.state.lineOneData),
         month2: this.state.lineTwoMonth,
-        value2: parseInt(this.state.lineTwoData, radix),
+        value2: parseInt(this.state.lineTwoData),
         month3: this.state.lineThreeMonth,
-        value3: parseInt(this.state.lineThreeData, radix),
+        value3: parseInt(this.state.lineThreeData),
         month4: this.state.lineFourMonth,
-        value4: parseInt(this.state.lineFourData, radix),
+        value4: parseInt(this.state.lineFourData),
       }
       dataRef.set(monthDataPair);
     }

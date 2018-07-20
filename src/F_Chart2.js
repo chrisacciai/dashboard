@@ -52,14 +52,14 @@ export default class F_Chart2 extends Component {
         const dataRef = firebase.database().ref('FChartTwoData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          lineOneValue1: parseInt(this.state.lineOneData1, radix),
-          lineOneValue2: parseInt(this.state.lineOneData2), radix,
+          lineOneValue1: parseInt(this.state.lineOneData1),
+          lineOneValue2: parseInt(this.state.lineOneData2),
           month2: this.state.lineTwoMonth,
-          lineTwoValue1: parseInt(this.state.lineTwoData1, radix),
-          lineTwoValue2: parseInt(this.state.lineTwoData2, radix),
+          lineTwoValue1: parseInt(this.state.lineTwoData1),
+          lineTwoValue2: parseInt(this.state.lineTwoData2),
           month3: this.state.lineThreeMonth,
-          lineThreeValue1: parseInt(this.state.lineThreeData1, radix),
-          lineThreeValue2: parseInt(this.state.lineThreeData2, radix),
+          lineThreeValue1: parseInt(this.state.lineThreeData1),
+          lineThreeValue2: parseInt(this.state.lineThreeData2),
         }
         dataRef.set(monthDataPair);
       }
