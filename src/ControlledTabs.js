@@ -42,12 +42,12 @@ export default class ControlledTabs extends Component {
   
     render() {
       return (
-        <Tabs
+        <Tabs className="tabColor"
           activeKey={this.state.key}
           onSelect={this.handleSelect}
           id="controlled-tab-example">
 
-          <Tab className="tabColor" eventKey={1} title="Operations">
+          <Tab eventKey={1} title="Operations">
             <div class = "row">
               <div class = "column">
                 <Chart1/>
@@ -61,7 +61,7 @@ export default class ControlledTabs extends Component {
               </div>
             </div>
           </Tab>
-          <Tab className="tabColor" eventKey={2} title="Business Development">
+          <Tab eventKey={2} title="Business Development">
               <div class = "row">
                 <div class = "column">
                   <BD_Chart1/>
@@ -73,7 +73,7 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
-          <Tab className="tabColor" eventKey={3} title="Finance">
+          <Tab eventKey={3} title="Finance">
               <div class = "row">
                 <div class = "column">
                   <F_Chart1/>
@@ -87,7 +87,7 @@ export default class ControlledTabs extends Component {
                   <F_Chart6/>
                 </div>
               </div>          </Tab>
-          <Tab className="tabColor" eventKey={4} title="Research &amp; Development">
+          <Tab eventKey={4} title="Research &amp; Development">
               <div class = "row">
                 <div class = "column">
                   <RD_Chart1/>
@@ -97,7 +97,7 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
-          <Tab className="tabColor" eventKey={5} title="Safety">
+          <Tab eventKey={5} title="Safety">
               <div class = "row">
                 <div class = "column">
                   <S_Chart/>
@@ -106,7 +106,7 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
-          <Tab className="tabColor" eventKey={6} title="PMO">
+          <Tab eventKey={6} title="PMO">
               <div class = "row">
                 <div class = "column">
                   <PMOChart/>
@@ -115,7 +115,7 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
-          <Tab className="tabColor" eventKey={7} title="Human Resources">
+          <Tab eventKey={7} title="Human Resources">
               <div class = "row">
                 <div class = "column">
                   <HR_Chart1/>
@@ -125,7 +125,7 @@ export default class ControlledTabs extends Component {
                 </div>
               </div>
           </Tab>
-          <Tab className="tabColor" eventKey={8} title="Master PDF View">
+          <Tab eventKey={8} title="Master PDF View">
             <MasterView/>
           </Tab>
         </Tabs>
