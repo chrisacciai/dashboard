@@ -51,17 +51,17 @@ export default class BD_Chart2 extends Component {
         const dataRef = firebase.database().ref('BDChartTwoData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          lineOneValue1: parseFloat(this.state.lineOneData1, radix),
-          lineOneValue2: parseFloat(this.state.lineOneData2, radix),
+          lineOneValue1: parseFloat(this.state.lineOneData1),
+          lineOneValue2: parseFloat(this.state.lineOneData2),
           month2: this.state.lineTwoMonth,
-          lineTwoValue1: parseFloat(this.state.lineTwoData1, radix),
-          lineTwoValue2: parseFloat(this.state.lineTwoData2, radix),
+          lineTwoValue1: parseFloat(this.state.lineTwoData1),
+          lineTwoValue2: parseFloat(this.state.lineTwoData2),
           month3: this.state.lineThreeMonth,
-          lineThreeValue1: parseFloat(this.state.lineThreeData1, radix),
-          lineThreeValue2: parseFloat(this.state.lineThreeData2, radix),
+          lineThreeValue1: parseFloat(this.state.lineThreeData1),
+          lineThreeValue2: parseFloat(this.state.lineThreeData2),
           month4: this.state.lineFourMonth,
-          lineFourValue1: parseFloat(this.state.lineFourData1, radix),
-          lineFourValue2: parseFloat(this.state.lineFourData2, radix),
+          lineFourValue1: parseFloat(this.state.lineFourData1),
+          lineFourValue2: parseFloat(this.state.lineFourData2),
         }
         dataRef.set(monthDataPair);
       }
