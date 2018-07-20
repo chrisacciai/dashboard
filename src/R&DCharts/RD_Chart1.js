@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
 const COLORS = ['#00C49F','#0088FE'];
 
-export default class HR_Chart2 extends Component {
+const toDollars = (item) => {
+  return "$" + item.value.toLocaleString('en');
+}
+
+export default class RD_Chart1 extends Component {
     constructor() {
         super();
         this.state = {
@@ -38,7 +42,7 @@ export default class HR_Chart2 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('SChartTwoData');
+        const dataRef = firebase.database().ref('RDChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           value1: parseInt(this.state.lineOneData),
@@ -55,7 +59,7 @@ export default class HR_Chart2 extends Component {
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('SChartTwoData');
+        const dataRef = firebase.database().ref('RDChartOneData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -97,7 +101,7 @@ export default class HR_Chart2 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form10">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form12">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -106,7 +110,7 @@ export default class HR_Chart2 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={true}>
+                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={toDollars}>
                     if
                     {
           	          this.mapToColor()
@@ -119,7 +123,7 @@ export default class HR_Chart2 extends Component {
             </p>
             <p style={ hidden }>
               <div id="table4">
-                <form id="form10" onSubmit={this.handleSubmit}>
+                <form id="form12" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>

@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
-import Chart1 from './Chart1';
-import Chart2 from './Chart2';
-import Chart3 from './Chart3';
-import Chart4 from './Chart4';
-import Chart5 from './Chart5';
-import Chart6 from './Chart6';
-import Chart7 from './Chart7';
+import Chart1 from './OpsCharts/Chart1';
+import Chart2 from './OpsCharts/Chart2';
+import Chart3 from './OpsCharts/Chart3';
+import Chart4 from './OpsCharts/Chart4';
+import Chart5 from './OpsCharts/Chart5';
+import Chart6 from './OpsCharts/Chart6';
+import Chart7 from './OpsCharts/Chart7';
 import BD_Chart1 from './BDCharts/BD_Chart1';
-import BD_Chart2 from './BD_Chart2';
-import BD_Chart3 from './BD_Chart3';
-import BD_Chart4 from './BD_Chart4';
-import HR_Chart1 from './HR_Chart1';
-import HR_Chart2 from './HR_Chart2';
-import S_Chart from './S_Chart';
-import RD_Chart1 from './RD_Chart1'
-import RD_Chart2 from './RD_Chart2'
-import F_Chart1 from './F_Chart1'
-import F_Chart2 from './F_Chart2'
-import F_Chart3 from './F_Chart3'
-import F_Chart4 from './F_Chart4'
-import F_Chart5 from './F_Chart5'
-import F_Chart6 from './F_Chart6'
-import F_Chart7 from './F_Chart7'
+import BD_Chart2 from './BDCharts/BD_Chart2';
+import BD_Chart3 from './BDCharts/BD_Chart3';
+import BD_Chart4 from './BDCharts/BD_Chart4';
+import HR_Chart1 from './HRCharts/HR_Chart1';
+import HR_Chart2 from './HRCharts/HR_Chart2';
+import S_Chart from './SafetyCharts/S_Chart';
+import RD_Chart1 from './R&DCharts/RD_Chart1'
+import RD_Chart2 from './R&DCharts/RD_Chart2'
+import F_Chart1 from './FinanceCharts/F_Chart1'
+import F_Chart2 from './FinanceCharts/F_Chart2'
+import F_Chart3 from './FinanceCharts/F_Chart3'
+import F_Chart4 from './FinanceCharts/F_Chart4'
+import F_Chart5 from './FinanceCharts/F_Chart5'
+import F_Chart6 from './FinanceCharts/F_Chart6'
+import F_Chart7 from './FinanceCharts/F_Chart7'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {

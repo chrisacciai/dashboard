@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
-const toPercent = (decimal, fixed = 2) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
-const toPercentAxis = (decimal, fixed = 1) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
-export default class Chart6 extends Component {
+export default class BD_Chart3 extends Component {
     constructor() {
         super();
         this.state = {
@@ -64,39 +56,39 @@ export default class Chart6 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('chartSixData');
+        const dataRef = firebase.database().ref('BDChartThreeData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseInt(this.state.lineThreeData),
           month4: this.state.lineFourMonth,
-          value4: parseFloat(this.state.lineFourData),
+          value4: parseInt(this.state.lineFourData),
           month5: this.state.lineFiveMonth,
-          value5: parseFloat(this.state.lineFiveData),
+          value5: parseInt(this.state.lineFiveData),
           month6: this.state.lineSixMonth,
-          value6: parseFloat(this.state.lineSixData),
+          value6: parseInt(this.state.lineSixData),
           month7: this.state.lineSevenMonth,
-          value7: parseFloat(this.state.lineSevenData),
+          value7: parseInt(this.state.lineSevenData),
           month8: this.state.lineEightMonth,
-          value8: parseFloat(this.state.lineEightData),
+          value8: parseInt(this.state.lineEightData),
           month9: this.state.lineNineMonth,
-          value9: parseFloat(this.state.lineNineData),
+          value9: parseInt(this.state.lineNineData),
           month10: this.state.lineTenMonth,
-          value10: parseFloat(this.state.lineTenData),
+          value10: parseInt(this.state.lineTenData),
           month11: this.state.lineElevenMonth,
-          value11: parseFloat(this.state.lineElevenData),
+          value11: parseInt(this.state.lineElevenData),
           month12: this.state.lineTwelveMonth,
-          value12: parseFloat(this.state.lineTwelveData),
+          value12: parseInt(this.state.lineTwelveData),
           
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('chartSixData');
+        const dataRef = firebase.database().ref('BDChartThreeData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -193,12 +185,12 @@ export default class Chart6 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Aliquot % Rework</p>
+              <p class="alignleft">Samples</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form6">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form8">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -206,29 +198,29 @@ export default class Chart6 extends Component {
             <p style={ shown }>
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data ={this.state.items}
+                <LineChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercentAxis}/>
+                <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
-                  <LabelList dataKey='pv' position='top' formatter={toPercent} />
-                </Area>
-                </AreaChart>
+                <Line type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
+                  <LabelList dataKey='pv' position='top'/>
+                </Line>
+                </LineChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table3">
-                <form id="form6" onSubmit={this.handleSubmit}>
+                <form id="form8" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Aliquot % Rework</th>
+                    <th>Samples</th>
                   </tr>
                 </thead>
-                <tbody>
+                  <tbody>
                     <tr>
                         <td>
                               <FormControl type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />

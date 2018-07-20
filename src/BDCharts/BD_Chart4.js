@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
 }
 
-export default class HR_Chart1 extends Component {
+export default class BD_Chart4 extends Component {
     constructor() {
         super();
         this.state = {
           shown: true,
           lineOneMonth: null,
-          lineOneData: null,
+          lineOneData1: null,
+          lineOneData2: null,
           lineTwoMonth: null,
-          lineTwoData: null,
-          lineThreeMonth: null,
-          lineThreeData: null,
+          lineTwoData1: null,
+          lineTwoData2: null,
           items: null
         };
 
@@ -42,44 +42,42 @@ export default class HR_Chart1 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('SChartOneData');
+        const dataRef = firebase.database().ref('BDChartFourData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          lineOneValue1: parseFloat(this.state.lineOneData1),
+          lineOneValue2: parseFloat(this.state.lineOneData2),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
-          month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          lineTwoValue1: parseFloat(this.state.lineTwoData1),
+          lineTwoValue2: parseFloat(this.state.lineTwoData2),
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('SChartOneData');
+        const dataRef = firebase.database().ref('BDChartFourData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.value1,
+            pv: items.lineOneValue1,
+            uv: items.lineOneValue2,
           });
           newState.push({
             month: items.month2,
-            pv: items.value2,
-          });
-          newState.push({
-            month: items.month3,
-            pv: items.value3,
+            pv: items.lineTwoValue1,
+            uv: items.lineTwoValue2,
           });
 
           this.setState({
             items: newState,
             lineOneMonth: items.month1,
-            lineOneData: items.value1,
+            lineOneData1: items.lineOneValue1,
+            lineOneData2: items.lineOneValue2,
             lineTwoMonth: items.month2,
-            lineTwoData: items.value2,
-            lineThreeMonth: items.month3,
-            lineThreeData: items.value3,
+            lineTwoData1: items.lineTwoValue1,
+            lineTwoData2: items.lineTwoValue2,
           });
         });
       }
@@ -98,12 +96,12 @@ export default class HR_Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Metric</p>
+              <p class="alignleft">Pay</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form9">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -119,44 +117,45 @@ export default class HR_Chart1 extends Component {
                 <Bar dataKey="pv" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                <ReferenceLine y={.4} stroke="#ff7300" strokeDasharray="3 3"/>
+                <Bar dataKey="uv" fill="#eee">
+                  <LabelList dataKey='uv' position='top' formatter={toPercent} />
+                </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table4">
-                <form id="form9" onSubmit={this.handleSubmit}>
+                <form id="form" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>Amount</th>
+                    <th>Actual</th>
+                    <th>Goal</th>
                   </tr>
                 </thead>
                   <tbody>
                     <tr>
                         <td>
-                              <FormControl type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
+                              <FormControl width="50%" type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                         </td>
                         <td>
-                              <FormControl type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                              <FormControl type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
+                              <FormControl width="50%" type="text"name="lineOneData1" onChange={this.handleChange} value={this.state.lineOneData1} />
                         </td>
                         <td>
-                              <FormControl type="text" name="lineTwoData" onChange={this.handleChange} value={this.state.lineTwoData} />
+                              <FormControl width="50%" type="text"name="lineOneData2" onChange={this.handleChange} value={this.state.lineOneData2} />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                              <FormControl type="text" name="lineThreeMonth" onChange={this.handleChange} value={this.state.lineThreeMonth} />
+                              <FormControl width="50%" type="text" name="lineTwoMonth" onChange={this.handleChange} value={this.state.lineTwoMonth} />
                         </td>
                         <td>
-                              <FormControl type="text" name="lineThreeData" onChange={this.handleChange} value={this.state.lineThreeData} />
+                              <FormControl width="50%" type="text" name="lineTwoData1" onChange={this.handleChange} value={this.state.lineTwoData1} />
+                        </td>
+                        <td>
+                              <FormControl width="50%" type="text" name="lineTwoData2" onChange={this.handleChange} value={this.state.lineTwoData2} />
                         </td>
                     </tr>
                   </tbody>

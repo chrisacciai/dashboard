@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
-export default class F_Chart6 extends Component {
+export default class F_Chart5 extends Component {
     constructor() {
         super();
         this.state = {
@@ -40,22 +40,22 @@ export default class F_Chart6 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('FChartSixData');
+        const dataRef = firebase.database().ref('FChartFiveData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseInt(this.state.lineThreeData),
           month4: this.state.lineFourMonth,
-          value4: parseFloat(this.state.lineFourData),
+          value4: parseInt(this.state.lineFourData),
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartSixData');
+        const dataRef = firebase.database().ref('FChartFiveData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -109,7 +109,7 @@ export default class F_Chart6 extends Component {
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form19">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form18">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -125,14 +125,13 @@ export default class F_Chart6 extends Component {
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
-                <ReferenceLine y={3.5} stroke="#ff7300" strokeDasharray="3 3"/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form id="form19" onSubmit={this.handleSubmit}>
+                <form id="form18" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>

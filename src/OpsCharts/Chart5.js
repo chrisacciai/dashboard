@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
-const toPercent = (decimal, fixed = 0) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
-export default class Chart3 extends Component {
+export default class Chart5 extends Component {
     constructor() {
         super();
         this.state = {
@@ -24,6 +20,18 @@ export default class Chart3 extends Component {
           lineFiveData: null,
           lineSixMonth: null,
           lineSixData: null,
+          lineSevenMonth: null,
+          lineSevenData: null,
+          lineEightMonth: null,
+          lineEightData: null,
+          lineNineMonth: null,
+          lineNineData: null,
+          lineTenMonth: null,
+          lineTenData: null,
+          lineElevenMonth: null,
+          lineElevenData: null,
+          lineTwelveMonth: null,
+          lineTwelveData: null,
           items: null
         };
 
@@ -48,26 +56,39 @@ export default class Chart3 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('chartThreeData');
+        const dataRef = firebase.database().ref('chartFiveData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseInt(this.state.lineThreeData),
           month4: this.state.lineFourMonth,
-          value4: parseFloat(this.state.lineFourData),
+          value4: parseInt(this.state.lineFourData),
           month5: this.state.lineFiveMonth,
-          value5: parseFloat(this.state.lineFiveData),
+          value5: parseInt(this.state.lineFiveData),
           month6: this.state.lineSixMonth,
-          value6: parseFloat(this.state.lineSixData),
+          value6: parseInt(this.state.lineSixData),
+          month7: this.state.lineSevenMonth,
+          value7: parseInt(this.state.lineSevenData),
+          month8: this.state.lineEightMonth,
+          value8: parseInt(this.state.lineEightData),
+          month9: this.state.lineNineMonth,
+          value9: parseInt(this.state.lineNineData),
+          month10: this.state.lineTenMonth,
+          value10: parseInt(this.state.lineTenData),
+          month11: this.state.lineElevenMonth,
+          value11: parseInt(this.state.lineElevenData),
+          month12: this.state.lineTwelveMonth,
+          value12: parseInt(this.state.lineTwelveData),
+          
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('chartThreeData');
+        const dataRef = firebase.database().ref('chartFiveData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -95,6 +116,30 @@ export default class Chart3 extends Component {
             month: items.month6,
             pv: items.value6,
           });
+          newState.push({
+            month: items.month7,
+            pv: items.value7,
+          });
+          newState.push({
+            month: items.month8,
+            pv: items.value8,
+          });
+          newState.push({
+            month: items.month9,
+            pv: items.value9,
+          });
+          newState.push({
+            month: items.month10,
+            pv: items.value10,
+          });
+          newState.push({
+            month: items.month11,
+            pv: items.value11,
+          });
+          newState.push({
+            month: items.month12,
+            pv: items.value12,
+          });
 
           this.setState({
             items: newState,
@@ -110,6 +155,18 @@ export default class Chart3 extends Component {
             lineFiveData: items.value5,
             lineSixMonth: items.month6,
             lineSixData: items.value6,
+            lineSevenMonth: items.month7,
+            lineSevenData: items.value7,
+            lineEightMonth: items.month8,
+            lineEightData: items.value8,
+            lineNineMonth: items.month9,
+            lineNineData: items.value9,
+            lineTenMonth: items.month10,
+            lineTenData: items.value10,
+            lineElevenMonth: items.month11,
+            lineElevenData: items.value11,
+            lineTwelveMonth: items.month12,
+            lineTwelveData: items.value12,
           });
         });
       }
@@ -128,39 +185,39 @@ export default class Chart3 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Labor Efficiency</p>
+              <p class="alignleft">Healthcare Analytical Reporting Errors</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form3">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form5">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
             <br/>
             <p style={ shown }>
-            <div id="container">
+            <div id="chartFiveContainer">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
-                margin={{top: 0, right: 50, left: 15, bottom: 5}}>
-                <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                margin={{top: 0, right: 50, left: 15, bottom: 22}}>
+                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='12' interval={0}/>
+                <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' formatter={toPercent} />
+                  <LabelList dataKey='pv' position='bottom'/>
                 </Line>
                 </LineChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table">
-                <form id="form3" onSubmit={this.handleSubmit}>
+              <div id="table3">
+                <form id="form5" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>% Over TAT</th>
+                    <th>Errors</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -210,6 +267,54 @@ export default class Chart3 extends Component {
                         </td>
                         <td>
                               <FormControl type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineSevenMonth" onChange={this.handleChange} value={this.state.lineSevenMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineSevenData" onChange={this.handleChange} value={this.state.lineSevenData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineEightMonth" onChange={this.handleChange} value={this.state.lineEightMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineEightData" onChange={this.handleChange} value={this.state.lineEightData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineNineMonth" onChange={this.handleChange} value={this.state.lineNineMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineNineData" onChange={this.handleChange} value={this.state.lineNineData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineTenMonth" onChange={this.handleChange} value={this.state.lineTenMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineTenData" onChange={this.handleChange} value={this.state.lineTenData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineElevenMonth" onChange={this.handleChange} value={this.state.lineElevenMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineElevenData" onChange={this.handleChange} value={this.state.lineElevenData} />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                              <FormControl type="text" name="lineTwelveMonth" onChange={this.handleChange} value={this.state.lineTwelveMonth} />
+                        </td>
+                        <td>
+                              <FormControl type="text" name="lineTwelveData" onChange={this.handleChange} value={this.state.lineTwelveData} />
                         </td>
                     </tr>
                   </tbody>

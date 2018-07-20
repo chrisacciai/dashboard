@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from './firebase.js';
+import firebase from '../firebase.js';
 
-const toPercent = (decimal, fixed = 0) => {
-  return `${(decimal * 100).toFixed(fixed)}%`;
-}
-
-export default class Chart2 extends Component {
+export default class F_Chart6 extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,10 +16,6 @@ export default class Chart2 extends Component {
           lineThreeData: null,
           lineFourMonth: null,
           lineFourData: null,
-          lineFiveMonth: null,
-          lineFiveData: null,
-          lineSixMonth: null,
-          lineSixData: null,
           items: null
         };
 
@@ -48,7 +40,7 @@ export default class Chart2 extends Component {
 
       handleSubmit(e) {
         e.preventDefault();
-        const dataRef = firebase.database().ref('chartTwoData');
+        const dataRef = firebase.database().ref('FChartSixData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           value1: parseFloat(this.state.lineOneData),
@@ -58,16 +50,12 @@ export default class Chart2 extends Component {
           value3: parseFloat(this.state.lineThreeData),
           month4: this.state.lineFourMonth,
           value4: parseFloat(this.state.lineFourData),
-          month5: this.state.lineFiveMonth,
-          value5: parseFloat(this.state.lineFiveData),
-          month6: this.state.lineSixMonth,
-          value6: parseFloat(this.state.lineSixData),
         }
         dataRef.set(monthDataPair);
       }
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('chartTwoData');
+        const dataRef = firebase.database().ref('FChartSixData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -87,14 +75,6 @@ export default class Chart2 extends Component {
             month: items.month4,
             pv: items.value4,
           });
-          newState.push({
-            month: items.month5,
-            pv: items.value5,
-          });
-          newState.push({
-            month: items.month6,
-            pv: items.value6,
-          });
 
           this.setState({
             items: newState,
@@ -106,10 +86,6 @@ export default class Chart2 extends Component {
             lineThreeData: items.value3,
             lineFourMonth: items.month4,
             lineFourData: items.value4,
-            lineFiveMonth: items.month5,
-            lineFiveData: items.value5,
-            lineSixMonth: items.month6,
-            lineSixData: items.value6,
           });
         });
       }
@@ -128,12 +104,12 @@ export default class Chart2 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare % Over TAT</p>
+              <p class="alignleft">Healthcare Average TAT</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form2">Submit Data</Button> 
+                  <Button type="submit" bsStyle="primary" form="form19">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -144,23 +120,24 @@ export default class Chart2 extends Component {
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey="pv" position='bottom' formatter={toPercent}/>
+                  <LabelList dataKey='pv' position='bottom' />
                 </Line>
+                <ReferenceLine y={3.5} stroke="#ff7300" strokeDasharray="3 3"/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
             </p>
             <p style={ hidden }>
               <div id="table">
-                <form id="form2" onSubmit={this.handleSubmit}>
+                <form id="form19" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
                     <th>Month</th>
-                    <th>% Over TAT</th>
+                    <th>Average TAT</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -169,7 +146,7 @@ export default class Chart2 extends Component {
                               <FormControl type="text" name="lineOneMonth" onChange={this.handleChange} value={this.state.lineOneMonth} />
                         </td>
                         <td>
-                              <FormControl type="text"name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
+                              <FormControl type="text" name="lineOneData" onChange={this.handleChange} value={this.state.lineOneData} />
                         </td>
                     </tr>
                     <tr>
@@ -196,22 +173,6 @@ export default class Chart2 extends Component {
                               <FormControl type="text" name="lineFourData" onChange={this.handleChange} value={this.state.lineFourData} />
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                              <FormControl type="text" name="lineFiveMonth" onChange={this.handleChange} value={this.state.lineFiveMonth} />
-                        </td>
-                        <td>
-                              <FormControl type="text" name="lineFiveData" onChange={this.handleChange} value={this.state.lineFiveData} />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                              <FormControl type="text" name="lineSixMonth" onChange={this.handleChange} value={this.state.lineSixMonth} />
-                        </td>
-                        <td>
-                              <FormControl type="text" name="lineSixData" onChange={this.handleChange} value={this.state.lineSixData} />
-                        </td>
-                    </tr>
                   </tbody>
                 </Table>
                 </form>
@@ -221,4 +182,3 @@ export default class Chart2 extends Component {
         );
     }
 }
-
