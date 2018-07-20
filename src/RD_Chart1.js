@@ -5,8 +5,8 @@ import firebase from './firebase';
 
 const COLORS = ['#00C49F','#0088FE'];
 
-const toDollars = (integer) => {
-  let dollarValue = "$" + integer;
+const toDollars = (item) => {
+  let dollarValue = "$" + item.value;
   return dollarValue;
 }
 
