@@ -3,8 +3,8 @@ import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelLi
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
 import firebase from './firebase.js';
 
-const toDollars = (item) => {
-  return "$" + item.value.toLocaleString('en');
+const toDollars = (integer) => {
+  return "$" + integer.toLocaleString('en');
 }
 
 export default class F_Chart4 extends Component {
