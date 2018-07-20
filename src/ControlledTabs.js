@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import Chart1 from './OpsCharts/Chart1.js';
+import M_Chart1 from './OpsCharts/M_Chart1.js';
 import Chart2 from './OpsCharts/Chart2.js';
 import Chart3 from './OpsCharts/Chart3.js';
 import Chart4 from './OpsCharts/Chart4.js';
@@ -16,13 +17,7 @@ import HR_Chart2 from './HRCharts/HR_Chart2.js';
 import S_Chart from './SafetyCharts/S_Chart.js';
 import RD_Chart1 from './R&DCharts/RD_Chart1.js'
 import RD_Chart2 from './R&DCharts/RD_Chart2.js'
-import F_Chart1 from './FinanceCharts/F_Chart1.js'
-import F_Chart2 from './FinanceCharts/F_Chart2.js'
-import F_Chart3 from './FinanceCharts/F_Chart3.js'
-import F_Chart4 from './FinanceCharts/F_Chart4.js'
-import F_Chart5 from './FinanceCharts/F_Chart5.js'
-import F_Chart6 from './FinanceCharts/F_Chart6.js'
-import F_Chart7 from './FinanceCharts/F_Chart7.js'
+import {F_Chart1, F_Chart2, F_Chart3, F_Chart4, F_Chart5, F_chart6, F_Chart7} from './FinanceCharts'
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -127,13 +122,13 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={8} title="Master PDF View">
               <div class = "row">
                 <div class = "columnThirds">
-                  <Chart1/>
+                  <M_Chart1/>
                 </div>
                 <div class = "columnThirds">
-                  <Chart1/>
+                  <M_Chart1/>
                 </div>
                 <div class = "columnThirds">
-                  <Chart1/>
+                  <M_Chart1/>
                 </div>
               </div>
           </Tab>
