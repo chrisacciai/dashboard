@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import firebase from '../firebase.js';
 
-export default class M_Chart1 extends Component {
+export default class M_Chart3 extends Component {
     constructor() {
         super();
         this.state = {
@@ -11,7 +11,7 @@ export default class M_Chart1 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('chartOneData');
+        const dataRef = firebase.database().ref('chartThreeData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -56,13 +56,13 @@ export default class M_Chart1 extends Component {
             <br/>
             <div id="MContainer">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={this.state.items}
+                <LineChart data ={this.state.items}
                 margin={{top: 0, right: 55, left: 10, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis/>
+                <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' />
+                  <LabelList dataKey='pv' position='bottom' formatter={toPercent} />
                 </Line>
                 </LineChart>
               </ResponsiveContainer>

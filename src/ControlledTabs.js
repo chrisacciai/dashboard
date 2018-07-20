@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import Chart1 from './OpsCharts/Chart1.js';
 import M_Chart1 from './OpsCharts/M_Chart1.js';
+import M_Chart2 from './OpsCharts/M_Chart2.js';
+import M_Chart3 from './OpsCharts/M_Chart3.js';
 import Chart2 from './OpsCharts/Chart2.js';
 import Chart3 from './OpsCharts/Chart3.js';
 import Chart4 from './OpsCharts/Chart4.js';
@@ -131,10 +133,10 @@ export default class ControlledTabs extends Component {
                   <M_Chart1/>
                 </div>
                 <div class = "columnThirds">
-                  <M_Chart1/>
+                  <M_Chart2/>
                 </div>
                 <div class = "columnThirds">
-                  <M_Chart1/>
+                  <M_Chart3/>
                 </div>
               </div>
           </Tab>
