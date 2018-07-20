@@ -7,7 +7,7 @@ import Chart4 from './Chart4';
 import Chart5 from './Chart5';
 import Chart6 from './Chart6';
 import Chart7 from './Chart7';
-import BD_Chart1 from './BD_Chart1';
+import BD_Chart1 from './BDCharts/BD_Chart1';
 import BD_Chart2 from './BD_Chart2';
 import BD_Chart3 from './BD_Chart3';
 import BD_Chart4 from './BD_Chart4';
