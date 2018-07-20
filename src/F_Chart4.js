@@ -51,13 +51,13 @@ export default class F_Chart4 extends Component {
         const dataRef = firebase.database().ref('FChartFourData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseInt(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData, radix),
           month2: this.state.lineTwoMonth,
-          value2: parseInt(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData, radix),
           month3: this.state.lineThreeMonth,
-          value3: parseInt(this.state.lineThreeData),
+          value3: parseInt(this.state.lineThreeData, radix),
           month4: this.state.lineFourMonth,
-          value4: parseInt(this.state.lineFourData),
+          value4: parseInt(this.state.lineFourData, radix),
           
         }
         dataRef.set(monthDataPair);

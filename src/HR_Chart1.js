@@ -45,11 +45,11 @@ export default class HR_Chart1 extends Component {
         const dataRef = firebase.database().ref('SChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseFloat(this.state.lineOneData, radix),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseFloat(this.state.lineTwoData, radix),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseFloat(this.state.lineThreeData, radix),
         }
         dataRef.set(monthDataPair);
       }

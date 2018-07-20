@@ -51,17 +51,17 @@ export default class Chart3 extends Component {
         const dataRef = firebase.database().ref('chartThreeData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseFloat(this.state.lineOneData),
+          value1: parseFloat(this.state.lineOneData, radix),
           month2: this.state.lineTwoMonth,
-          value2: parseFloat(this.state.lineTwoData),
+          value2: parseFloat(this.state.lineTwoData, radix),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
+          value3: parseFloat(this.state.lineThreeData, radix),
           month4: this.state.lineFourMonth,
-          value4: parseFloat(this.state.lineFourData),
+          value4: parseFloat(this.state.lineFourData, radix),
           month5: this.state.lineFiveMonth,
-          value5: parseFloat(this.state.lineFiveData),
+          value5: parseFloat(this.state.lineFiveData, radix),
           month6: this.state.lineSixMonth,
-          value6: parseFloat(this.state.lineSixData),
+          value6: parseFloat(this.state.lineSixData, radix),
         }
         dataRef.set(monthDataPair);
       }

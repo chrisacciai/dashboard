@@ -45,9 +45,9 @@ export default class RD_Chart1 extends Component {
         const dataRef = firebase.database().ref('RDChartOneData');
         const monthDataPair = {
           month1: this.state.lineOneMonth,
-          value1: parseInt(this.state.lineOneData),
+          value1: parseInt(this.state.lineOneData, radix),
           month2: this.state.lineTwoMonth,
-          value2: parseInt(this.state.lineTwoData),
+          value2: parseInt(this.state.lineTwoData, radix),
         }
         dataRef.set(monthDataPair);
       }
