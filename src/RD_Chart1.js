@@ -6,9 +6,7 @@ import firebase from './firebase';
 const COLORS = ['#00C49F','#0088FE'];
 
 const toDollars = (item) => {
-  let dollarValue = "$" + item.value;
-  dollarValue.toLocaleString('en');
-  return dollarValue;
+  return "$" + item.value.toLocaleString('en');
 }
 
 export default class RD_Chart1 extends Component {
