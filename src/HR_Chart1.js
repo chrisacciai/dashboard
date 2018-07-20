@@ -1,7 +1,7 @@
-import React, { Component } from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/recharts';
-import {Table, FormControl, ButtonGroup, Button} from '../../../../Library/Caches/typescript/2.9/node_modules/@types/react-bootstrap';
-import firebase from './firebase';
+import React, { Component } from 'react';
+import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
+import firebase from './firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
