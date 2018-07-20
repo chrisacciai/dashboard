@@ -6,6 +6,10 @@
   float: left;
   width: 50%;
 }
+.columnThirds {
+  float: left;
+  width: 33.33%;
+}
 
 #container {
   height: 300px;
