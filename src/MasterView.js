@@ -4,7 +4,7 @@ import M_Chart2 from './OpsCharts/M_Chart2.js';
 import M_Chart3 from './OpsCharts/M_Chart3.js';
 import ReactToPrint from 'react-to-print';
 
-export default class MasterView extends Component {
+class MasterView extends Component {
       render() {
         return (
             <div>
@@ -29,7 +29,7 @@ export default class MasterView extends Component {
     }
 }
 
-class Example extends React.Component {
+export default class Example extends React.Component {
     render() {
       return (
         <div>
