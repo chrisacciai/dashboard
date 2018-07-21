@@ -37,7 +37,7 @@ class Example extends React.Component {
             trigger={() => <a href="#">Print this out!</a>}
             content={() => this.componentRef}
           />
-          <ComponentToPrint ref={el => (this.componentRef = el)} />
+          <MasterView ref={el => (this.componentRef = el)} />
         </div>
       );
     }
