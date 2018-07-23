@@ -18,7 +18,7 @@ export default class BD_Chart1 extends Component {
           lineTwoData: null,
           lineThreeMonth: null,
           lineThreeData: null,
-          items: null
+          items: null,
         };
 
         this.handleChange = this.handleChange.bind(this);

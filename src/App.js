@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ControlledTabs from './ControlledTabs';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Navigation from './Navigation';
 
 class App extends Component {
 
