@@ -58,7 +58,7 @@ componentDidMount() {
         </div>
         <div>
           <LineChart data={this.state.items} width={370} height={200}
-            margin={{top: 10, right: 15, left: 10, bottom: 10}}>
+            margin={{top: 10, right: 15, left: 5, bottom: 10}}>
             <XAxis dataKey='month'/>
             <YAxis tickFormatter={toPercent}/>
             <CartesianGrid strokeDasharray="3 3"/>

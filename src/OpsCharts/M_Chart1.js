@@ -55,7 +55,7 @@ export default class M_Chart1 extends Component {
             </div>
             <div>
               <LineChart data={this.state.items} width={370} height={200}
-                margin={{top: 10, right: 15, left: 10, bottom: 10}}>
+                margin={{top: 10, right: 15, left: 5, bottom: 10}}>
                 <XAxis dataKey='month'/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
