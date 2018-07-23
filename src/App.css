@@ -9,9 +9,11 @@
 .columnThirds {
   width: 99mm;
 }
-.rowThirds {
- display: table;
- table-layout: fixed;
+.rowThirds:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  clear: both;
 }
 
 .mt4 {
