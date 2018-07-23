@@ -23,7 +23,7 @@ import F_Chart4 from './FinanceCharts/F_Chart4.js';
 import F_Chart5 from './FinanceCharts/F_Chart5.js';
 import F_Chart6 from './FinanceCharts/F_Chart6.js';
 import F_Chart7 from './FinanceCharts/F_Chart7.js';
-import MasterView from './MasterView.js';
+import Example from './MasterView.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
