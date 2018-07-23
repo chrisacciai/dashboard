@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import M_Chart1 from './OpsCharts/M_Chart1.js';
-import M_Chart2 from './OpsCharts/M_Chart2.js';
-import M_Chart3 from './OpsCharts/M_Chart3.js';
+import MChart1 from './OpsCharts/MChart1.js';
+import MChart2 from './OpsCharts/MChart2.js';
+import MChart3 from './OpsCharts/MChart3.js';
 import {Button} from 'react-bootstrap';
 
 export default class Export extends Component {
@@ -36,13 +36,13 @@ export default class Export extends Component {
           </div>
           <div class = "rowThirds">
             <div class = "columnThirds">
-              <M_Chart1/>
+              <MChart1/>
             </div>
             <div class = "columnThirds">
-              <M_Chart2/>
+              <MChart2/>
             </div>
             <div class = "columnThirds">
-              <M_Chart3/>
+              <MChart3/>
             </div>
           </div>
         </div>

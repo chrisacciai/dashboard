@@ -7,22 +7,22 @@ import Chart4 from './OpsCharts/Chart4.js';
 import Chart5 from './OpsCharts/Chart5.js';
 import Chart6 from './OpsCharts/Chart6.js';
 import PMOChart from './PMOCharts/PMOChart.js';
-import BD_Chart1 from './BDCharts/BD_Chart1.js';
-import BD_Chart2 from './BDCharts/BD_Chart2.js';
-import BD_Chart3 from './BDCharts/BD_Chart3.js';
-import BD_Chart4 from './BDCharts/BD_Chart4.js';
-import HR_Chart1 from './HRCharts/HR_Chart1.js';
-import HR_Chart2 from './HRCharts/HR_Chart2.js';
-import S_Chart from './SafetyCharts/S_Chart.js';
-import RD_Chart1 from './R&DCharts/RD_Chart1.js';
-import RD_Chart2 from './R&DCharts/RD_Chart2.js';
-import F_Chart1 from './FinanceCharts/F_Chart1.js';
-import F_Chart2 from './FinanceCharts/F_Chart2.js';
-import F_Chart3 from './FinanceCharts/F_Chart3.js';
-import F_Chart4 from './FinanceCharts/F_Chart4.js';
-import F_Chart5 from './FinanceCharts/F_Chart5.js';
-import F_Chart6 from './FinanceCharts/F_Chart6.js';
-import F_Chart7 from './FinanceCharts/F_Chart7.js';
+import BDChart1 from './BDCharts/BDChart1.js';
+import BDChart2 from './BDCharts/BDChart2.js';
+import BDChart3 from './BDCharts/BDChart3.js';
+import BDChart4 from './BDCharts/BDChart4.js';
+import HRChart1 from './HRCharts/HRChart1.js';
+import HRChart2 from './HRCharts/HRChart2.js';
+import SChart from './SafetyCharts/SChart.js';
+import RDChart1 from './R&DCharts/RDChart1.js';
+import RDChart2 from './R&DCharts/RDChart2.js';
+import FChart1 from './FinanceCharts/FChart1.js';
+import FChart2 from './FinanceCharts/FChart2.js';
+import FChart3 from './FinanceCharts/FChart3.js';
+import FChart4 from './FinanceCharts/FChart4.js';
+import FChart5 from './FinanceCharts/FChart5.js';
+import FChart6 from './FinanceCharts/FChart6.js';
+import FChart7 from './FinanceCharts/FChart7.js';
 import Export from './Export.js';
 
 export default class ControlledTabs extends Component {
@@ -64,43 +64,43 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={2} title="Business Development">
               <div class = "row">
                 <div class = "column">
-                  <BD_Chart1/>
-                  <BD_Chart3/>
+                  <BDChart1/>
+                  <BDChart3/>
                 </div>
                 <div class = "column">
-                  <BD_Chart2/>
-                  <BD_Chart4/>
+                  <BDChart2/>
+                  <BDChart4/>
                 </div>
               </div>
           </Tab>
           <Tab eventKey={3} title="Finance">
               <div class = "row">
                 <div class = "column">
-                  <F_Chart1/>
-                  <F_Chart3/>
-                  <F_Chart5/>
-                  <F_Chart7/>
+                  <FChart1/>
+                  <FChart3/>
+                  <FChart5/>
+                  <FChart7/>
                 </div>
                 <div class = "column">
-                  <F_Chart2/>
-                  <F_Chart4/>
-                  <F_Chart6/>
+                  <FChart2/>
+                  <FChart4/>
+                  <FChart6/>
                 </div>
               </div>          </Tab>
           <Tab eventKey={4} title="Research &amp; Development">
               <div class = "row">
                 <div class = "column">
-                  <RD_Chart1/>
+                  <RDChart1/>
                 </div>
                 <div class = "column">
-                  <RD_Chart2/>
+                  <RDChart2/>
                 </div>
               </div>
           </Tab>
           <Tab eventKey={5} title="Safety">
               <div class = "row">
                 <div class = "column">
-                  <S_Chart/>
+                  <SChart/>
                 </div>
                 <div class = "column">
                 </div>
@@ -118,10 +118,10 @@ export default class ControlledTabs extends Component {
           <Tab eventKey={7} title="Human Resources">
               <div class = "row">
                 <div class = "column">
-                  <HR_Chart1/>
+                  <HRChart1/>
                 </div>
                 <div class = "column">
-                  <HR_Chart2/>
+                  <HRChart2/>
                 </div>
               </div>
           </Tab>
