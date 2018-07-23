@@ -13,7 +13,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">[BETA] Dash</h1>
-          <Button className="Button1" onClick={Export.printDocument()} bsStyle="primary">Export as PDF</Button>
+          <Button className="Button1" onClick={new Export().printDocument()} bsStyle="primary">Export as PDF</Button>
         </header>
         <ControlledTabs/>
       </div>

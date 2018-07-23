@@ -10,7 +10,7 @@ export default class Export extends Component {
     super(props);
   }
 
-  static printDocument() {
+  printDocument() {
     const input = document.getElementById('divToPrint');
     html2canvas(input)
       .then((canvas) => {
