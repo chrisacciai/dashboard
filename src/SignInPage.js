@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { auth } from './firebase/firebase.js';
+import { auth } from './firebase/Firebase.js';
 import * as routes from './constants/Routes.js';
 
 const SignInPage = ({ history }) =>
