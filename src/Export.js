@@ -15,15 +15,13 @@ export default class Export extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
+        widnow.open(imgData);
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
-        var width = pdf.internal.pageSize.width;
-        var height = pdf.internal.pageSize.height;
 
-        pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
-        // pdf.output('dataurlnewwindow');
-        pdf.save("dashboardMasterView.pdf");
+        pdf.addImage(imgData, 'JPEG', 0, 0,);
+        pdf.output('dataurlnewwindow');
       })
     ;
   }
