@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './Navigation';
-import 
 
 import LandingPage from './LandingPage';
 import SignInPage from './SignInPage';
