@@ -15,13 +15,11 @@ export default class Export extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        window.open(imgData);
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
-
-        pdf.addImage(imgData, 'JPEG', 0, 0,);
-        pdf.output('dataurlnewwindow');
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        pdf.save('dataurlnewwindow');
       })
     ;
   }
