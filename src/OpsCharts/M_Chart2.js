@@ -57,7 +57,7 @@ componentDidMount() {
           <p class="aligncenter">Healthcare % Over TAT</p>
         </div>
         <div>
-          <LineChart data={this.state.items} width={370} height={200}
+          <LineChart data={this.state.items} width={375} height={200}
             margin={{top: 10, right: 25, left: 0, bottom: 10}}>
             <XAxis dataKey='month' tick={{fontSize: 11}}/>
             <YAxis tickFormatter={toPercent} tick={{fontSize: 11}}/>
