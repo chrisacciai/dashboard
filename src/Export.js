@@ -25,16 +25,10 @@ export default class Export extends Component {
 
   render() {
     return (<div>
-      <div className="mb5">
+      <div>
         <button onClick={this.printDocument}>Print</button>
       </div>
-      <div id="divToPrint" className="mt4" {...css({
-        backgroundColor: '#f5f5f5',
-        width: '210mm',
-        minHeight: '297mm',
-        marginLeft: 'auto',
-        marginRight: 'auto'
-      })}>
+      <div id="divToPrint" className="mt4">
         <div>
           <div class = "MasterHeader">
             <p className = "MasterText">
