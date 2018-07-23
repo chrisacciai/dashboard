@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import M_Chart1 from './OpsCharts/M_Chart1.js';
 import M_Chart2 from './OpsCharts/M_Chart2.js';
 import M_Chart3 from './OpsCharts/M_Chart3.js';
-import ReactToPrint from 'react-to-print';
-
 class MasterView extends Component {
       render() {
         return (
@@ -28,17 +26,3 @@ class MasterView extends Component {
         );
     }
 }
-
-export default class Example extends React.Component {
-    render() {
-      return (
-        <div>
-          <ReactToPrint
-            trigger={() => <a href="#">Print this out!</a>}
-            content={() => this.componentRef}
-          />
-          <MasterView ref={el => (this.componentRef = el)} />
-        </div>
-      );
-    }
-  }

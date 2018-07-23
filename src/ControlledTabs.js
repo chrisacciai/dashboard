@@ -23,7 +23,7 @@ import F_Chart4 from './FinanceCharts/F_Chart4.js';
 import F_Chart5 from './FinanceCharts/F_Chart5.js';
 import F_Chart6 from './FinanceCharts/F_Chart6.js';
 import F_Chart7 from './FinanceCharts/F_Chart7.js';
-import Example from './MasterView.js';
+import Export from './Export.js';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
@@ -126,7 +126,7 @@ export default class ControlledTabs extends Component {
               </div>
           </Tab>
           <Tab eventKey={8} title="Master PDF View">
-            <Example/>
+            <Export/>
           </Tab>
         </Tabs>
       );
