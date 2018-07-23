@@ -25,7 +25,7 @@ export default class Export extends Component {
   }
 
   render() {
-    return (<div>
+    return (<div> <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
       <div id="divToPrint" className="mt4">
         <div>
           <div class = "MasterHeader">
