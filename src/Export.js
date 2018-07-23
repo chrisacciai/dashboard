@@ -10,7 +10,7 @@ export default class Export extends Component {
     super(props);
   }
 
-  printDocument() {
+  static printDocument() {
     const input = document.getElementById('divToPrint');
     html2canvas(input)
       .then((canvas) => {
@@ -26,9 +26,6 @@ export default class Export extends Component {
 
   render() {
     return (<div>
-      <div>
-        <button onClick={this.printDocument}>Print</button>
-      </div>
       <div id="divToPrint" className="mt4">
         <div>
           <div class = "MasterHeader">
