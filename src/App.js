@@ -45,6 +45,8 @@ class App extends Component {
             component={() => <HomePage />}
           />
         </div>
-      </Router>
+      </Router>)
+  }
+}
 
 export default App;
