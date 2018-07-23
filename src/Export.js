@@ -36,7 +36,7 @@ export default class Export extends Component {
               Operations
             </p>
           </div>
-          <div class = "row">
+          <div class = "rowThirds">
             <div class = "columnThirds">
               <M_Chart1/>
             </div>
