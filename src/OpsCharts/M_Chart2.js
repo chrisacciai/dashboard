@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import firebase from '../firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
@@ -58,7 +58,6 @@ componentDidMount() {
         </div>
         <br/>
         <div id="MContainer">
-          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={this.state.items}
             margin={{top: 0, right: 55, left: 10, bottom: 5}}>
             <XAxis dataKey='month'/>
@@ -68,7 +67,6 @@ componentDidMount() {
               <LabelList dataKey="pv" position='bottom' formatter={toPercent}/>
             </Line>
             </LineChart>
-          </ResponsiveContainer>
         </div>
       </div>
     );

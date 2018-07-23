@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import firebase from '../firebase.js';
 
 export default class M_Chart1 extends Component {
@@ -55,7 +55,6 @@ export default class M_Chart1 extends Component {
             </div>
             <br/>
             <div id="MContainer">
-              <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 55, left: 10, bottom: 5}}>
                 <XAxis dataKey='month'/>
@@ -65,7 +64,6 @@ export default class M_Chart1 extends Component {
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
                 </LineChart>
-              </ResponsiveContainer>
             </div>
           </div>
         );
