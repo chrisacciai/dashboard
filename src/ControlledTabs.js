@@ -24,6 +24,7 @@ import F_Chart5 from './FinanceCharts/F_Chart5.js';
 import F_Chart6 from './FinanceCharts/F_Chart6.js';
 import F_Chart7 from './FinanceCharts/F_Chart7.js';
 import Export from './Export.js';
+import './App.css';
 
 export default class ControlledTabs extends Component {
     constructor(props, context) {
