@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ControlledTabs from './ControlledTabs';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './Navigation';
 
@@ -9,7 +7,7 @@ import LandingPage from './LandingPage';
 import SignInPage from './SignInPage';
 import HomePage from './HomePage';
 
-import * as routes from '../constants/routes';
+import * as routes from './Routes';
 
 const App = () =>
   <Router>

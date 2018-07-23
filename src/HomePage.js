@@ -1,4 +1,6 @@
 import React from 'react';
+import ControlledTabs from './ControlledTabs';
+import logo from './logo';
 
 const HomePage = () =>
     <div className="App">
