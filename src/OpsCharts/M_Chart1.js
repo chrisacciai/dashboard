@@ -53,17 +53,16 @@ export default class M_Chart1 extends Component {
             <div>
               <p class="aligncenter">Healthcare Average TAT</p>
             </div>
-            <br/>
-            <div id="MContainer">
-                <LineChart data={this.state.items}
-                margin={{top: 0, right: 55, left: 10, bottom: 5}}>
+            <div>
+              <LineChart data={this.state.items} width={250} height={200}
+                margin={{top: 10, right: 10, left: 10, bottom: 10}}>
                 <XAxis dataKey='month'/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
-                </LineChart>
+              </LineChart>
             </div>
           </div>
         );
