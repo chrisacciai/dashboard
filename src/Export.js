@@ -5,7 +5,6 @@ import M_Chart1 from './OpsCharts/M_Chart1.js';
 import M_Chart2 from './OpsCharts/M_Chart2.js';
 import M_Chart3 from './OpsCharts/M_Chart3.js';
 import {Button} from 'react-bootstrap';
-import './App.css';
 
 export default class Export extends Component {
   constructor(props) {

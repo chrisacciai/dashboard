@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import 'firebase/auth';
 
 const config = {
     apiKey: "AIzaSyDHWTCk0IZOjkzYD0jCbc2MnORfTvkuGPc",
@@ -8,5 +9,14 @@ const config = {
     storageBucket: "",
     messagingSenderId: "986991454126"
 };
-firebase.initializeApp(config);
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+  }
 export default firebase;
+
+const auth = firebase.auth();
+
+export {
+    auth,
+}
