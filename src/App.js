@@ -7,7 +7,7 @@ import LandingPage from './LandingPage';
 import SignInPage from './SignInPage';
 import HomePage from './HomePage';
 
-import * as routes from './Routes';
+import * as routes from './constants/routes';
 
 const App = () =>
   <Router>
