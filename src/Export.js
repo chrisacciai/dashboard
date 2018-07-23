@@ -15,7 +15,7 @@ export default class Export extends Component {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        widnow.open(imgData);
+        window.open(imgData);
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
