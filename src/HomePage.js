@@ -9,4 +9,4 @@ const HomePage = () =>
         <ControlledTabs/>
     </div>
 
-export default LandingPage;
+export default HomePage;
