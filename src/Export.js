@@ -18,7 +18,10 @@ export default class Export extends Component {
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
-        pdf.addImage(imgData, 'JPEG', 0, 0);
+        var width = pdf.internal.pageSize.width;
+        var height = pdf.internal.pageSize.height;
+
+        pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
         // pdf.output('dataurlnewwindow');
         pdf.save("dashboardMasterView.pdf");
       })
