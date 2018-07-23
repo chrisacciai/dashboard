@@ -2,22 +2,35 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ControlledTabs from './ControlledTabs';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './Navigation';
 
-class App extends Component {
+import LandingPage from './LandingPage';
+import SignInPage from './SignInPage';
+import HomePage from './HomePage';
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">[BETA] Dash</h1>
-        </header>
-        <ControlledTabs/>
-      </div>
-    );
-  }
-}
+import * as routes from '../constants/routes';
+
+const App = () =>
+  <Router>
+    <div>
+      <Navigation />
+
+      <hr/>
+
+      <Route
+        exact path={routes.LANDING}
+        component={() => <LandingPage />}
+      />
+      <Route
+        exact path={routes.SIGN_IN}
+        component={() => <SignInPage />}
+      />
+      <Route
+        exact path={routes.HOME}
+        component={() => <HomePage />}
+      />
+    </div>
+  </Router>
 
 export default App;
