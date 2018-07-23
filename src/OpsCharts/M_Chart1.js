@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import firebase from '../firebase/firebase.js';
+import firebase from '../firebase/Firebase.js';
 
 export default class M_Chart1 extends Component {
     constructor() {

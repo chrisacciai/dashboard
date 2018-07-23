@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase.js';
+import firebase from '../firebase/Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
