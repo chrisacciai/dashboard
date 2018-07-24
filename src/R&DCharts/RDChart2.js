@@ -201,7 +201,7 @@ export default class RD_Chart2 extends Component {
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 22}}>
                 <XAxis dataKey='month'/>
-                <YAxis />
+                <YAxis interval={0} tick={{angle: -45}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#8884d8" >
                   <LabelList dataKey='pv' position='top'/>
