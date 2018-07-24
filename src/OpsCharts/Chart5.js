@@ -185,7 +185,7 @@ export default class Chart5 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Analytical Reporting Errors</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>

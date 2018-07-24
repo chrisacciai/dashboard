@@ -102,7 +102,7 @@ export default class BD_Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Growth</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
