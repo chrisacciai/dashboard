@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/Firebase.js';
+import firebase from '../firebase/index.js';
 
 export default class Chart4 extends Component {
     constructor() {
