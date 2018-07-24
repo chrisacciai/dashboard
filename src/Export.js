@@ -4,6 +4,7 @@ import jsPDF from 'jspdf';
 import MChart1 from './OpsCharts/MChart1.js';
 import MChart2 from './OpsCharts/MChart2.js';
 import MChart3 from './OpsCharts/MChart3.js';
+import MChart4 from './OpsCharts/MChart4.js';
 import {Button} from 'react-bootstrap';
 
 export default class Export extends Component {
@@ -37,6 +38,7 @@ export default class Export extends Component {
           <div class = "rowThirds">
             <div class = "columnThirds">
               <MChart1/>
+              <MChart4/>
             </div>
             <div class = "columnThirds">
               <MChart2/>
