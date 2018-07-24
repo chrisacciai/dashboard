@@ -25,7 +25,9 @@
   margin-right: 'auto';
 }
 #logo {
-  margin-left: 15px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 #container {
