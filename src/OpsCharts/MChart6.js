@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import firebase from '../Firebase.js';
+
+const toPercent = (decimal, fixed = 2) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
+  
+  const toPercentAxis = (decimal, fixed = 1) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
 
 export default class MChart6 extends Component {
     constructor() {
