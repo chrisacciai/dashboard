@@ -32,7 +32,6 @@ export default class Export extends Component {
   render() {
     return (<div> <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
       <div id="divToPrint" className="mt4">
-        <div>
           <div class = "MasterHeader">
             <p className = "MasterText">
               Operations
@@ -66,10 +65,9 @@ export default class Export extends Component {
 
             </div>
             <div class = "columnThirds">
-            
+    
             </div>
           </div>
-        </div>
       </div>
     </div>);
   }
