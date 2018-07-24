@@ -1,5 +1,5 @@
-import * as auth from './Auth.js';
-import * as firebase from './Firebase.js';
+import * as auth from './auth';
+import * as firebase from './firebase';
 
 export {
   auth,

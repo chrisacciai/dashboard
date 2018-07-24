@@ -1,4 +1,4 @@
-import { auth } from './Firebase.js';
+import { auth } from './firebase';
 
 // Sign In
 export const doSignInWithEmailAndPassword = (email, password) =>
