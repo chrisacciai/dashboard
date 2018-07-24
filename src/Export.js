@@ -5,6 +5,8 @@ import MChart1 from './OpsCharts/MChart1.js';
 import MChart2 from './OpsCharts/MChart2.js';
 import MChart3 from './OpsCharts/MChart3.js';
 import MChart4 from './OpsCharts/MChart4.js';
+import MChart5 from './OpsCharts/MChart5.js';
+import MChart6 from './OpsCharts/MChart6.js';
 import {Button} from 'react-bootstrap';
 
 export default class Export extends Component {
@@ -42,9 +44,11 @@ export default class Export extends Component {
             </div>
             <div class = "columnThirds">
               <MChart2/>
+              <MChart5/>
             </div>
             <div class = "columnThirds">
               <MChart3/>
+              <MChart6/>
             </div>
           </div>
         </div>
