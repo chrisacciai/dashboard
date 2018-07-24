@@ -1,34 +1,23 @@
-import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Navigation from './Navigation';
+import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
+import {Button} from 'react-bootstrap';
+import ControlledTabs from './ControlledTabs';
 
-import LandingPage from './LandingPage';
-import SignInPage from './SignInPage';
-import HomePage from './HomePage';
+class App extends Component {
 
-import * as routes from './constants/Routes.js';
-
-const App = () =>
-  <Router>
-    <div>
-      <Navigation />
-
-      <hr/>
-
-      <Route
-        exact path={routes.LANDING}
-        component={() => <LandingPage />}
-      />
-      <Route
-        exact path={routes.SIGN_IN}
-        component={() => <SignInPage />}
-      />
-      <Route
-        exact path={routes.HOME}
-        component={() => <HomePage />}
-      />
-    </div>
-  </Router>
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">[BETA] Dash</h1>
+          <Button className="Button1" bsStyle="primary">Export as PDF</Button>
+        </header>
+        <ControlledTabs/>
+      </div>
+    );
+  }
+}
 
 export default App;

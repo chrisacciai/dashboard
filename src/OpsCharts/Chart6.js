@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import firebase from '../firebase';
 
 const toPercent = (decimal, fixed = 2) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
