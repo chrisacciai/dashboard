@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {PieChart, Pie, Cell, Legend} from 'recharts';
 import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE'];
@@ -40,7 +40,7 @@ export default class RDMChart1 extends Component {
         return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
     }
   }
-  
+
   render() {
     return (
       <div>
