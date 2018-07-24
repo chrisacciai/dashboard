@@ -55,6 +55,10 @@ export default class MChart4 extends Component {
             month: items.month10,
             pv: items.value10,
           });
+
+          this.setState({
+            items: newState,
+          });
         });
       }
 
