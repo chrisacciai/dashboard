@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">[BETA] Dash</h1>
           <Button className="Button1" bsStyle="primary">Export as PDF</Button>
         </header>
