@@ -9,6 +9,7 @@ import MChart5 from './OpsCharts/MChart5.js';
 import MChart6 from './OpsCharts/MChart6.js';
 import RDMChart1 from './R&DCharts/RDMChart1.js';
 import {Button} from 'react-bootstrap';
+import logo from './logo-dark.png'
 
 export default class Export extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class Export extends Component {
     return (<div> <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
         <div id="divToPrint" className="mt4">
           <div class="logo">
-          <img src="./images/picture.png"/>
+            <img src={logo} alt="logo"/>
           </div>
           <br/>
           <div class = "MasterHeader">
