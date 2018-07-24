@@ -224,8 +224,8 @@ export default class Chart6 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Aliquot % Rework</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                 <tbody>

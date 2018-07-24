@@ -216,8 +216,8 @@ export default class RD_Chart2 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Number</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                   <tbody>

@@ -136,8 +136,8 @@ export default class F_Chart6 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                   <tbody>

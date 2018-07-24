@@ -160,10 +160,10 @@ export default class F_Chart3 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Pay 1</th>
-                    <th>Pay 2</th>
-                    <th>Pay 3</th>
+                    <th>Time</th>
+                    <th>Data 1</th>
+                    <th>Data 2</th>
+                    <th>Data 3</th>
                   </tr>
                 </thead>
                   <tbody>

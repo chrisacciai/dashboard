@@ -143,8 +143,8 @@ export default class PMOChart extends Component {
               <Table striped bordered condensed hover>
               <thead>
                 <tr>
-                  <th>Metric</th>
-                  <th>Number</th>
+                  <th>Time</th>
+                  <th>Data</th>
                 </tr>
               </thead>
                 <tbody>
