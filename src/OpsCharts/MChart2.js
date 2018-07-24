@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import firebase from '../firebase';
+import firebase from '../firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
     return `${(decimal * 100).toFixed(fixed)}%`;

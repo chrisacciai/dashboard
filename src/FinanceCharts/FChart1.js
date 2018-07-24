@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase';
+import firebase from '../firebase.js';
 
 const toDollars = (integer) => {
   return "$" + integer.toLocaleString('en');
