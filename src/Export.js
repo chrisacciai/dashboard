@@ -51,6 +51,11 @@ export default class Export extends Component {
               <MChart6/>
             </div>
           </div>
+          <div class = "MasterHeader">
+            <p className = "MasterText">
+              Research &amp; Development
+            </p>
+          </div>
         </div>
       </div>
     </div>);
