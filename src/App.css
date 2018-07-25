@@ -35,10 +35,12 @@
   left: 20px;
   top: 20px;
 }
-#master-week {
+.master-week {
   position: absolute;
   left: 20px;
   top: 220px;
+  font-size: 1.4em;
+  color: #316ca4;
 }
 .logo-master {
   position: absolute;
@@ -144,7 +146,7 @@ p.aligncenter {
   margin-left: 76px;
   margin-right: 49px;
   height: 300px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 #table2 {
   margin-left: 76px;
