@@ -124,27 +124,32 @@ p.aligncenter {
 
 #table {
   width: 90%;
-  margin: auto;
+  margin-left: 76px;
+  margin-right: 49px;
   height: 300px;
 }
 #table2 {
   width: 90%;
-  margin: auto;
+  margin-left: 76px;
+  margin-right: 49px;
   height: 470px;
 }
 #table3 {
   width: 90%;
-  margin: auto;
+  margin-left: 76px;
+  margin-right: 49px;
   height: 500px;
 }
 #table4 {
   width:90%;
-  margin:auto;
+  margin-left: 76px;
+  margin-right: 49px;
   height: 180px;
 }
 #table5 {
   width:90%;
-  margin:auto;
+  margin-left: 76px;
+  margin-right: 49px;
   height: 210px;
 }
 
