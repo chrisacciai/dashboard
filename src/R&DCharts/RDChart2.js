@@ -210,7 +210,7 @@ export default class RD_Chart2 extends Component {
               </ResponsiveContainer>
             </div>
             <div>
-            <Panel bsStyle="info" id="note">
+            <Panel bsStyle="primary" id="note">
               <Panel.Heading >
                 <Panel.Title bsClass="panel-title" toggle>
                   Toggle Note
