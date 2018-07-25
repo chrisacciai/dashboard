@@ -29,7 +29,7 @@ export default class Chart4 extends Component {
           lineTenMonth: null,
           lineTenData: null,
           items: null,
-          noteText,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
