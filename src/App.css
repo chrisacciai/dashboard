@@ -42,6 +42,14 @@
   font-size: 1.4em;
   color: #316ca4;
 }
+
+.week-button {
+  position: absolute;
+  top: 95px;
+  right: 40px;
+  width: 40px;
+}
+
 .logo-master {
   position: absolute;
   left: 20px;
