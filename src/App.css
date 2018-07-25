@@ -44,13 +44,18 @@
 }
 
 #note {
-  margin-left: 90px;
-  margin-right: 60px;
+  margin-left: 80px;
+  margin-right: 50px;
+  height: 60px;
 }
 .panelHeader {
-  font-size: 14px;
+  font-size: 12px;
   text-align: left;
-  height: 20px;
+}
+.panelTitle {
+  position: relative;
+  font-size: 12px;
+  text-align: left;
 }
 
 .row:after {
