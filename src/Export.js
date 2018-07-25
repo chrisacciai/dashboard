@@ -7,7 +7,7 @@ import MChart3 from './OpsCharts/MChart3.js';
 import MChart4 from './OpsCharts/MChart4.js';
 import MChart5 from './OpsCharts/MChart5.js';
 import MChart6 from './OpsCharts/MChart6.js';
-import {Button} from 'react-bootstrap';
+import {Button, FormControl} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
 
@@ -21,7 +21,7 @@ export default class Export extends Component {
 
   handleChange(event) {
     this.setState({ [event.target.name] : event.target.value });
-    e.preventDefault();
+    event.preventDefault();
     const dataRef = firebase.database().ref('weekData');
     const monthDataPair = {
       week: this.state.week, 
