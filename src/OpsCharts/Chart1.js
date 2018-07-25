@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button, ToggleButton, Panel} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 export default class Chart1 extends Component {
@@ -131,7 +131,6 @@ export default class Chart1 extends Component {
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
-                  <ToggleButton>Show Note</ToggleButton>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button type="submit" bsStyle="primary" form="form1">Submit Data</Button> 
                 </ButtonGroup>
@@ -152,18 +151,20 @@ export default class Chart1 extends Component {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <Panel bsClass="note">
-            <Panel.Heading >
-              <Panel.Title toggle>
-                Toggle Note
-              </Panel.Title>
-            </Panel.Heading>
-            <Panel.Collapse>
-              <Panel.Body>
-                <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
-              </Panel.Body>
-            </Panel.Collapse>
+            <div>
+            <Panel >
+              <Panel.Heading >
+                <Panel.Title toggle>
+                  Toggle Note
+                </Panel.Title>
+              </Panel.Heading>
+              <Panel.Collapse>
+                <Panel.Body>
+                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                </Panel.Body>
+              </Panel.Collapse>
             </Panel>
+            </div>
             </p>
             <p style={ hidden }>
               <div id="table">
