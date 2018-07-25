@@ -23,7 +23,9 @@
   height: '210mm';
 }
 .logo {
-  float: left;
+  position: absolute;
+  top: 160px;
+  left: 16px;
 }
 
 #container {
@@ -46,14 +48,6 @@
   content: "";
   display: table;
   clear: both;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-  position: absolute;
-  top: 8px;
-  left: 16px;
 }
 
 .App-header {
