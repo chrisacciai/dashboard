@@ -25,7 +25,7 @@
   height: '210mm';
 }
 
-#export-header {
+#master-header {
   height: 200px;
   width: 100%;
 }
@@ -35,10 +35,10 @@
   left: 20px;
   top: 20px;
 }
-.logo-header {
+.logo-master {
   position: absolute;
   left: 20px;
-  top: 20px;
+  top: 400px;
 }
 
 #container {
@@ -81,7 +81,7 @@
   height: 150px;
   color: white;
 }
-.MasterHeader {
+.MasterTitle {
   height: 27px;
   width: 297mm;
   background-color: #316ca4;
