@@ -9,11 +9,37 @@ import MChart5 from './OpsCharts/MChart5.js';
 import MChart6 from './OpsCharts/MChart6.js';
 import {Button} from 'react-bootstrap';
 import logo from './logo-dark.png'
+import firebase from './Firebase.js';
 
 export default class Export extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      week: null,
+    };
   }
+
+  handleChange(event) {
+    this.setState({ [event.target.name] : event.target.value });
+    e.preventDefault();
+    const dataRef = firebase.database().ref('weekData');
+    const monthDataPair = {
+      week: this.state.week, 
+    }
+    dataRef.set(monthDataPair);
+  }
+
+  componentDidMount() {
+    const dataRef = firebase.database().ref('weekData');
+    dataRef.on('value', (snapshot) => {
+      let items = snapshot.val();
+
+      this.setState({
+        week: items.week,
+      });
+    });
+  }
+
 
   printDocument() {
     const input = document.getElementById('divToPrint');
@@ -30,13 +56,16 @@ export default class Export extends Component {
   }
 
   render() {
-    return (<div> <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
+    return (
+    <div>
+      <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
+      <FormControl type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
         <div id="divToPrint" className="mt4">
           <div id="master-header">
             <div class= "logo-master">
               <img src={logo} alt="logo"/>
             </div>
-              <h1 className="master-week">Corporate Dashboard Week of</h1>
+              <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
           </div>
           <br/>
           <div class = "MasterTitle">
