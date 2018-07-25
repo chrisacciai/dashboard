@@ -46,7 +46,8 @@
 .week-button {
   position: absolute;
   top: 95px;
-  right: 40px;
+  right: 120px;
+  width: 90px
 }
 
 .logo-master {
