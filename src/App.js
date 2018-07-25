@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ControlledTabs from './ControlledTabs';
+import logo from './logo-dark.png'
 
 class App extends Component {
 
@@ -8,7 +9,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">[BETA] Dash</h1>
+        <div class= "logo-header">
+            <img src={logo} alt="logo"/>
+        </div>
+          <h1 className="App-title">[BETA] Dashboard</h1>
         </header>
         <ControlledTabs/>
       </div>

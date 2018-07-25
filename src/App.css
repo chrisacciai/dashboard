@@ -6,10 +6,12 @@
   float: left;
   width: 50%;
 }
+
 .columnThirds {
   width: 99mm;
   float: left;
 }
+
 .rowThirds:after {
   content: "";
   display: table;
@@ -22,9 +24,21 @@
   width: '297mm';
   height: '210mm';
 }
+
+#export-header {
+  height: 200px;
+  width: 100%;
+}
+
 .logo {
-  position: relative;
-  left: -495px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.logo-header {
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 #container {
@@ -61,11 +75,11 @@
 }
 
 .App-header {
-  background-color: rgb(255, 249, 249);
+  background-color: #316ca4;
   position: relative;
   text-align: center;
   height: 150px;
-  color: rgb(12, 11, 11);
+  color: white;
 }
 .MasterHeader {
   height: 27px;
