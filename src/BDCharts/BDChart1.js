@@ -19,6 +19,7 @@ export default class BD_Chart1 extends Component {
           lineThreeMonth: null,
           lineThreeData: null,
           items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -53,6 +54,7 @@ export default class BD_Chart1 extends Component {
           month3: this.state.lineThreeMonth,
           value3: parseFloat(this.state.lineThreeData),
           value3: parseFloat(this.state.lineThreeData),
+          noteText: this.state.noteText,
           
         }
         dataRef.set(monthDataPair);
@@ -84,6 +86,7 @@ export default class BD_Chart1 extends Component {
             lineTwoData: items.value2,
             lineThreeMonth: items.month3,
             lineThreeData: items.value3,
+            noteText: items.noteText,
           });
         });
       }
@@ -128,16 +131,9 @@ export default class BD_Chart1 extends Component {
             </div>
             <div>
             <Panel bsStyle="primary" id="note">
-              <Panel.Heading >
-                <Panel.Title bsClass="panel-title" toggle>
-                  Toggle Note
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Collapse>
                 <Panel.Body>
-                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                  {this.state.noteText}
                 </Panel.Body>
-              </Panel.Collapse>
             </Panel>
             </div>
             </p>
@@ -179,6 +175,13 @@ export default class BD_Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

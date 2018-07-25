@@ -224,16 +224,9 @@ export default class Chart1 extends Component {
                 </div>
                 <div>
                   <Panel bsStyle="primary" id="note">
-                    <Panel.Heading >
-                      <Panel.Title bsClass="panel-title" toggle>
-                        Toggle Note
-                      </Panel.Title>
-                    </Panel.Heading>
-                    <Panel.Collapse>
                       <Panel.Body>
                         <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
                       </Panel.Body>
-                    </Panel.Collapse>
                   </Panel>
                 </div>
               </p>

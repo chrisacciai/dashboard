@@ -18,7 +18,8 @@ export default class HR_Chart1 extends Component {
           lineTwoData: null,
           lineThreeMonth: null,
           lineThreeData: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -50,6 +51,7 @@ export default class HR_Chart1 extends Component {
           value2: parseFloat(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
           value3: parseFloat(this.state.lineThreeData),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -125,16 +127,9 @@ export default class HR_Chart1 extends Component {
             </div>
             <div>
             <Panel bsStyle="primary" id="note">
-              <Panel.Heading >
-                <Panel.Title bsClass="panel-title" toggle>
-                  Toggle Note
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Collapse>
                 <Panel.Body>
-                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                  {this.state.noteText}
                 </Panel.Body>
-              </Panel.Collapse>
             </Panel>
             </div>
             </p>
@@ -176,6 +171,13 @@ export default class HR_Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

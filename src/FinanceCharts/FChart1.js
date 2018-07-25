@@ -33,7 +33,8 @@ export default class F_Chart1 extends Component {
           lineSixMonth: null,
           lineSixData1: null,
           lineSixData2: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -77,6 +78,7 @@ export default class F_Chart1 extends Component {
           month6: this.state.lineSixMonth,
           lineSixValue1: parseInt(this.state.lineSixData1),
           lineSixValue2: parseInt(this.state.lineSixData2),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -137,6 +139,7 @@ export default class F_Chart1 extends Component {
             lineSixMonth: items.month6,
             lineSixData1: items.lineSixValue1,
             lineSixData2: items.lineSixValue2,
+            noteText: items.noteText,
           });
         });
       }
@@ -184,16 +187,9 @@ export default class F_Chart1 extends Component {
             </div>
             <div>
             <Panel bsStyle="primary" id="note">
-              <Panel.Heading >
-                <Panel.Title bsClass="panel-title" toggle>
-                  Toggle Note
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Collapse>
                 <Panel.Body>
-                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                  {this.state.noteText}
                 </Panel.Body>
-              </Panel.Collapse>
             </Panel>
             </div>
             </p>
@@ -278,6 +274,13 @@ export default class F_Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

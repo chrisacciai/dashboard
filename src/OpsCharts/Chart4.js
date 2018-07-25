@@ -28,7 +28,8 @@ export default class Chart4 extends Component {
           lineNineData: null,
           lineTenMonth: null,
           lineTenData: null,
-          items: null
+          items: null,
+          noteText,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -74,6 +75,7 @@ export default class Chart4 extends Component {
           value9: parseInt(this.state.lineNineData),
           month10: this.state.lineTenMonth,
           value10: parseInt(this.state.lineTenData),
+          noteText: this.state.noteText,
           
         }
         dataRef.set(monthDataPair);
@@ -147,6 +149,7 @@ export default class Chart4 extends Component {
             lineNineData: items.value9,
             lineTenMonth: items.month10,
             lineTenData: items.value10,
+            noteText: items.noteText,
           });
         });
       }
@@ -191,16 +194,9 @@ export default class Chart4 extends Component {
             </div>
             <div>
             <Panel bsStyle="primary" id="note">
-              <Panel.Heading >
-                <Panel.Title bsClass="panel-title" toggle>
-                  Toggle Note
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Collapse>
                 <Panel.Body>
-                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                  {this.state.noteText}
                 </Panel.Body>
-              </Panel.Collapse>
             </Panel>
             </div>
             </p>
@@ -298,6 +294,13 @@ export default class Chart4 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>
