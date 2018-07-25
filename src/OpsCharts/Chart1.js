@@ -22,6 +22,7 @@ export default class Chart1 extends Component {
           lineSixData: null,
           items: null,
           noteText: null,
+          open: false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -152,12 +153,11 @@ export default class Chart1 extends Component {
               </ResponsiveContainer>
             </div>
             <div>
-            <Panel >
-              <Panel.Heading >
-                <Panel.Title toggle>
-                  Toggle Note
-                </Panel.Title>
-              </Panel.Heading>
+            <Button onclick={() => this.setState({ open: !this.state.open})}>
+              Toggle Note
+            </Button>
+            <br/>
+            <Panel expanded={this.state.open}>
               <Panel.Collapse>
                 <Panel.Body>
                   <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
