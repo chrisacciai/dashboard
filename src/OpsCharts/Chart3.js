@@ -158,7 +158,7 @@ export default class Chart3 extends Component {
             <div>
             <Panel bsStyle="primary" id="note">
                 <Panel.Body>
-                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                  {this.state.noteText}
                 </Panel.Body>
             </Panel>
             </div>
