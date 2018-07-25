@@ -46,7 +46,8 @@
 #note {
   margin-left: 76px;
   margin-right: 49px;
-  font-size: 16px;
+  font-size: 12px;
+  text-align: left;
 }
 .panel-title {
   font-size: 16px;
