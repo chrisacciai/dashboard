@@ -43,6 +43,16 @@
   padding: 10px;
 }
 
+.note {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.panelTitle {
+  font-size: 14px;
+  text-align: left;
+  height: 20px;
+}
+
 .row:after {
   content: "";
   display: table;
