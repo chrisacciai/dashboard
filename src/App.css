@@ -44,10 +44,12 @@
 }
 
 #note {
+  margin-top: 8px;
   margin-left: 76px;
   margin-right: 49px;
   font-size: 12px;
   text-align: left;
+  color: white;
 }
 .panel-title {
   font-size: 16px;

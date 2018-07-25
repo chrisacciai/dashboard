@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
@@ -122,6 +122,20 @@ export default class HR_Chart1 extends Component {
                 <ReferenceLine y={.4} stroke="#ff7300" strokeDasharray="3 3"/>
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="info" id="note">
+              <Panel.Heading >
+                <Panel.Title bsClass="panel-title" toggle>
+                  Toggle Note
+                </Panel.Title>
+              </Panel.Heading>
+              <Panel.Collapse>
+                <Panel.Body>
+                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                </Panel.Body>
+              </Panel.Collapse>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>

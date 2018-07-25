@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE'];
@@ -119,6 +119,20 @@ export default class RD_Chart1 extends Component {
                   <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </PieChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="info" id="note">
+              <Panel.Heading >
+                <Panel.Title bsClass="panel-title" toggle>
+                  Toggle Note
+                </Panel.Title>
+              </Panel.Heading>
+              <Panel.Collapse>
+                <Panel.Body>
+                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                </Panel.Body>
+              </Panel.Collapse>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>
