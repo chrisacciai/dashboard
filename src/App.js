@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import ControlledTabs from './ControlledTabs';
-import logo from './logo-dark.png'
+import logo from './logo-light.png'
 
 class App extends Component {
 
