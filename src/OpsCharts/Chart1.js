@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button, Alert} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, ToggleButton, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 export default class Chart1 extends Component {
@@ -21,7 +21,7 @@ export default class Chart1 extends Component {
           lineSixMonth: null,
           lineSixData: null,
           items: null,
-          alertText: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -59,6 +59,7 @@ export default class Chart1 extends Component {
           value5: parseInt(this.state.lineFiveData),
           month6: this.state.lineSixMonth,
           value6: parseInt(this.state.lineSixData),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -107,6 +108,7 @@ export default class Chart1 extends Component {
             lineFiveData: items.value5,
             lineSixMonth: items.month6,
             lineSixData: items.value6,
+            noteText: items.noteText,
           });
         });
       }
@@ -129,6 +131,7 @@ export default class Chart1 extends Component {
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
+                  <ToggleButton>Show Note</ToggleButton>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button type="submit" bsStyle="primary" form="form1">Submit Data</Button> 
                 </ButtonGroup>
@@ -149,9 +152,18 @@ export default class Chart1 extends Component {
                 </LineChart>
               </ResponsiveContainer>
             </div>
-            <Alert bsStyle="warning">
-              <p>This is an alert</p>
-            </Alert>
+            <Panel bsClass="note">
+            <Panel.Heading >
+              <Panel.Title toggle>
+                Toggle Note
+              </Panel.Title>
+            </Panel.Heading>
+            <Panel.Collapse>
+              <Panel.Body>
+                <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+              </Panel.Body>
+            </Panel.Collapse>
+            </Panel>
             </p>
             <p style={ hidden }>
               <div id="table">

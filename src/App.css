@@ -32,6 +32,11 @@
   width: 100%;
 }
 
+.note {
+  width: 80%;
+  height: 20px;
+}
+
 #chartFiveContainer {
   height: 319px;
   width:100%;
