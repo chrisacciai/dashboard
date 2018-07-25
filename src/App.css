@@ -23,9 +23,8 @@
   height: '210mm';
 }
 .logo {
-  position: absolute;
-  top: 160px;
-  left: 16px;
+  position: relative;
+  margin-left: 16px;
 }
 
 #container {
