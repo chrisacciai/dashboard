@@ -22,7 +22,7 @@
   width: '297mm';
   height: '210mm';
 }
-#logo {
+.logo {
   position: absolute;
   left: 0;
   top: 0;
