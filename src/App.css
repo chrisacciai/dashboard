@@ -123,22 +123,22 @@ p.aligncenter {
 
 #table {
   margin-left: 76px;
-  margin-right: 96px;
+  padding-right: 96px;
   height: 300px;
 }
 #table2 {
   margin-left: 76px;
-  margin-right: 96px;
+  padding-right: 96px;
   height: 470px;
 }
 #table3 {
   margin-left: 76px;
-  margin-right: 96px;
+  padding-right: 96px;
   height: 500px;
 }
 #table4 {
   margin-left: 76px;
-  margin-right: 96px;
+  padding-right: 96px;
   height: 180px;
 }
 #table5 {
