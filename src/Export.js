@@ -59,7 +59,7 @@ export default class Export extends Component {
     return (
     <div>
       <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
-      <FormControl type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
+      <FormControl bsStyle="small" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
         <div id="divToPrint" className="mt4">
           <div id="master-header">
             <div class= "logo-master">
