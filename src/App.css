@@ -44,10 +44,10 @@
 }
 
 #note {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 90px;
+  margin-right: 60px;
 }
-.panelTitle {
+.panelHeader {
   font-size: 14px;
   text-align: left;
   height: 20px;

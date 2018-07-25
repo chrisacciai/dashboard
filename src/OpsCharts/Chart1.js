@@ -153,8 +153,8 @@ export default class Chart1 extends Component {
             </div>
             <div>
             <Panel bsStyle="info" id="note">
-              <Panel.Heading>
-                <Panel.Title bsClass="panelTitle" toggle>
+              <Panel.Heading bsClass="panelHeader">
+                <Panel.Title toggle>
                   Toggle Note
                 </Panel.Title>
               </Panel.Heading>
