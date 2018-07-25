@@ -152,7 +152,7 @@ export default class Chart1 extends Component {
               </ResponsiveContainer>
             </div>
             <div>
-            <Panel bsStyle="info" bsClass="note">
+            <Panel bsStyle="info" >
               <Panel.Heading>
                 <Panel.Title bsClass="panelTitle" toggle>
                   Toggle Note
