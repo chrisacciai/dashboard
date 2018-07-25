@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, Alert} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 export default class Chart1 extends Component {
@@ -20,7 +20,8 @@ export default class Chart1 extends Component {
           lineFiveData: null,
           lineSixMonth: null,
           lineSixData: null,
-          items: null
+          items: null,
+          alertText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -148,6 +149,9 @@ export default class Chart1 extends Component {
                 </LineChart>
               </ResponsiveContainer>
             </div>
+            <Alert bsStyle="warning">
+              <p>This is an alert</p>
+            </Alert>
             </p>
             <p style={ hidden }>
               <div id="table">

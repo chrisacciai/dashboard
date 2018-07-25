@@ -57,23 +57,6 @@ export default class Export extends Component {
               <MChart6/>
             </div>
           </div>
-          <br/>
-          <div class = "MasterHeader">
-            <p className = "MasterText">
-              Research &amp; Development
-            </p>
-          </div>
-          <div class = "rowThirds">
-            <div class = "columnThirds">
-              <RDMChart1/>
-            </div>
-            <div class = "columnThirds">
-
-            </div>
-            <div class = "columnThirds">
-    
-            </div>
-          </div>
         </div>
     </div>);
   }
