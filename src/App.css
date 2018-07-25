@@ -50,6 +50,7 @@
   font-size: 12px;
   text-align: left;
   color: white;
+  background-color:#488AC7;
 }
 .panel-title {
   font-size: 16px;
@@ -151,6 +152,11 @@ p.aligncenter {
   margin-left: 76px;
   margin-right: 49px;
   height: 210px;
+}
+
+.submitButton {
+  background-color: #488AC7;
+  color: black;
 }
 
 .res-block {
