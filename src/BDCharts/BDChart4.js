@@ -117,10 +117,10 @@ export default class BD_Chart4 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#8884d8">
+                <Bar dataKey="pv" fill="#82ca9d">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                <Bar dataKey="uv" fill="#82ca9d">
+                <Bar dataKey="uv" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toPercent} />
                 </Bar>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" />

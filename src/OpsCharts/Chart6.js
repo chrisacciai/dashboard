@@ -214,7 +214,7 @@ export default class Chart6 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Area type="monotone" dataKey="pv" stroke="#82ca9d" fill="#8884d8">
+                <Area type="monotone" dataKey="pv" stroke="#82ca9d" fill="#82ca9d">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Area>
                 </AreaChart>

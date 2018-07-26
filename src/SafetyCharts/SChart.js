@@ -206,7 +206,7 @@ export default class S_Chart extends Component {
                 <XAxis dataKey='month' tick={{angle: -45}} tickMargin='17' interval={0}/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#82ca9d" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom'/>
                 </Line>
                 </LineChart>

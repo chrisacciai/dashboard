@@ -118,7 +118,7 @@ export default class HR_Chart1 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#8884d8">
+                <Bar dataKey="pv" fill="#82ca9d">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
                 <ReferenceLine y={.4} stroke="#ff7300" strokeDasharray="3 3"/>
