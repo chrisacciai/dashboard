@@ -7,7 +7,7 @@ import MChart3 from './OpsCharts/MChart3.js';
 import MChart4 from './OpsCharts/MChart4.js';
 import MChart5 from './OpsCharts/MChart5.js';
 import MChart6 from './OpsCharts/MChart6.js';
-import {Button, FormControl} from 'react-bootstrap';
+import {Button, FormControl, ButtonGroup} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
 
@@ -21,10 +21,13 @@ export default class Export extends Component {
 
   handleChange(event) {
     this.setState({ [event.target.name] : event.target.value });
-    event.preventDefault();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
     const dataRef = firebase.database().ref('weekData');
     const monthDataPair = {
-      week: this.state.week, 
+      week: this.state.week,
     }
     dataRef.set(monthDataPair);
   }
@@ -50,7 +53,7 @@ export default class Export extends Component {
           orientation: 'landscape'
         });
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.save('dataurlnewwindow');
+        pdf.save('corporateDashboardPDF');
       })
     ;
   }
@@ -58,8 +61,13 @@ export default class Export extends Component {
   render() {
     return (
     <div>
-      <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
-      <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
+      <ButtonGroup>
+        <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
+        <Button className="Button2" type="submit" bsStyle="primary" form="weekForm">Refresh Date</Button>
+      </ButtonGroup>
+      <form id="weekForm" onSubmit={this.handleSubmit}>
+        <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
+      </form>
         <div id="divToPrint" className="mt4">
           <div id="master-header">
             <div class= "logo-master">

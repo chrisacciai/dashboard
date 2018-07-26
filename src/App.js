@@ -12,7 +12,7 @@ class App extends Component {
         <div class= "logo">
             <img src={logo} alt="logo"/>
         </div>
-          <h1 className="App-title">[BETA] Dashboard</h1>
+          <h1 className="App-title">[BETA] Corporate Dashboard</h1>
         </header>
         <ControlledTabs/>
       </div>
