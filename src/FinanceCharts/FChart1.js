@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {Table, FormControl, ButtonGroup, Button, Panel, Legend} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
-  return "$" + integer.toLocaleString('en');
+  return "$" + (integer/1000000).toFixed(2) + "M";
 }
 const toMil = (integer) => {
-  return "$" + integer.toString()[0] + " Mil";
+  return "$" + integer.toString()[0] + " M";
 }
 
 export default class F_Chart1 extends Component {
@@ -33,7 +33,8 @@ export default class F_Chart1 extends Component {
           lineSixMonth: null,
           lineSixData1: null,
           lineSixData2: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -77,6 +78,7 @@ export default class F_Chart1 extends Component {
           month6: this.state.lineSixMonth,
           lineSixValue1: parseInt(this.state.lineSixData1),
           lineSixValue2: parseInt(this.state.lineSixData2),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -137,6 +139,7 @@ export default class F_Chart1 extends Component {
             lineSixMonth: items.month6,
             lineSixData1: items.lineSixValue1,
             lineSixData2: items.lineSixValue2,
+            noteText: items.noteText,
           });
         });
       }
@@ -155,12 +158,12 @@ export default class F_Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form14">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form14">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -170,17 +173,25 @@ export default class F_Chart1 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
-                <XAxis dataKey='month'/>
+                <XAxis dataKey='month' padding={{left: 25}}/>
                 <YAxis tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' formatter={toDollars} />
                 </Line>
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </LineChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>
@@ -189,9 +200,9 @@ export default class F_Chart1 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>One</th>
-                    <th>Two</th>
+                    <th>Time</th>
+                    <th>Data 1</th>
+                    <th>Data 2</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -264,6 +275,13 @@ export default class F_Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

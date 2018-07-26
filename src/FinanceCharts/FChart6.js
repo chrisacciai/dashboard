@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 export default class F_Chart6 extends Component {
     constructor() {
@@ -16,7 +16,8 @@ export default class F_Chart6 extends Component {
           lineThreeData: null,
           lineFourMonth: null,
           lineFourData: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -50,6 +51,7 @@ export default class F_Chart6 extends Component {
           value3: parseFloat(this.state.lineThreeData),
           month4: this.state.lineFourMonth,
           value4: parseFloat(this.state.lineFourData),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -86,6 +88,7 @@ export default class F_Chart6 extends Component {
             lineThreeData: items.value3,
             lineFourMonth: items.month4,
             lineFourData: items.value4,
+            noteText: items.noteText,
           });
         });
       }
@@ -104,12 +107,12 @@ export default class F_Chart6 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Healthcare Average TAT</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form19">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form19">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -119,25 +122,32 @@ export default class F_Chart6 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
-                <XAxis dataKey='month'/>
+                <XAxis dataKey='month' padding={{left: 25}}/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
                 <ReferenceLine y={3.5} stroke="#ff7300" strokeDasharray="3 3"/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
+            </div>
             </p>
             <p style={ hidden }>
-              <div id="table">
+              <div id="table5">
                 <form id="form19" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Average TAT</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -176,6 +186,13 @@ export default class F_Chart6 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

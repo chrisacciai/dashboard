@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, BarChart, Bar, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
@@ -18,7 +18,8 @@ export default class HR_Chart1 extends Component {
           lineTwoData: null,
           lineThreeMonth: null,
           lineThreeData: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -50,6 +51,7 @@ export default class HR_Chart1 extends Component {
           value2: parseFloat(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
           value3: parseFloat(this.state.lineThreeData),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -98,12 +100,12 @@ export default class HR_Chart1 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Metric</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form9">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form9">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -116,12 +118,19 @@ export default class HR_Chart1 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#8884d8">
+                <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
                 <ReferenceLine y={.4} stroke="#ff7300" strokeDasharray="3 3"/>
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>
@@ -130,8 +139,8 @@ export default class HR_Chart1 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Amount</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -162,6 +171,13 @@ export default class HR_Chart1 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

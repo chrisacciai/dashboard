@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 export default class RD_Chart2 extends Component {
     constructor() {
@@ -32,7 +32,8 @@ export default class RD_Chart2 extends Component {
           lineElevenData: null,
           lineTwelveMonth: null,
           lineTwelveData: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -82,6 +83,7 @@ export default class RD_Chart2 extends Component {
           value11: parseInt(this.state.lineElevenData),
           month12: this.state.lineTwelveMonth,
           value12: parseInt(this.state.lineTwelveData),
+          noteText: this.state.noteText,
           
         }
         dataRef.set(monthDataPair);
@@ -167,6 +169,7 @@ export default class RD_Chart2 extends Component {
             lineElevenData: items.value11,
             lineTwelveMonth: items.month12,
             lineTwelveData: items.value12,
+            noteText: items.noteText,
           });
         });
       }
@@ -185,12 +188,12 @@ export default class RD_Chart2 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Metric</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form13">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form13">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -200,14 +203,21 @@ export default class RD_Chart2 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 22}}>
-                <XAxis dataKey='month'/>
+                <XAxis dataKey='month' interval={0} tick={{angle: -45}} tickMargin='12'/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#8884d8" >
+                <Bar dataKey="pv" fill="#00C49F" >
                   <LabelList dataKey='pv' position='top'/>
                 </Bar>
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>
@@ -216,8 +226,8 @@ export default class RD_Chart2 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Number</th>
+                    <th>Time</th>
+                    <th>Data</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -320,6 +330,13 @@ export default class RD_Chart2 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

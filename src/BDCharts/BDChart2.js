@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
   return `${(decimal * 100).toFixed(fixed)}%`;
@@ -24,7 +24,8 @@ export default class BD_Chart2 extends Component {
           lineFourMonth: null,
           lineFourData1: null,
           lineFourData2: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -62,6 +63,7 @@ export default class BD_Chart2 extends Component {
           month4: this.state.lineFourMonth,
           lineFourValue1: parseFloat(this.state.lineFourData1),
           lineFourValue2: parseFloat(this.state.lineFourData2),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -106,6 +108,7 @@ export default class BD_Chart2 extends Component {
             lineFourMonth: items.month4,
             lineFourData1: items.lineFourValue1,
             lineFourData2: items.lineFourValue2,
+            noteText: items.noteText,
           });
         });
       }
@@ -124,12 +127,12 @@ export default class BD_Chart2 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Pay</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form8">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form8">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -142,14 +145,22 @@ export default class BD_Chart2 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#8884d8">
+                <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                <Bar dataKey="uv" fill="#82ca9d">
+                <Bar dataKey="uv" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toPercent} />
                 </Bar>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
             </div>
             </p>
             <p style={ hidden }>
@@ -158,9 +169,9 @@ export default class BD_Chart2 extends Component {
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Pay 1</th>
-                    <th>Pay 2</th>
+                    <th>Time</th>
+                    <th>Data 1</th>
+                    <th>Data 2</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -211,6 +222,13 @@ export default class BD_Chart2 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>

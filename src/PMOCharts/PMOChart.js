@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
@@ -18,7 +18,8 @@ export default class PMOChart extends Component {
         lineThreeData: null,
         lineFourMonth: null,
         lineFourData: null,
-        items: null
+        items: null,
+        noteText: null, 
       };
 
       this.handleChange = this.handleChange.bind(this);
@@ -52,6 +53,7 @@ export default class PMOChart extends Component {
         value3: parseInt(this.state.lineThreeData),
         month4: this.state.lineFourMonth,
         value4: parseInt(this.state.lineFourData),
+        noteText: this.state.noteText,
       }
       dataRef.set(monthDataPair);
     }
@@ -94,6 +96,7 @@ export default class PMOChart extends Component {
           lineThreeData: items.value3,
           lineFourMonth: items.month4,
           lineFourData: items.value4,
+          noteText: items.noteText,
         });
       });
     }
@@ -112,12 +115,12 @@ export default class PMOChart extends Component {
         <div>
           <br/>
           <div>
-            <p class="alignleft">Metric</p>
+            <p class="alignleft">Example Metric</p>
             <p class="alignright">
               <ButtonGroup bsSize="xs">
                 <Button onClick={this.show.bind(this)}>Chart View</Button>
                 <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                <Button type="submit" bsStyle="primary" form="form21">Submit Data</Button> 
+                <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form21">Submit Data</Button> 
               </ButtonGroup>
             </p>
           </div>
@@ -136,15 +139,22 @@ export default class PMOChart extends Component {
               </PieChart>
             </ResponsiveContainer>
           </div>
+          <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
+            </div>
           </p>
           <p style={ hidden }>
-            <div id="table4">
+            <div id="table5">
               <form id="form21" onSubmit={this.handleSubmit}>
               <Table striped bordered condensed hover>
               <thead>
                 <tr>
-                  <th>Metric</th>
-                  <th>Number</th>
+                  <th>Time</th>
+                  <th>Data</th>
                 </tr>
               </thead>
                 <tbody>
@@ -184,6 +194,13 @@ export default class PMOChart extends Component {
               </Table>
               </form>
               </div>
+              <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
+                </div>
             </p>
         </div>
       );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button} from 'react-bootstrap';
-import firebase from '../firebase/firebase';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid, LabelList} from 'recharts';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
   return "$" + integer.toLocaleString('en');
@@ -21,7 +21,8 @@ export default class F_Chart7 extends Component {
           lineThreeMonth: null,
           lineThreeData1: null,
           lineThreeData2: null,
-          items: null
+          items: null,
+          noteText: null,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -56,6 +57,7 @@ export default class F_Chart7 extends Component {
           month3: this.state.lineThreeMonth,
           lineThreeValue1: parseInt(this.state.lineThreeData1),
           lineThreeValue2: parseInt(this.state.lineThreeData2),
+          noteText: this.state.noteText,
         }
         dataRef.set(monthDataPair);
       }
@@ -92,6 +94,7 @@ export default class F_Chart7 extends Component {
             lineThreeMonth: items.month3,
             lineThreeData1: items.lineThreeValue1,
             lineThreeData2: items.lineThreeValue2,
+            noteText: items.noteText,
           });
         });
       }
@@ -110,12 +113,12 @@ export default class F_Chart7 extends Component {
           <div>
             <br/>
             <div>
-              <p class="alignleft">Pay</p>
+              <p class="alignleft">Example Metric</p>
               <p class="alignright">
                 <ButtonGroup bsSize="xs">
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
-                  <Button type="submit" bsStyle="primary" form="form20">Submit Data</Button> 
+                  <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form20">Submit Data</Button> 
                 </ButtonGroup>
               </p>
             </div>
@@ -128,25 +131,33 @@ export default class F_Chart7 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" stackId="a" fill="#8884d8">
+                <Bar dataKey="pv" stackId="a" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toDollars}/>
                 </Bar>
-                <Bar dataKey="uv" stackId="a" fill="#82ca9d">
-                  <LabelList dataKey='uv' position='bottom' formatter={toDollars}/>
+                <Bar dataKey="uv" stackId="a" fill="#0088FE">
+                  <LabelList dataKey='uv' position='top' formatter={toDollars}/>
                 </Bar>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
+            <div>
+            <Panel bsStyle="primary" id="note">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
+            </div>
             </p>
             <p style={ hidden }>
-              <div id="table5">
+              <div id="table4">
                 <form id="form20" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
                   <tr>
-                    <th>Month</th>
-                    <th>Pay 1</th>
-                    <th>Pay 2</th>
+                    <th>Time</th>
+                    <th>Data 1</th>
+                    <th>Data 2</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -186,6 +197,13 @@ export default class F_Chart7 extends Component {
                   </tbody>
                 </Table>
                 </form>
+                </div>
+                <div>
+                  <Panel bsStyle="primary" id="note">
+                      <Panel.Body>
+                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
+                      </Panel.Body>
+                  </Panel>
                 </div>
               </p>
           </div>
