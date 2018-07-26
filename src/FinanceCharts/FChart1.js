@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button, Panel, Legend} from 'react-bootstrap';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
+import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
