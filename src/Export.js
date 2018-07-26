@@ -61,13 +61,6 @@ export default class Export extends Component {
       <Button className="Button1" onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
       <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
         <div id="divToPrint" className="mt4">
-          <div id="master-header">
-            <div class= "logo-master">
-              <img src={logo} alt="logo"/>
-            </div>
-              <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
-          </div>
-          <br/>
           <div class = "MasterTitle">
             <p className = "MasterText">
               Operations
