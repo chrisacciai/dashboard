@@ -141,7 +141,7 @@ export default class F_Chart6 extends Component {
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table">
+              <div id="table5">
                 <form id="form19" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>

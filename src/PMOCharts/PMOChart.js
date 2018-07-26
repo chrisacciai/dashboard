@@ -148,7 +148,7 @@ export default class PMOChart extends Component {
             </div>
           </p>
           <p style={ hidden }>
-            <div id="table4">
+            <div id="table5">
               <form id="form21" onSubmit={this.handleSubmit}>
               <Table striped bordered condensed hover>
               <thead>

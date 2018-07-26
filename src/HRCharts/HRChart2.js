@@ -128,7 +128,7 @@ export default class HR_Chart2 extends Component {
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table4">
+              <div id="table6">
                 <form id="form10" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>

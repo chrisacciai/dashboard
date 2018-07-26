@@ -132,7 +132,7 @@ export default class RD_Chart1 extends Component {
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table4">
+              <div id="table6">
                 <form id="form12" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>
