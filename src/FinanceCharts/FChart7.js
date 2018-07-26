@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -137,6 +137,7 @@ export default class F_Chart7 extends Component {
                 <Bar dataKey="uv" stackId="a" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toDollars}/>
                 </Bar>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </BarChart>
               </ResponsiveContainer>
             </div>

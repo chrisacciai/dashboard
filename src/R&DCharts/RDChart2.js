@@ -203,8 +203,8 @@ export default class RD_Chart2 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 22}}>
-                <XAxis dataKey='month'/>
-                <YAxis interval={0} tick={{angle: -45}}/>
+                <XAxis dataKey='month' interval={0} tick={{angle: -45}}/>
+                <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#00C49F" >
                   <LabelList dataKey='pv' position='top'/>
