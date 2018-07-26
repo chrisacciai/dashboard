@@ -18,21 +18,11 @@ export default class Export extends Component {
       week: null,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   handleChange(event) {
     this.setState({ [event.target.name] : event.target.value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const dataRef = firebase.database().ref('weekData');
-    const monthDataPair = {
-      week: this.state.week,
-    }
-    dataRef.set(monthDataPair);
   }
 
   componentDidMount() {
