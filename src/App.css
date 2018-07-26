@@ -88,6 +88,17 @@
   margin-bottom: 0px;
   height: 30px;
   text-align: left;
+}
+
+.inline {
+  display: inline-block;
+  margin: 1em;
+}
+.wrap {
+  display: table;
+}
+.wrap p {
+  display: table-cell;
   vertical-align: middle;
 }
 
