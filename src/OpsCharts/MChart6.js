@@ -88,10 +88,10 @@ export default class MChart6 extends Component {
             <div>
                 <AreaChart data ={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: 0, bottom: 10}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
+                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 25}}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Area type="monotone" dataKey="pv" stroke="#00C49F" fill="#8884d8">
+                <Area type="monotone" dataKey="pv" dot fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} fontSize='11' />
                 </Area>
                 </AreaChart>
