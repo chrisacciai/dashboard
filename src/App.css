@@ -87,14 +87,14 @@
 
 .inline {
   display: inline-block;
+}
+.wrap {
+  display: table;
   margin-top: 0px;
   margin-left: 20px;
   margin-right: 10px;
   height: 25px;
   margin-bottom: 0px;
-}
-.wrap {
-  display: table;
 }
 .wrap p {
   display: table-cell;
