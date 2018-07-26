@@ -70,7 +70,7 @@ export default class MChart1 extends Component {
             <div class="inline">
               <div class="wrap">
                 <Panel bsStyle="primary" id="Mnote">
-                    <Panel.Body>
+                    <Panel.Body bsClass="vertical">
                         <p>{this.state.noteText}</p>
                     </Panel.Body>
                 </Panel>

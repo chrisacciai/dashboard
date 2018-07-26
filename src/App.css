@@ -125,6 +125,10 @@
   left: 20px;
 }
 
+.vertical {
+  vertical-align: middle;
+}
+
 .Button1 {
   position: absolute;
   top: 95px;
