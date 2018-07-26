@@ -62,8 +62,8 @@ export default class Export extends Component {
     return (
     <div>
       <ButtonGroup className="Button1">
-        <Button onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
         <Button type="submit" bsStyle="primary" form="weekForm">Refresh Date</Button>
+        <Button onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
       </ButtonGroup>
       <form id="weekForm" onSubmit={this.handleSubmit}>
         <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
