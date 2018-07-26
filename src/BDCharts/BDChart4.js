@@ -136,7 +136,7 @@ export default class BD_Chart4 extends Component {
             </div>
             </p>
             <p style={ hidden }>
-              <div id="table4">
+              <div id="table6">
                 <form id="form" onSubmit={this.handleSubmit}>
                 <Table striped bordered condensed hover>
                 <thead>

@@ -171,19 +171,26 @@ p.aligncenter {
 #table3 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 560px;
+  height: 570px;
   margin-bottom: 30px;
 }
 #table4 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 200px;
+  height: 180px;
   margin-bottom: 20px
 }
 #table5 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 180px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+#table6 {
+  margin-left:76px;
+  margin-right: 49px;
+  height: 100px;
+  margin-bottom: 20px;
 }
 
 .res-block {
