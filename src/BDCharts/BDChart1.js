@@ -47,12 +47,9 @@ export default class BD_Chart1 extends Component {
         const monthDataPair = {
           month1: this.state.lineOneMonth,
           value1: parseFloat(this.state.lineOneData),
-          value1: parseFloat(this.state.lineOneData),
           month2: this.state.lineTwoMonth,
           value2: parseFloat(this.state.lineTwoData),
-          value2: parseFloat(this.state.lineTwoData),
           month3: this.state.lineThreeMonth,
-          value3: parseFloat(this.state.lineThreeData),
           value3: parseFloat(this.state.lineThreeData),
           noteText: this.state.noteText,
           
