@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
-import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
+import {Table, FormControl, ButtonGroup, Button, Panel, Legend} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
@@ -182,6 +182,7 @@ export default class F_Chart1 extends Component {
                 <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </LineChart>
               </ResponsiveContainer>
             </div>
