@@ -87,18 +87,7 @@
   margin-right: 25px;
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.inline {
-  display: inline-block;
-}
-.wrap {
-  display: table;
-  height: 25px;
-}
-.wrap p {
-  display: table-cell;
-  vertical-align: middle;
+  max-height: 25px;
 }
 
 .panel-title {
