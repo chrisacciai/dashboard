@@ -4,7 +4,7 @@ import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
-  return "$" + (integer/1000000).toString()[0] + "M";
+  return "$" + (integer/1000000).toFixed(2) + "M";
 }
 const toMil = (integer) => {
   return "$" + integer.toString()[0] + " M";

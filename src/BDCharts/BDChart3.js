@@ -206,7 +206,7 @@ export default class BD_Chart3 extends Component {
                 <XAxis dataKey='month' padding={{left: 25}}/>
                 <YAxis/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#82ca9d" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='top'/>
                 </Line>
                 </LineChart>

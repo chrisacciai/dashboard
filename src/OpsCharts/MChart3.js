@@ -63,7 +63,7 @@ export default class MChart3 extends Component {
                 <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 25}}/>
                 <YAxis tickFormatter={toPercent} tick={{fontSize: 11}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="82ca9d" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#82ca9d" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' formatter={toPercent} fontSize='11' />
                 </Line>
               </LineChart>
