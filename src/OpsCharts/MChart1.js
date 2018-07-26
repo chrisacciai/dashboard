@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 export default class MChart1 extends Component {
     constructor() {
         super();
         this.state = {
-          items: null
+          items: null,
+          noteText: "",
         };
       }	
 
@@ -42,6 +44,7 @@ export default class MChart1 extends Component {
 
           this.setState({
             items: newState,
+            noteText: items.noteText,
           });
         });
       }
@@ -63,6 +66,13 @@ export default class MChart1 extends Component {
                   <LabelList dataKey='pv' position='bottom' fontSize='11' />
                 </Line>
               </LineChart>
+            </div>
+            <div>
+            <Panel bsStyle="primary" id="Mnote">
+                <Panel.Body>
+                  {this.state.noteText}
+                </Panel.Body>
+            </Panel>
             </div>
           </div>
         );

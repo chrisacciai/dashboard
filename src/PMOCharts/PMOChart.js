@@ -19,7 +19,7 @@ export default class PMOChart extends Component {
         lineFourMonth: null,
         lineFourData: null,
         items: null,
-        noteText: null, 
+        noteText: "", 
       };
 
       this.handleChange = this.handleChange.bind(this);
