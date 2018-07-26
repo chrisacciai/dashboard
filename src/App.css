@@ -83,6 +83,10 @@
 #Mnote {
   font-size: 11px;
   text-align: left;
+  margin-left: 60px;
+  margin-right: 25px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .inline {
@@ -90,11 +94,7 @@
 }
 .wrap {
   display: table;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 10px;
   height: 25px;
-  margin-bottom: 0px;
 }
 .wrap p {
   display: table-cell;
