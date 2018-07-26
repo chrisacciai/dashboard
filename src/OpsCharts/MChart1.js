@@ -67,16 +67,14 @@ export default class MChart1 extends Component {
                 </Line>
               </LineChart>
             </div>
-            <div >
-            <Panel bsStyle="primary" id="Mnote">
-                <Panel.Body>
-                <div class="inline">
-                  <div class="wrap">
-                    <p>{this.state.noteText}</p>
-                  </div>
-                </div>
-                </Panel.Body>
-            </Panel>
+            <div class="inline">
+              <div class="wrap">
+                <Panel bsStyle="primary" id="Mnote">
+                    <Panel.Body>
+                        <p>{this.state.noteText}</p>
+                    </Panel.Body>
+                </Panel>
+              </div>
             </div>
           </div>
         );
