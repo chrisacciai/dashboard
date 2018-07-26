@@ -59,7 +59,7 @@ componentDidMount() {
         <div>
           <LineChart data={this.state.items} width={375} height={200}
             margin={{top: 10, right: 30, left: 0, bottom: 10}}>
-            <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 25}}/>
+            <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
             <YAxis tickFormatter={toPercent} tick={{fontSize: 11}}/>
             <CartesianGrid strokeDasharray="3 3"/>
             <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>

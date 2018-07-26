@@ -82,7 +82,9 @@
 
 #Mnote {
   margin-top: 8px;
-  width: 375px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 11px;
 }
 
 .panel-title {
