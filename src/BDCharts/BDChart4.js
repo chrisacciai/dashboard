@@ -115,7 +115,7 @@ export default class BD_Chart4 extends Component {
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
                 <XAxis dataKey='month'/>
-                <YAxis tickFormatter={toPercent}/>
+                <YAxis tickFormatter={toPercent} padding={{top: 25}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />

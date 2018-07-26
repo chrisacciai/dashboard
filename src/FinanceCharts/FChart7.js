@@ -132,7 +132,7 @@ export default class F_Chart7 extends Component {
                 <YAxis tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" stackId="a" fill="#00C49F">
-                  <LabelList dataKey='pv' position='top' formatter={toDollars}/>
+                  <LabelList dataKey='pv' position='bottom' formatter={toDollars}/>
                 </Bar>
                 <Bar dataKey="uv" stackId="a" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toDollars}/>

@@ -128,7 +128,7 @@ export default class F_Chart6 extends Component {
                 <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
-                <ReferenceLine y={3.5} stroke="#ff7300" strokeDasharray="3 3"/>
+                <ReferenceLine y={3.5} stroke="red" strokeDasharray="3 3"/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
