@@ -91,7 +91,7 @@ export default class MChart6 extends Component {
                 <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Area type="monotone" dataKey="pv" stroke="#8884d8" fill="#8884d8">
+                <Area type="monotone" dataKey="pv" stroke="#00C49F" fill="#8884d8">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} fontSize='11' />
                 </Area>
                 </AreaChart>

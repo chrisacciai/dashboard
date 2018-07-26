@@ -83,7 +83,7 @@ export default class MChart5 extends Component {
                 <XAxis dataKey='month' tick={{fontSize: 11, angle: -45}} interval={0} tickMargin='12'/>
                 <YAxis tick={{fontSize: 11}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' fontSize='11' />
                 </Line>
                 </LineChart>

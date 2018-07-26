@@ -134,7 +134,7 @@ export default class F_Chart4 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#82ca9d">
+                <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toDollars}/>
                 </Bar>
                 </BarChart>

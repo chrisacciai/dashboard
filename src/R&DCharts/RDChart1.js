@@ -3,7 +3,7 @@ import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
-const COLORS = ['#82ca9d','#0088FE'];
+const COLORS = ['#00C49F','#0088FE'];
 
 const toDollars = (item) => {
   return "$" + item.value.toLocaleString('en');
@@ -113,7 +113,7 @@ export default class RD_Chart1 extends Component {
             <div id="container">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={toDollars}>
+                  <Pie data={this.state.items} outerRadius={100} isAnimationActive={false} label={toDollars}>
                     if
                     {
           	          this.mapToColor()

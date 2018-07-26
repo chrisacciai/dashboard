@@ -3,7 +3,7 @@ import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
-const COLORS = ['#82ca9d','#0088FE'];
+const COLORS = ['#00C49F','#0088FE'];
 
 export default class HR_Chart2 extends Component {
     constructor() {
