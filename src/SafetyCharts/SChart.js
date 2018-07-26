@@ -203,7 +203,7 @@ export default class S_Chart extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 22}}>
-                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='17' interval={0}/>
+                <XAxis dataKey='month' tick={{angle: -45}} tickMargin='17' interval={0} padding={{left: 25}}/>
                 <YAxis />
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#82ca9d" activeDot={{r: 8}}>

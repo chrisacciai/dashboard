@@ -173,7 +173,7 @@ export default class F_Chart1 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
-                <XAxis dataKey='month'/>
+                <XAxis dataKey='month' padding={{left: 25}}/>
                 <YAxis tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
