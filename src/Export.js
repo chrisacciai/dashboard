@@ -23,9 +23,6 @@ export default class Export extends Component {
 
   handleChange(event) {
     this.setState({ [event.target.name] : event.target.value });
-  }
-
-  componentDidMount() {
     const dataRef = firebase.database().ref('weekData');
     dataRef.on('value', (snapshot) => {
       let items = snapshot.val();
@@ -35,7 +32,6 @@ export default class Export extends Component {
       });
     });
   }
-
 
   printDocument() {
     const input = document.getElementById('divToPrint');
