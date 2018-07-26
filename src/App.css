@@ -81,10 +81,11 @@
 }
 
 #Mnote {
-  margin-top: 8px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 0px;
+  margin-left: 60px;
+  margin-right: 25px;
   font-size: 11px;
+  margin-bottom: 0px;
 }
 
 .panel-title {
