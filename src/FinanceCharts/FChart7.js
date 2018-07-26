@@ -135,7 +135,7 @@ export default class F_Chart7 extends Component {
                   <LabelList dataKey='pv' position='top' formatter={toDollars}/>
                 </Bar>
                 <Bar dataKey="uv" stackId="a" fill="#82ca9d">
-                  <LabelList dataKey='uv' position='bottom' formatter={toDollars}/>
+                  <LabelList dataKey='uv' position='top' formatter={toDollars}/>
                 </Bar>
                 </BarChart>
               </ResponsiveContainer>

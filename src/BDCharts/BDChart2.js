@@ -151,6 +151,7 @@ export default class BD_Chart2 extends Component {
                 <Bar dataKey="uv" fill="#82ca9d">
                   <LabelList dataKey='uv' position='top' formatter={toPercent} />
                 </Bar>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
