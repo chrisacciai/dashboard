@@ -165,22 +165,25 @@ p.aligncenter {
 #table2 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 470px;
+  height: 490px;
+  margin-bottom: 20px;
 }
 #table3 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 500px;
+  height: 550px;
+  margin-bottom: 20px;
 }
 #table4 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 180px;
+  height: 200px;
+  margin-bottom: 20px
 }
 #table5 {
   margin-left: 76px;
   margin-right: 49px;
-  height: 210px;
+  height: 180px;
 }
 
 .res-block {

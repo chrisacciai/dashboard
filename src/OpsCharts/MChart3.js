@@ -60,10 +60,10 @@ export default class MChart3 extends Component {
             <div>
               <LineChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: 0, bottom: 10}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
+                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 25}}/>
                 <YAxis tickFormatter={toPercent} tick={{fontSize: 11}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="82ca9d" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' formatter={toPercent} fontSize='11' />
                 </Line>
               </LineChart>

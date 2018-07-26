@@ -4,10 +4,10 @@ import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toDollars = (integer) => {
-  return "$" + integer.toLocaleString('en');
+  return "$" + (integer/1000000).toString()[0] + "M";
 }
 const toMil = (integer) => {
-  return "$" + integer.toString()[0] + " Mil";
+  return "$" + integer.toString()[0] + " M";
 }
 
 export default class F_Chart1 extends Component {
@@ -176,10 +176,10 @@ export default class F_Chart1 extends Component {
                 <XAxis dataKey='month' padding={{left: 25}}/>
                 <YAxis tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="pv" stroke="#82ca9d" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='bottom' formatter={toDollars} />
                 </Line>
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" activeDot={{r: 8}}>
+                <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
                 </LineChart>

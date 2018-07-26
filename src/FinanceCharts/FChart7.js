@@ -131,10 +131,10 @@ export default class F_Chart7 extends Component {
                 <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" stackId="a" fill="#8884d8">
-                  <LabelList dataKey='pv' position='top' formatter={toDollars}/>
+                <Bar dataKey="pv" stackId="a" fill="#82ca9d">
+                  <LabelList dataKey='pv' position='bottom' formatter={toDollars}/>
                 </Bar>
-                <Bar dataKey="uv" stackId="a" fill="#82ca9d">
+                <Bar dataKey="uv" stackId="a" fill="0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toDollars}/>
                 </Bar>
                 </BarChart>
