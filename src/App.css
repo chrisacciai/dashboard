@@ -30,15 +30,10 @@
   width: 100%;
 }
 
-.logo {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-}
 .master-week {
   position: absolute;
   left: 20px;
-  top: 255px;
+  top: 275px;
   font-size: 1.4em;
   color: #316ca4;
 }
@@ -54,6 +49,12 @@
   position: absolute;
   left: 20px;
   top: 215px;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 #container {
@@ -86,7 +87,7 @@
 #Mnote {
   font-size: 11px;
   text-align: left;
-  margin-left: 59px;
+  margin-left: 44px;
   margin-right: 27px;
   margin-top: 0px;
   margin-bottom: 0px;
