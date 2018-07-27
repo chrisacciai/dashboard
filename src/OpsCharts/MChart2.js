@@ -10,7 +10,8 @@ export default class MChart2 extends Component {
     constructor() {
         super();
         this.state = {
-          items: null
+          items: null,
+          noteText: "",
         };
       }	
 
@@ -46,6 +47,7 @@ componentDidMount() {
 
       this.setState({
         items: newState,
+        noteText: items.noteText,
       });
     });
   }
@@ -67,6 +69,9 @@ componentDidMount() {
             </Line>
           </LineChart>
         </div>
+        <Panel id="Mnote">
+          <span>{this.state.noteText}</span>
+        </Panel>
       </div>
     );
 }

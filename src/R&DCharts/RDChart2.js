@@ -214,9 +214,7 @@ export default class RD_Chart2 extends Component {
             </div>
             <div>
             <Panel bsStyle="primary" id="note">
-                <Panel.Body>
-                  {this.state.noteText}
-                </Panel.Body>
+                <span>{this.state.noteText}</span>
             </Panel>
             </div>
             </p>

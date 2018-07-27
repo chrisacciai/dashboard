@@ -222,7 +222,7 @@ export default class Chart1 extends Component {
                 </div>
                 <div>
                   <Panel bsStyle="primary" id="note">
-                      <span><FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} /></span>
+                      <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
                   </Panel>
                 </div>
               </p>

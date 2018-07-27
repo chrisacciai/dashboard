@@ -14,7 +14,8 @@ export default class MChart6 extends Component {
     constructor() {
         super();
         this.state = {
-          items: null
+          items: null,
+          noteText: "",
         };
       }	
 
@@ -74,6 +75,7 @@ export default class MChart6 extends Component {
 
           this.setState({
             items: newState,
+            noteText: items.noteText,
           });
         });
       }
@@ -96,6 +98,9 @@ export default class MChart6 extends Component {
                 </Area>
                 </AreaChart>
             </div>
+            <Panel id="Mnote">
+              <span>{this.state.noteText}</span>
+            </Panel>
           </div>
         );
     }

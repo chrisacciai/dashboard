@@ -140,10 +140,8 @@ export default class PMOChart extends Component {
             </ResponsiveContainer>
           </div>
           <div>
-            <Panel bsStyle="primary" id="note">
-                <Panel.Body>
-                  {this.state.noteText}
-                </Panel.Body>
+          <Panel bsStyle="primary" id="note">
+                <span>{this.state.noteText}</span>
             </Panel>
             </div>
           </p>
