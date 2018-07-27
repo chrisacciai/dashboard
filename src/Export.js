@@ -101,16 +101,10 @@ export default class Export extends Component {
           </div>
         </div>
         <div id="divToPrint" className="mt4">
-          <div id="master-header">
-            <div class= "logo-master">
-              <img src={logo} alt="logo"/>
-            </div>
-              <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
-          </div>
           <br/>
           <div class = "MasterTitle">
             <p className = "MasterText">
-              Operations
+              Finance
             </p>
           </div>
           <div class = "rowThirds">
