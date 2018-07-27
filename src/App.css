@@ -79,7 +79,8 @@
   font-size: 15px;
   text-align: left;
   line-height: 45px;
-  max-height: 45px;
+  max-height: 40px;
+  padding-left: 5px;
 }
 
 #Mnote {
@@ -97,6 +98,7 @@ span {
   display: inline-block;
   vertical-align: center;
   line-height: normal;
+  padding-left: 5px;
 }
 
 .panel-title {
