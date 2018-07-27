@@ -101,7 +101,7 @@ export default class Export extends Component {
           </div>
         </div>
         <div id="divToPrint" className="mt4">
-          <div class="master-header">
+          <div id="master-header">
             <div class= "logo-master">
               <img src={logo} alt="logo"/>
             </div>
