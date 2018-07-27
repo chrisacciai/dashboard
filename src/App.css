@@ -126,12 +126,6 @@
   left: 20px;
 }
 
-.vertical {
-  display: inline-block;
-  line-height: normal;
-  vertical-align: middle;
-}
-
 .Button1 {
   position: absolute;
   top: 95px;

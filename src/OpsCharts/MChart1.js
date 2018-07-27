@@ -71,7 +71,7 @@ export default class MChart1 extends Component {
               <div class="wrap">
                 <Panel bsStyle="primary" id="Mnote">
                     <Panel.Body>
-                        <p className="vertical">{this.state.noteText}</p>
+                        {this.state.noteText}
                     </Panel.Body>
                 </Panel>
               </div>
