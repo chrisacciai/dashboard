@@ -192,12 +192,8 @@ export default class PMOChart extends Component {
               </Table>
               </form>
               </div>
-              <div>
-                  <Panel bsStyle="primary" id="note">
-                      <Panel.Body>
-                        <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText} />
-                      </Panel.Body>
-                  </Panel>
+              <div id="editNote">
+                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
                 </div>
             </p>
         </div>

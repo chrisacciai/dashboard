@@ -74,10 +74,34 @@ export default class Export extends Component {
       </form>
         <div id="divToPrint" className="mt4">
           <div id="master-header">
-            <div class= "logo-master">
-              <img src={logo} alt="logo"/>
-            </div>
+            <img src={logo} alt="logo"/>
               <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
+          </div>
+          <br/>
+          <div class = "MasterTitle">
+            <p className = "MasterText">
+              Operations
+            </p>
+          </div>
+          <div class = "rowThirds">
+            <div class = "columnThirds">
+              <MChart1/>
+              <MChart4/>
+            </div>
+            <div class = "columnThirds">
+              <MChart2/>
+              <MChart5/>
+            </div>
+            <div class = "columnThirds">
+              <MChart3/>
+              <MChart6/>
+            </div>
+          </div>
+        </div>
+        <div id="divToPrint" className="mt4">
+          <div id="master-header">
+            <img src={logo} alt="logo"/>
+              <h1>Corporate Dashboard Week of {this.state.week}</h1>
           </div>
           <br/>
           <div class = "MasterTitle">
