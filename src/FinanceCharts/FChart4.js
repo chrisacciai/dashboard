@@ -8,7 +8,7 @@ const toDollars = (integer) => {
 }
 
 const toMil = (integer) => {
-  return "$" + integer.toString()[0] + " Mil";
+  return "$" + integer.toString()[0] + " M";
 }
 
 export default class F_Chart4 extends Component {

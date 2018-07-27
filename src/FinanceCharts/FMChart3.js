@@ -69,7 +69,7 @@ export default class FMChart3 extends Component {
                 <Bar dataKey="rv" fill="#8884d8">
                   <LabelList dataKey='rv' position='top' formatter={toDollars} fontSize='11'/>
                 </Bar>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" fontSize='11'/>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </BarChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">

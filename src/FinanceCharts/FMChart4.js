@@ -11,7 +11,7 @@ import firebase from '../Firebase.js';
     return "$" + (integer/1000000).toFixed(2) + "M";
   }
 
-export default class FMChart2 extends Component {
+export default class FMChart4 extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,24 +21,25 @@ export default class FMChart2 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartTwoData');
+        const dataRef = firebase.database().ref('FChartFourData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.lineOneValue1,
-            uv: items.lineOneValue2,
+            pv: items.value1,
           });
           newState.push({
             month: items.month2,
-            pv: items.lineTwoValue1,
-            uv: items.lineTwoValue2,
+            pv: items.value2,
           });
           newState.push({
             month: items.month3,
-            pv: items.lineThreeValue1,
-            uv: items.lineThreeValue2,
+            pv: items.value3,
+          });
+          newState.push({
+            month: items.month4,
+            pv: items.value4,
           });
 
           this.setState({
@@ -64,10 +65,6 @@ export default class FMChart2 extends Component {
                 <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toDollars} fontSize='11'/>
                 </Bar>
-                <Bar dataKey="uv" fill="#0088FE">
-                  <LabelList dataKey='uv' position='top' formatter={toDollars} fontSize='11'/>
-                </Bar>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </BarChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
