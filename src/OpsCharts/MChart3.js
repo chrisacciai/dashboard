@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
 const toPercent = (decimal, fixed = 0) => {
