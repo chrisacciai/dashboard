@@ -71,7 +71,7 @@ export default class FMChart1 extends Component {
             </div>
             <div>
               <LineChart data={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
+                margin={{top: 10, right: 30, left: -18, bottom: 0}}>
                 <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
@@ -81,7 +81,7 @@ export default class FMChart1 extends Component {
                 <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} fontSize='11'/>
                 </Line>
-                <Legend margin={{top: 3, left: 0, right: 0, bottom:0}} align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </LineChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
