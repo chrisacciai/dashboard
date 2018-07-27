@@ -56,7 +56,7 @@ export default class Export extends Component {
   
 
   printDocument() {
-    const input = document.getElementById('divToPrint');
+    const input = document.getElementById('divToPrint2');
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
@@ -107,7 +107,7 @@ export default class Export extends Component {
             </div>
           </div>
         </div>
-        <div id="divToPrint" className="mt4">
+        <div id="divToPrint2" className="mt4">
           <br/>
           <div class = "MasterTitle">
             <p className = "MasterText">
