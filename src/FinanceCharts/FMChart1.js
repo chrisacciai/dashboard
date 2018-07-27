@@ -81,7 +81,7 @@ export default class FMChart1 extends Component {
                 <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} fontSize='11'/>
                 </Line>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend margin={{top: 3, left: 0, right: 0, bottom:0}} align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </LineChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
