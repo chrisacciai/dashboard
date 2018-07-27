@@ -87,6 +87,7 @@
   margin-right: 25px;
   margin-top: 0px;
   margin-bottom: 0px;
+  line-height: 25px;
   max-height: 25px;
 }
 
@@ -126,6 +127,8 @@
 }
 
 .vertical {
+  display: inline-block;
+  line-height: normal;
   vertical-align: middle;
 }
 
