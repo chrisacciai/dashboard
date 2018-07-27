@@ -221,9 +221,7 @@ export default class Chart1 extends Component {
                 </form>
                 </div>
                 <div>
-                  <Panel bsStyle="primary" id="note">
-                      <FormControl bsClass="editNote" type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
-                  </Panel>
+                  <FormControl bsStyle="primary" id="Mnote" type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
                 </div>
               </p>
           </div>
