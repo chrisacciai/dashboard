@@ -6,12 +6,8 @@ import firebase from '../Firebase.js';
 const toDollars = (integer) => {
     return "$" + integer.toLocaleString('en');
   }
-  
-  const toMil = (integer) => {
-    return "$" + integer.toString()[0] + " Mil";
-  }
 
-export default class FMChart2 extends Component {
+export default class FMChart3 extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,7 +17,7 @@ export default class FMChart2 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartTwoData');
+        const dataRef = firebase.database().ref('FChartThreeData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -29,16 +25,19 @@ export default class FMChart2 extends Component {
             month: items.month1,
             pv: items.lineOneValue1,
             uv: items.lineOneValue2,
+            rv: items.lineOneValue3,
           });
           newState.push({
             month: items.month2,
             pv: items.lineTwoValue1,
             uv: items.lineTwoValue2,
+            rv: items.lineTwoValue3,
           });
           newState.push({
             month: items.month3,
             pv: items.lineThreeValue1,
             uv: items.lineThreeValue2,
+            rv: items.lineThreeValue3,
           });
 
           this.setState({
@@ -66,6 +65,9 @@ export default class FMChart2 extends Component {
                 </Bar>
                 <Bar dataKey="uv" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toDollars} fontSize='11'/>
+                </Bar>
+                <Bar dataKey="rv" fill="#8884d8">
+                  <LabelList dataKey='rv' position='top' formatter={toDollars} fontSize='11'/>
                 </Bar>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" fontSize='11'/>
               </BarChart>
