@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
-
 const toDollars = (integer) => {
-    return "$" + (integer/1000000).toFixed(2) + "M";
+    return "$" + integer.toLocaleString('en');
   }
+  
   const toMil = (integer) => {
-    return "$" + integer.toString()[0] + " M";
+    return "$" + integer.toString()[0] + " Mil";
   }
 
-export default class FMChart1 extends Component {
+export default class FMChart2 extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,8 +19,9 @@ export default class FMChart1 extends Component {
           noteText: "",
         };
       }	
+
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartOneData');
+        const dataRef = firebase.database().ref('FChartTwoData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -39,21 +40,6 @@ export default class FMChart1 extends Component {
             pv: items.lineThreeValue1,
             uv: items.lineThreeValue2,
           });
-          newState.push({
-            month: items.month4,
-            pv: items.lineFourValue1,
-            uv: items.lineFourValue2,
-          });
-          newState.push({
-            month: items.month5,
-            pv: items.lineFiveValue1,
-            uv: items.lineFiveValue2,
-          });
-          newState.push({
-            month: items.month6,
-            pv: items.lineSixValue1,
-            uv: items.lineSixValue2,
-          });
 
           this.setState({
             items: newState,
@@ -70,19 +56,19 @@ export default class FMChart1 extends Component {
               <p class="aligncenter">Example Metric</p>
             </div>
             <div>
-              <LineChart data={this.state.items} width={375} height={200}
+              <BarChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
+                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' formatter={toDollars} fontSize='11'/>
-                </Line>
-                <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
-                  <LabelList dataKey='uv' position='bottom' formatter={toDollars} fontSize='11'/>
-                </Line>
+                <Bar dataKey="pv" fill="#00C49F">
+                  <LabelList dataKey='pv' position='top' formatter={toDollars} fontSize='11'/>
+                </Bar>
+                <Bar dataKey="uv" fill="#0088FE">
+                  <LabelList dataKey='uv' position='top' formatter={toDollars} fontSize='11'/>
+                </Bar>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" />
-              </LineChart>
+              </BarChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
               <span>{this.state.noteText}</span>
