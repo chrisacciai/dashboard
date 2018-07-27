@@ -7,9 +7,9 @@ import firebase from '../Firebase.js';
 const toDollars = (integer) => {
     return "$" + (integer/1000000).toFixed(2) + "M";
   }
-  const toMil = (integer) => {
+const toMil = (integer) => {
     return "$" + integer.toString()[0] + " M";
-  }
+}
 
 export default class FMChart1 extends Component {
     constructor() {
@@ -62,6 +62,11 @@ export default class FMChart1 extends Component {
         });
       }
 
+      showNote() {
+          if (noteText != "" && noteText != null)
+            return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
+      }
+
       render() {
         return (
           <div>
@@ -84,9 +89,7 @@ export default class FMChart1 extends Component {
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </LineChart>
             </div>
-            <Panel bsStyle="primary" id="Mnote">
-              <span>{this.state.noteText}</span>
-            </Panel>
+            {this.showNote()}
           </div>
         );
     }
