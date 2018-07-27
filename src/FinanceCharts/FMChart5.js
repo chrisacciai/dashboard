@@ -41,6 +41,11 @@ export default class FMChart5 extends Component {
         });
       }
 
+      showNote() {
+        if (this.state.noteText != "" && this.state.noteText != null)
+          return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
+    }
+
       render() {
         return (
           <div>
@@ -59,9 +64,7 @@ export default class FMChart5 extends Component {
                 </Line>
               </LineChart>
             </div>
-            <Panel bsStyle="primary" id="Mnote">
-              <span>{this.state.noteText}</span>
-            </Panel>
+            {this.showNote()}
           </div>
         );
     }
