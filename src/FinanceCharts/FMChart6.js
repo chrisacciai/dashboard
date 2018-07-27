@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, ReferenceLine} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
-  
-  const toMil = (integer) => {
-    return "$" + integer.toString()[0] + " M";
-  }
 
-  const toDollars = (integer) => {
-    return "$" + (integer/1000000).toFixed(2) + "M";
-  }
-
-export default class FMChart4 extends Component {
+export default class FMChart6 extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,7 +13,7 @@ export default class FMChart4 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartFourData');
+        const dataRef = firebase.database().ref('FChartSixData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
@@ -57,15 +49,16 @@ export default class FMChart4 extends Component {
               <p class="aligncenter">Example Metric</p>
             </div>
             <div>
-              <BarChart data={this.state.items} width={375} height={200}
+              <LineChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
-                <YAxis tick={{fontSize: 11}} tickFormatter={toMil}/>
+                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
+                <YAxis tick={{fontSize: 11}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#00C49F">
-                  <LabelList dataKey='pv' position='top' formatter={toDollars} fontSize='11'/>
-                </Bar>
-              </BarChart>
+                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
+                  <LabelList dataKey='pv' position='bottom' fontSize='11' />
+                </Line>
+                <ReferenceLine y={3.5} stroke="red"/>
+              </LineChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
               <span>{this.state.noteText}</span>

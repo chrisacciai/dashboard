@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
   
-  const toMil = (integer) => {
-    return "$" + integer.toString()[0] + " M";
+const toDollars = (integer) => {
+    return "$" + integer.toLocaleString('en');
   }
 
-  const toDollars = (integer) => {
-    return "$" + (integer/1000000).toFixed(2) + "M";
-  }
-
-export default class FMChart4 extends Component {
+export default class FMChart2 extends Component {
     constructor() {
         super();
         this.state = {
@@ -21,25 +17,24 @@ export default class FMChart4 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('FChartFourData');
+        const dataRef = firebase.database().ref('FChartSevenData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
           newState.push({
             month: items.month1,
-            pv: items.value1,
+            pv: items.lineOneValue1,
+            uv: items.lineOneValue2,
           });
           newState.push({
             month: items.month2,
-            pv: items.value2,
+            pv: items.lineTwoValue1,
+            uv: items.lineTwoValue2,
           });
           newState.push({
             month: items.month3,
-            pv: items.value3,
-          });
-          newState.push({
-            month: items.month4,
-            pv: items.value4,
+            pv: items.lineThreeValue1,
+            uv: items.lineThreeValue2,
           });
 
           this.setState({
@@ -60,11 +55,15 @@ export default class FMChart4 extends Component {
               <BarChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
                 <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
-                <YAxis tick={{fontSize: 11}} tickFormatter={toMil}/>
+                <YAxis tick={{fontSize: 11}} tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <Bar dataKey="pv" fill="#00C49F">
-                  <LabelList dataKey='pv' position='top' formatter={toDollars} fontSize='11'/>
+                <Bar dataKey="pv" stackId="a" fill="#00C49F">
+                  <LabelList dataKey='pv' position='insideTop' formatter={toDollars} fontSize='11'/>
                 </Bar>
+                <Bar dataKey="uv" stackId="a" fill="#0088FE">
+                  <LabelList dataKey='uv' position='top' formatter={toDollars} fontSize='11'/>
+                </Bar>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
               </BarChart>
             </div>
             <Panel bsStyle="primary" id="Mnote">
