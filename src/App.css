@@ -78,6 +78,8 @@
   margin-right: 49px;
   font-size: 15px;
   text-align: left;
+  line-height: 45px;
+  max-height: 45px;
 }
 
 #Mnote {
