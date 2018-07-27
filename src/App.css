@@ -84,6 +84,13 @@
   padding-left: 5px;
 }
 
+#editNote {
+  margin-top: 10px;
+  margin-left: 76px;
+  margin-right: 49px;
+  font-size: 15px;
+}
+
 #Mnote {
   font-size: 11px;
   text-align: left;
