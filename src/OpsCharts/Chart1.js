@@ -220,8 +220,8 @@ export default class Chart1 extends Component {
                 </Table>
                 </form>
                 </div>
-                <div>
-                  <FormControl id="editNote" type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
+                <div id="editNote">
+                  <FormControl type="text" name="noteText" onChange={this.handleChange} value={this.state.noteText}/>
                 </div>
               </p>
           </div>

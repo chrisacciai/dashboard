@@ -90,7 +90,7 @@ export default class MChart6 extends Component {
             </div>
             <div>
                 <AreaChart data ={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: -15, bottom: 5}}>
+                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
                 <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 20}}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>

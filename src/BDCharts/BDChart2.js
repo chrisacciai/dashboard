@@ -142,7 +142,7 @@ export default class BD_Chart2 extends Component {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data ={this.state.items}
                 margin={{top: 0, right: 50, left: 15, bottom: 5}}>
-                <XAxis dataKey='month' padding={{bottom: 20}}/>
+                <XAxis dataKey='month'/>
                 <YAxis tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#00C49F">
@@ -151,7 +151,7 @@ export default class BD_Chart2 extends Component {
                 <Bar dataKey="uv" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toPercent} />
                 </Bar>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" />
+                <Legend margin={{top: 10}} align="center" layout="horizontal" verticalAlign="bottom" />
                 </BarChart>
               </ResponsiveContainer>
             </div>
