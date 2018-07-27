@@ -91,7 +91,7 @@
   max-height: 25px;
 }
 
-.vertical-center {
+span {
   display: inline-block;
   vertical-align: center;
   line-height: normal;
