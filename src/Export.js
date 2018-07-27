@@ -100,28 +100,6 @@ export default class Export extends Component {
             </div>
           </div>
         </div>
-        <div id="divToPrint" className="mt4">
-          <br/>
-          <div class = "MasterTitle">
-            <p className = "MasterText">
-              Finance
-            </p>
-          </div>
-          <div class = "rowThirds">
-            <div class = "columnThirds">
-              <MChart1/>
-              <MChart4/>
-            </div>
-            <div class = "columnThirds">
-              <MChart2/>
-              <MChart5/>
-            </div>
-            <div class = "columnThirds">
-              <MChart3/>
-              <MChart6/>
-            </div>
-          </div>
-        </div>
     </div>);
   }
 }
