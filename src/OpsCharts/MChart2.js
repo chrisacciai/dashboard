@@ -70,7 +70,7 @@ componentDidMount() {
             </Line>
           </LineChart>
         </div>
-        <Panel id="Mnote">
+        <Panel bsStyle="primary" id="Mnote">
           <span>{this.state.noteText}</span>
         </Panel>
       </div>

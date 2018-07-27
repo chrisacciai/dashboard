@@ -73,21 +73,21 @@
 }
 
 #note {
-  margin-top: 8px;
+  margin-top: 10px;
   margin-left: 76px;
   margin-right: 49px;
   font-size: 15px;
   text-align: left;
-  line-height: 45px;
-  max-height: 45px;
+  line-height: 40px;
+  max-height: 40px;
   padding-left: 5px;
 }
 
 #Mnote {
   font-size: 11px;
   text-align: left;
-  margin-left: 60px;
-  margin-right: 25px;
+  margin-left: 59px;
+  margin-right: 27px;
   margin-top: 0px;
   margin-bottom: 0px;
   line-height: 25px;

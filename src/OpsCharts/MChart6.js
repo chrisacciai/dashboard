@@ -99,7 +99,7 @@ export default class MChart6 extends Component {
                 </Area>
                 </AreaChart>
             </div>
-            <Panel id="Mnote">
+            <Panel bsStyle="primary" id="Mnote">
               <span>{this.state.noteText}</span>
             </Panel>
           </div>
