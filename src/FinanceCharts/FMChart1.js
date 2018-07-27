@@ -71,8 +71,8 @@ export default class FMChart1 extends Component {
             </div>
             <div>
               <LineChart data={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: -18, bottom: 0}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
+                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
+                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15, bottom: 0}}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toMil}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
