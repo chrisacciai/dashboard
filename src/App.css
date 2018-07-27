@@ -25,7 +25,7 @@
   min-height: '210mm';
 }
 
-#master-header {
+.master-header {
   height: 120px;
   width: 100%;
 }
