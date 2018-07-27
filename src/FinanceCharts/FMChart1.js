@@ -63,7 +63,7 @@ export default class FMChart1 extends Component {
       }
 
       showNote() {
-          if (noteText != "" && noteText != null)
+          if (this.state.noteText != "" && this.state.noteText != null)
             return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
       }
 
