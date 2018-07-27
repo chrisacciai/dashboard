@@ -107,8 +107,8 @@ export default class Export extends Component {
             </div>
           </div>
         </div>
+        <br/>
         <div id="divToPrint2" className="mt4">
-          <br/>
           <div class = "MasterTitle">
             <p className = "MasterText">
               Finance
