@@ -82,7 +82,7 @@ export default class MChart5 extends Component {
             </div>
             <div>
                 <LineChart data={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: 0, bottom: 20}}>
+                margin={{top: 10, right: 30, left: -15, bottom: 20}}>
                 <XAxis dataKey='month' tick={{fontSize: 11, angle: -45}} interval={0} tickMargin='12' padding={{left: 15}}/>
                 <YAxis tick={{fontSize: 11}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
