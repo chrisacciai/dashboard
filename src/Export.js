@@ -77,9 +77,9 @@ export default class Export extends Component {
             <div class= "logo-master">
               <img src={logo} alt="logo"/>
             </div>
-              <br/>
-              <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
           </div>
+          <br/>
+            <h1 className="master-week">Corporate Dashboard Week of {this.state.week}</h1>
           <br/>
           <div class = "MasterTitle">
             <p className = "MasterText">

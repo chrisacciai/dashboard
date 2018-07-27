@@ -121,7 +121,7 @@ export default class HR_Chart1 extends Component {
                 <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Bar>
-                <ReferenceLine y={.4} stroke="red" strokeDasharray="3 3"/>
+                <ReferenceLine y={.4} stroke="red"/>
                 </BarChart>
               </ResponsiveContainer>
             </div>
