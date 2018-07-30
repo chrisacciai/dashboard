@@ -144,6 +144,10 @@ span {
   background-color: #316ca4;
 }
 
+.masterLegend {
+  left: 100px;
+}
+
 .pieDiv {
   width: 375; 
   height: 200;
