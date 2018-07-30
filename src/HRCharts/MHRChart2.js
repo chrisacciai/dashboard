@@ -56,7 +56,7 @@ export default class MHRChart2 extends Component {
             <div>
               <PieChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                  <Pie data={this.state.items} outerRadius={55} cx={200} cy={85} isAnimationActive={false} label={toDollars}>
+                  <Pie data={this.state.items} outerRadius={55} cx={200} cy={85} isAnimationActive={false} label>
                     if
                     {
           	          this.mapToColor()
