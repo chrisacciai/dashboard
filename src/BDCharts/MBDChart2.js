@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
   
