@@ -95,9 +95,9 @@ export default class Export extends Component {
           var heightLeft = imgHeight;
           var position = 0;
 
-          var doc = new jsPDF('landscape', 'mm', [canvas.width, canvas.height]);
+          var doc = new jsPDF('landscape', 'mm');
 
-          doc.addImage(imgData, 'PNG', 0, position, canvas.width, canvas.height);
+          doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
           heightLeft -= pageHeight;
 
           while (heightLeft >= 0) {
