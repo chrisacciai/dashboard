@@ -15,6 +15,7 @@ import FMChart5 from './FinanceCharts/FMChart5.js';
 import FMChart6 from './FinanceCharts/FMChart6.js';
 import FMChart7 from './FinanceCharts/FMChart7.js';
 import RDMChart1 from './R&DCharts/RDMChart1.js';
+import RDMChart2 from './R&DCharts/RDMChart2.js';
 import {Button, FormControl, ButtonGroup} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
@@ -136,6 +137,7 @@ export default class Export extends Component {
             <div class = "columnThirds">
               <FMChart3/>
               <FMChart6/>
+              <RDMChart2/>
             </div>
           </div>
         </div>
