@@ -10,11 +10,6 @@ const toMil = (integer) => {
   return "$" + integer.toString()[0] + " M";
 }
 
-const legendStyle = {
-  left: 25,
-  iconSize: 11,
-}
-
 export default class F_Chart1 extends Component {
     constructor() {
         super();
@@ -187,7 +182,7 @@ export default class F_Chart1 extends Component {
                 <Line type="monotone" dataKey="uv" stroke="#0088FE" activeDot={{r: 8}}>
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
-                <Legend wrapperStyle={legendStyle}/>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
