@@ -18,6 +18,7 @@ import RDMChart1 from './R&DCharts/RDMChart1.js';
 import RDMChart2 from './R&DCharts/RDMChart2.js';
 import MBDChart1 from './BDCharts/MBDChart1.js';
 import MBDChart2 from './BDCharts/MBDChart2.js';
+import MBDChart3 from './BDCharts/MBDChart3.js';
 import {Button, FormControl, ButtonGroup} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
@@ -160,6 +161,7 @@ export default class Export extends Component {
               <MBDChart2/>
             </div>
             <div class = "columnThirds">
+              <MBDChart3/>
             </div>
           </div>
         </div>
