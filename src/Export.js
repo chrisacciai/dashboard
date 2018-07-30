@@ -22,6 +22,8 @@ import MBDChart3 from './BDCharts/MBDChart3.js';
 import MBDChart4 from './BDCharts/MBDChart4.js';
 import MHRChart1 from './HRCharts/MHRChart1.js';
 import MHRChart2 from './HRCharts/MHRChart2.js';
+import MPMOChart from './PMOCharts/MPMOChart.js';
+import MSChart from './SafetyCharts/MSChart.js';
 import {Button, FormControl, ButtonGroup} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
@@ -162,6 +164,12 @@ export default class Export extends Component {
               <div class = "MasterFiller">
               </div>
               <MBDChart4/>
+              <div class = "MasterTitle3">
+                <p className = "MasterText">
+                  PMO
+                </p>
+              </div>
+              <MPMOChart/>
             </div>
             <div class = "columnThirds">
               <MBDChart2/>
@@ -171,6 +179,12 @@ export default class Export extends Component {
                 </p>
               </div>
               <MHRChart1/>
+              <div class = "MasterTitle3">
+                <p className = "MasterText">
+                  Safety
+                </p>
+              </div>
+              <MSChart/>
             </div>
             <div class = "columnThirds">
               <MBDChart3/>
