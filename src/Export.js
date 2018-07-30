@@ -111,8 +111,6 @@ export default class Export extends Component {
     ;
   }
 
-
-
   render() {
     return (
     <div>
@@ -123,8 +121,7 @@ export default class Export extends Component {
       <form id="weekForm" onSubmit={this.handleSubmit}>
         <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
       </form>
-      <div id="testDiv">
-        <div id="divToPrint" className="mt4">
+      <div id="divToPrint" className="mt4">
           <div id="master-header">
             <div class= "logo-master">
               <img src={logo} alt="logo"/>
@@ -151,9 +148,6 @@ export default class Export extends Component {
               <MChart6/>
             </div>
           </div>
-        </div>
-        <br/>
-        <div id="divToPrint" className="mt4">
           <div class = "MasterTitle">
             <p className = "MasterText">
               Finance
@@ -185,9 +179,6 @@ export default class Export extends Component {
               <RDMChart2/>
             </div>
           </div>
-        </div>
-        <br/>
-        <div id="divToPrint" className="mt4">
           <div class = "MasterTitle">
             <p className = "MasterText">
               Business Development
@@ -227,7 +218,6 @@ export default class Export extends Component {
               </div>
               <MHRChart2/>
             </div>
-          </div>
         </div>
       </div>
     </div>);
