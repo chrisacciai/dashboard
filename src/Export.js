@@ -89,7 +89,7 @@ export default class Export extends Component {
           It still creates a little overlap part between the pages, but good enough for me.
           if you can find an official number from jsPDF, use them.
           */
-          var imgWidth = 295; 
+          var imgWidth = 297; 
           var pageHeight = 210;  
           var imgHeight = canvas.height * imgWidth / canvas.width;
           var heightLeft = imgHeight;
@@ -134,7 +134,7 @@ export default class Export extends Component {
               Operations
             </p>
           </div>
-          <div class = "rowThirds">
+          <div class = "row">
             <div class = "columnThirds">
               <MChart1/>
               <MChart4/>
@@ -153,7 +153,7 @@ export default class Export extends Component {
               Finance
             </p>
           </div>
-          <div class = "rowThirds">
+          <div class = "row">
             <div class = "columnThirds">
               <FMChart1/>
               <FMChart4/>
@@ -184,7 +184,7 @@ export default class Export extends Component {
               Business Development
             </p>
           </div>
-          <div class = "rowThirds">
+          <div class = "row">
             <div class = "columnThirds">
               <MBDChart1/>
               <div class = "MasterFiller">
