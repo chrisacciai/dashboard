@@ -18,59 +18,59 @@ export default class RDMChart1 extends Component {
         };
       }	
 
-  componentDidMount() {
-    const dataRef = firebase.database().ref('RDChartOneData');
-    dataRef.on('value', (snapshot) => {
-      let items = snapshot.val();
-      let newState = [];
-      newState.push({
-        name: items.month1,
-        value: items.value1,
-      });
-      newState.push({
-        name: items.month2,
-        value: items.value2,
-      });
+      componentDidMount() {
+        const dataRef = firebase.database().ref('RDChartOneData');
+        dataRef.on('value', (snapshot) => {
+          let items = snapshot.val();
+          let newState = [];
+          newState.push({
+            name: items.month1,
+            value: items.value1,
+          });
+          newState.push({
+            name: items.month2,
+            value: items.value2,
+          });
 
-      this.setState({
-        items: newState,
-        noteText: items.noteText,
-      });
-    });
-  }
+          this.setState({
+            items: newState,
+            noteText: items.noteText,
+          });
+        });
+      }
 
-  showNote() {
-    if (this.state.noteText != "" && this.state.noteText != null)
-      return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
-  }
+      showNote() {
+        if (this.state.noteText != "" && this.state.noteText != null)
+          return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
+      }
 
-  mapToColor() {
-    if (this.state.items != null) {
-        return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
-    }
-  }
+      mapToColor() {
+        if (this.state.items != null) {
+            return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+        }
+      }
 
-  render() {
-    return (
-      <div>
-        <br/>
-        <div>
-          <p class="aligncenter">Example Metric</p>
-        </div>
-        <div>
-            <PieChart>
-              <Pie data={this.state.items} isAnimationActive={false} outerRadius={50} label={toDollars} width={375} height={200}
+      render() {
+        return (
+          <div>
+            <br/>
+            <div>
+              <p class="aligncenter">Example Metric</p>
+            </div>
+            <div>
+              <PieChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                  if
-                  {
-          	        this.mapToColor()
-                  }
-              </Pie>
-              <Legend align="center" layout="horizontal" verticalAlign="bottom" />
-            </PieChart>
+                  <Pie data={this.state.items} outerRadius={100} isAnimationActive={false} label={toDollars}>
+                    if
+                    {
+          	          this.mapToColor()
+                    }
+                  </Pie>
+                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+              </PieChart>
+            </div>
+            {this.showNote()}
           </div>
-          {this.showNote()}
-        </div>
-    );
-}
+        );
+    }
 }

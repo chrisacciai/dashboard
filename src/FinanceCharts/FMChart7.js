@@ -59,7 +59,7 @@ export default class FMChart2 extends Component {
             <div>
               <BarChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
+                <XAxis dataKey='month' tick={{fontSize: 11}} height={20} interval={0}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toDollars}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" stackId="a" fill="#00C49F">
