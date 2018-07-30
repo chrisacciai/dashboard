@@ -12,7 +12,8 @@ export default class RDMChart1 extends Component {
     constructor() {
         super();
         this.state = {
-          items: null
+          items: null,
+          noteText: "",
         };
       }	
 
@@ -32,9 +33,16 @@ export default class RDMChart1 extends Component {
 
       this.setState({
         items: newState,
+        noteText: items.noteText,
       });
     });
   }
+
+  showNote() {
+    if (this.state.noteText != "" && this.state.noteText != null)
+      return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
+  }
+
   mapToColor() {
     if (this.state.items != null) {
         return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
@@ -50,8 +58,8 @@ export default class RDMChart1 extends Component {
         </div>
         <div>
             <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} fill="#8884d8" isAnimationActive={false} label={toDollars} width={375} height={200}
-                    margin={{top: 10, right: 30, left: 0, bottom: 10}}>
+                  <Pie data={this.state.items} outerRadius={100} isAnimationActive={false} label={toDollars} width={375} height={200}
+                  margin={{top: 10, right: 30, left: -18, bottom: 5}}>
                     if
                     {
           	          this.mapToColor()
@@ -59,8 +67,9 @@ export default class RDMChart1 extends Component {
                   </Pie>
                   <Legend align="center" layout="horizontal" verticalAlign="bottom" />
             </PieChart>
+          </div>
+          {this.showNote()}
         </div>
-      </div>
     );
 }
 }
