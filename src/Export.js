@@ -66,15 +66,24 @@ export default class Export extends Component {
   
 
   printDocument() {
-    const input = [document.getElementById('divToPrint'), document.getElementById('divToPrint2'), document.getElementById('divToPrint3')];
-    html2canvas(input)
+    const page1 = document.getElementById('divToPrint');
+    html2canvas(page1)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
         pdf.addImage(imgData, 'JPEG', 0, 0);
-        pdf.save('corporateDashboardPDF');
+        pdf.addPage()
+        const page2 = document.getElementById('divToPrint2');
+        html2canvas(page2)
+          .then((canvas) => {
+            const imgData2 = canvas.toDataURL('image/png');
+            const pdf = new jsPDF({
+              orientation: 'landscape'
+            });
+            pdf.addImage(imgData2, 'JPEG', 0, 0);
+            pdf.save('corporateDashboardPDF');
       })
     ;
   }
