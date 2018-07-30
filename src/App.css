@@ -156,7 +156,7 @@ span {
 .MasterFiller {
   width: 99mm;
   height: 27px;
-  background-color: white;
+  background-color: transparent;
 }
 
 .App-title {
