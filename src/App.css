@@ -144,6 +144,12 @@ span {
   font-size: 17px;
 }
 
+.MasterFiller {
+  width: 99mm;
+  height: 27px;
+  background-color: white;
+}
+
 .App-title {
   font-size: 1.5em;
   position: absolute;
