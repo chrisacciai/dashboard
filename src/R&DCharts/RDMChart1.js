@@ -59,14 +59,14 @@ export default class RDMChart1 extends Component {
         </div>
         <div>
             <PieChart>
-                  <Pie data={this.state.items} outerRadius={100} isAnimationActive={false} label={toDollars} width={375} height={200}
-                  margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                    if
-                    {
-          	          this.mapToColor()
-                    }
-                  </Pie>
-                  <Legend align="center" layout="horizontal" verticalAlign="bottom" />
+              <Pie data={this.state.items} isAnimationActive={false} label={toDollars} width={375} height={200}
+                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
+                  if
+                  {
+          	        this.mapToColor()
+                  }
+              </Pie>
+              <Legend align="center" layout="horizontal" verticalAlign="bottom" />
             </PieChart>
           </div>
           {this.showNote()}
