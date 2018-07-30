@@ -55,7 +55,7 @@ export default class MBDChart1 extends Component {
             </div>
             <div>
               <BarChart data={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
+                margin={{top: 6, right: 30, left: -18, bottom: 5}}>
                 <XAxis dataKey='month' tick={{fontSize: 11}} height={20} interval={0}/>
                 <YAxis tick={{fontSize: 11}} tickFormatter={toPercent}/>
                 <CartesianGrid strokeDasharray="3 3"/>
