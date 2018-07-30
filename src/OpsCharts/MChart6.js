@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList, ResponsiveContainer} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -93,16 +93,18 @@ export default class MChart6 extends Component {
             <div>
               <p class="aligncenter">Example Metric</p>
             </div>
-            <div>
+            <div id="masterContainer">
+              <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data ={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 20}}/>
-                <YAxis tick={{fontSize: 11}} tickFormatter={toPercentAxis}/>
+                <XAxis dataKey='month' tick={{fontSize: 12}} interval={0} padding={{left: 20}}/>
+                <YAxis tick={{fontSize: 12}} tickFormatter={toPercentAxis}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Area type="monotone" dataKey="pv" dot stroke="#00C49F" fill="#00C49F">
-                  <LabelList dataKey='pv' position='top' formatter={toPercent} fontSize='11' />
+                  <LabelList dataKey='pv' position='top' formatter={toPercent} fontSize='12' />
                 </Area>
                 </AreaChart>
+              </ResponsiveContainer>
             </div>
             {this.showNote()}
           </div>
