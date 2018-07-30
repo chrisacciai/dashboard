@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import {PieChart, Pie, Cell, Legend} from 'recharts';
+import {BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
+  
+const toPercent = (decimal, fixed = 0) => {
+    return `${(decimal * 100).toFixed(fixed)}%`;
+  }
 
-const COLORS = ['#00C49F','#0088FE'];
-
-const toDollars = (item) => {
-  return "$" + item.value.toLocaleString('en');
-}
-
-export default class RDMChart1 extends Component {
+export default class MBDChart1 extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,17 +17,21 @@ export default class RDMChart1 extends Component {
       }	
 
       componentDidMount() {
-        const dataRef = firebase.database().ref('RDChartOneData');
+        const dataRef = firebase.database().ref('BDChartOneData');
         dataRef.on('value', (snapshot) => {
           let items = snapshot.val();
           let newState = [];
           newState.push({
-            name: items.month1,
-            value: items.value1,
+            month: items.month1,
+            pv: items.value1,
           });
           newState.push({
-            name: items.month2,
-            value: items.value2,
+            month: items.month2,
+            pv: items.value2,
+          });
+          newState.push({
+            month: items.month3,
+            pv: items.value3,
           });
 
           this.setState({
@@ -38,17 +40,11 @@ export default class RDMChart1 extends Component {
           });
         });
       }
-
+      
       showNote() {
         if (this.state.noteText != "" && this.state.noteText != null)
           return <Panel bsStyle="primary" id="Mnote"><span>{this.state.noteText}</span></Panel>
-      }
-
-      mapToColor() {
-        if (this.state.items != null) {
-            return this.state.items.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
         }
-      }
 
       render() {
         return (
@@ -58,16 +54,15 @@ export default class RDMChart1 extends Component {
               <p class="aligncenter">Example Metric</p>
             </div>
             <div>
-              <PieChart data={this.state.items} width={375} height={200}
+              <BarChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                  <Pie data={this.state.items} outerRadius={55} cx={200} cy={110} isAnimationActive={false} label={toDollars}>
-                    if
-                    {
-          	          this.mapToColor()
-                    }
-                  </Pie>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
-              </PieChart>
+                <XAxis dataKey='month' tick={{fontSize: 11}} height={20} interval={0}/>
+                <YAxis tick={{fontSize: 11}} tickFormatter={toPercent}/>
+                <CartesianGrid strokeDasharray="3 3"/>
+                <Bar dataKey="pv" fill="#00C49F">
+                  <LabelList dataKey='pv' position='top' formatter={toPercent} fontSize='11'/>
+                </Bar>
+              </BarChart>
             </div>
             {this.showNote()}
           </div>
