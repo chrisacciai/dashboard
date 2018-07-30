@@ -17,6 +17,7 @@ import FMChart7 from './FinanceCharts/FMChart7.js';
 import RDMChart1 from './R&DCharts/RDMChart1.js';
 import RDMChart2 from './R&DCharts/RDMChart2.js';
 import MBDChart1 from './BDCharts/MBDChart1.js';
+import MBDChart2 from './BDCharts/MBDChart2.js';
 import {Button, FormControl, ButtonGroup} from 'react-bootstrap';
 import logo from './logo-dark.png'
 import firebase from './Firebase.js';
@@ -148,33 +149,17 @@ export default class Export extends Component {
         <div id="divToPrint3" className="mt4">
           <div class = "MasterTitle">
             <p className = "MasterText">
-              Finance
+              Business Development
             </p>
           </div>
           <div class = "rowThirds">
             <div class = "columnThirds">
               <MBDChart1/>
-              <FMChart4/>
-              <div class = "MasterFiller">
-              </div>
-              <FMChart7/>
             </div>
             <div class = "columnThirds">
-              <FMChart2/>
-              <FMChart5/>
-              <div class = "MasterTitle2">
-                <p className = "MasterText">
-                  Research &amp; Development
-                </p>
-              </div>
-              <RDMChart1/>
+              <MBDChart2/>
             </div>
             <div class = "columnThirds">
-              <FMChart3/>
-              <FMChart6/>
-              <div class = "MasterFiller">
-              </div>
-              <RDMChart2/>
             </div>
           </div>
         </div>
