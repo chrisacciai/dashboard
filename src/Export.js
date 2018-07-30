@@ -64,7 +64,7 @@ export default class Export extends Component {
   }
 
   printDocument() {
-    const page1 = document.getElementById('divToPrint');
+    const page1 = document.getElementById('testDiv');
     html2canvas(page1)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
