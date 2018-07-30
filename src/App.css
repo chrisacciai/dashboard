@@ -131,6 +131,13 @@ span {
   width: 297mm;
   background-color: #316ca4;
 }
+
+.MasterTitle2 {
+  height: 27px;
+  width: 198mm;
+  background-color: #316ca4;
+}
+
 .MasterText {
   color: rgb(255, 255, 255);
   margin: auto;

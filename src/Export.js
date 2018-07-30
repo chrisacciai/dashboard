@@ -123,6 +123,11 @@ export default class Export extends Component {
             <div class = "columnThirds">
               <FMChart2/>
               <FMChart5/>
+              <div class = "MasterTitle2">
+                <p className = "MasterText">
+                  Research &amp; Development
+                </p>
+              </div>
             </div>
             <div class = "columnThirds">
               <FMChart3/>
