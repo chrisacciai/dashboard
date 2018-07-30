@@ -5,6 +5,10 @@ import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
+const legendStyle = {
+    left: 70,
+}
+
 export default class MPMOChart extends Component {
     constructor() {
         super();
@@ -70,7 +74,7 @@ export default class MPMOChart extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                <Legend margin={{left: 100}}/>
+                <Legend wrapperStyle={legendStyle}/>
               </PieChart>
             </div>
             {this.showNote()}
