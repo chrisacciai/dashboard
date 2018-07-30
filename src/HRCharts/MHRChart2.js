@@ -6,7 +6,7 @@ import firebase from '../Firebase.js';
 const COLORS = ['#00C49F','#0088FE'];
 
 const legendStyle = {
-    left: 30,
+    left: 25,
     iconSize: 11,
 }
 

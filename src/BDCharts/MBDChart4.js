@@ -8,7 +8,7 @@ const toPercent = (decimal, fixed = 0) => {
   }
 
 const legendStyle = {
-    left: 30,
+    left: 25,
     iconSize: 11,
 }
 
