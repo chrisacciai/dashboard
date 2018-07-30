@@ -5,6 +5,11 @@ import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE'];
 
+const legendStyle = {
+    left: 40,
+    iconSize: 11,
+}
+
 export default class MHRChart2 extends Component {
     constructor() {
         super();
@@ -62,7 +67,7 @@ export default class MHRChart2 extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend wrapperStyle={legendStyle}/>
               </PieChart>
             </div>
             {this.showNote()}

@@ -9,6 +9,11 @@ const toDollars = (item) => {
   return "$" + item.value.toLocaleString('en');
 }
 
+const legendStyle = {
+  left: 40,
+  iconSize: 11,
+}
+
 export default class RDMChart1 extends Component {
     constructor() {
         super();
@@ -66,7 +71,7 @@ export default class RDMChart1 extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend wrapperStyle={legendStyle}/>
               </PieChart>
             </div>
             {this.showNote()}

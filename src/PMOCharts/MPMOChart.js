@@ -6,7 +6,8 @@ import firebase from '../Firebase.js';
 const COLORS = ['#00C49F','#0088FE', '#DCDCDC', '#D50D0D'];
 
 const legendStyle = {
-    left: 30,
+    left: 25,
+    iconSize: 11,
 }
 
 export default class MPMOChart extends Component {
