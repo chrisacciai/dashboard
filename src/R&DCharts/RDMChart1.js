@@ -59,7 +59,7 @@ export default class RDMChart1 extends Component {
         </div>
         <div>
             <PieChart>
-              <Pie data={this.state.items} isAnimationActive={false} label={toDollars} width={375} height={200}
+              <Pie data={this.state.items} isAnimationActive={false} outerRadius={50} label={toDollars} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
                   if
                   {
