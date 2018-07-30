@@ -49,6 +49,11 @@
   width: 100%;
 }
 
+#masterContainer {
+  height: 250px;
+  width: 100%;
+}
+
 #chartFiveContainer {
   height: 319px;
   width:100%;

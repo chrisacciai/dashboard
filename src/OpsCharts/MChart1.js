@@ -61,7 +61,7 @@ export default class MChart1 extends Component {
             <div>
               <p class="aligncenter">Example Metric</p>
             </div>
-            <div>
+            <div id="masterContainer">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={this.state.items}
                   margin={{top: 10, right: 30, left: -18, bottom: 5}}>
