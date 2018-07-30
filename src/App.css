@@ -138,6 +138,15 @@ span {
   background-color: #316ca4;
 }
 
+.pieDiv {
+  width: 375; 
+  height: 200;
+  margin-top: 10;
+  margin-right: 30; 
+  margin-left: -18;
+  margin-bottom: 5;
+}
+
 .MasterText {
   color: rgb(255, 255, 255);
   margin: auto;

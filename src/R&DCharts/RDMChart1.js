@@ -58,9 +58,9 @@ export default class RDMChart1 extends Component {
               <p class="aligncenter">Example Metric</p>
             </div>
             <div>
-              <PieChart data={this.state.items} outerRadius={50} width={375} height={200}
+              <PieChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                  <Pie data={this.state.items} outerRadius={100} isAnimationActive={false} label={toDollars}>
+                  <Pie data={this.state.items} outerRadius={50} isAnimationActive={false} label={toDollars}>
                     if
                     {
           	          this.mapToColor()
