@@ -88,8 +88,8 @@ export default class RDMChart2 extends Component {
             <div>
               <BarChart data={this.state.items} width={375} height={200}
                 margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0}/>
-                <YAxis tick={{fontSize: 11}} />
+                <XAxis dataKey='month' tick={{fontSize: 11, angle: -45}} tickMargin='12' interval={0}/>
+                <YAxis tick={{fontSize: 11}} padding={{top: 25}}/>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <Bar dataKey="pv" fill="#00C49F">
                   <LabelList dataKey='pv' position='top' fontSize='11'/>
