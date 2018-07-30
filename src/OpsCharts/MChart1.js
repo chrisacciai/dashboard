@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, ResponsiveContainer} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -62,15 +62,17 @@ export default class MChart1 extends Component {
               <p class="aligncenter">Example Metric</p>
             </div>
             <div>
-              <LineChart data={this.state.items} width={375} height={200}
-                margin={{top: 10, right: 30, left: -18, bottom: 5}}>
-                <XAxis dataKey='month' tick={{fontSize: 11}} interval={0} padding={{left: 15}}/>
-                <YAxis tick={{fontSize: 11}}/>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
-                  <LabelList dataKey='pv' position='bottom' fontSize='11' />
-                </Line>
-              </LineChart>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={this.state.items}
+                  margin={{top: 10, right: 30, left: -18, bottom: 5}}>
+                  <XAxis dataKey='month' tick={{fontSize: 12}} interval={0} padding={{left: 15}}/>
+                  <YAxis tick={{fontSize: 11}}/>
+                  <CartesianGrid strokeDasharray="3 3"/>
+                  <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
+                    <LabelList dataKey='pv' position='bottom' fontSize='12' />
+                  </Line>
+                </LineChart>
+              </ResponsiveContainer>
             </div>
             {this.showNote()}
           </div>
