@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {PieChart, Pie, Cell, Legend} from 'recharts';
+import {PieChart, Pie, Cell, Legend, Panel} from 'recharts';
 import firebase from '../Firebase.js';
 
 const COLORS = ['#00C49F','#0088FE'];
