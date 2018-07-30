@@ -7,6 +7,11 @@ const toPercent = (decimal, fixed = 0) => {
     return `${(decimal * 100).toFixed(fixed)}%`;
   }
 
+const legendStyle = {
+    left: 30,
+    iconSize: 11,
+}
+
 export default class MBDChart4 extends Component {
     constructor() {
         super();
@@ -63,7 +68,7 @@ export default class MBDChart4 extends Component {
                 <Bar dataKey="uv" fill="#0088FE">
                   <LabelList dataKey='uv' position='top' formatter={toPercent} fontSize='11'/>
                 </Bar>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend wrapperStyle={legendStyle}/>
               </BarChart>
             </div>
             {this.showNote()}

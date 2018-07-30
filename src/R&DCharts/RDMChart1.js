@@ -10,7 +10,7 @@ const toDollars = (item) => {
 }
 
 const legendStyle = {
-  left: 40,
+  left: 30,
   iconSize: 11,
 }
 

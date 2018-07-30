@@ -7,6 +7,11 @@ const toDollars = (integer) => {
     return "$" + integer.toLocaleString('en');
   }
 
+const legendStyle = {
+    left: 30,
+    iconSize: 11,
+  }
+
 export default class FMChart3 extends Component {
     constructor() {
         super();
@@ -74,7 +79,7 @@ export default class FMChart3 extends Component {
                 <Bar dataKey="rv" fill="#8884d8">
                   <LabelList dataKey='rv' position='top' formatter={toDollars} fontSize='11'/>
                 </Bar>
-                <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Legend wrapperStyle={legendStyle}/>
               </BarChart>
             </div>
             {this.showNote()}
