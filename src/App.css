@@ -145,7 +145,8 @@ span {
 }
 
 .masterLegend {
-  left: 100px;
+  position: absolute;
+  left: 120px;
 }
 
 .pieDiv {

@@ -70,7 +70,7 @@ export default class MPMOChart extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                <Legend layout="horizontal" verticalAlign="bottom" iconSize='11' wrapperStyle="masterLegend"/>
+                <Legend layout="horizontal" iconSize='11' wrapperStyle="masterLegend"/>
               </PieChart>
             </div>
             {this.showNote()}
