@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, ResponsiveContainer} from 'recharts';
 import {Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 

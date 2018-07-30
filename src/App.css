@@ -126,13 +126,13 @@ span {
 
 .MasterTitle2 {
   height: 24px;
-  width: 66.66%;
+  width: 100%;
   background-color: #316ca4;
 }
 
 .MasterTitle3 {
   height: 24px;
-  width: 33.33%;
+  width: 100%;
   background-color: #316ca4;
 }
 
@@ -157,7 +157,7 @@ span {
 }
 
 .MasterFiller {
-  width: 99mm;
+  width: 100%;
   height: 24px;
   background-color: transparent;
 }
