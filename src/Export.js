@@ -64,47 +64,37 @@ export default class Export extends Component {
   }
 
   printDocument() {
-    const page1 = document.getElementById('testDiv');
+    const page1 = document.getElementById('divToPrint');
     html2canvas(page1)
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF({
           orientation: 'landscape'
         });
-        pdf.addImage(imgData, 'JPEG',0, 0, {pagesplit: true});  
+        pdf.addImage(imgData, 'JPEG',0, 0);
+        pdf.save('page1.pdf')  
         });
     ;
-  }
-
-  makePDF() {
-    const page1 = document.getElementById('divToPrint');
+    const page2 = document.getElementById('divToPrint2');
     html2canvas(page1)
       .then((canvas) => {
-          // suppose your picture is already in a canvas
-
-          var imgData = canvas.toDataURL('image/png');
-
-          /*
-          Here are the numbers (paper width and height) that I found to work. 
-          It still creates a little overlap part between the pages, but good enough for me.
-          if you can find an official number from jsPDF, use them.
-          */
-          var imgWidth = 297; 
-          var pageHeight = 210;  
-          var imgHeight = canvas.height * imgWidth / canvas.width;
-          var heightLeft = imgHeight;
-
-          var doc = new jsPDF('landscape', 'mm', [canvas.width, canvas.height]);
-
-          doc.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-          heightLeft -= pageHeight;
-
-          while (heightLeft >= 0) {
-            doc.addPage();
-            doc.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-            heightLeft -= pageHeight;
-          }
-          doc.save('test.pdf');
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'landscape'
+        });
+        pdf.addImage(imgData, 'JPEG',0, 0);
+        pdf.save('page2.pdf')  
+        });
+    ;
+    const page3 = document.getElementById('divToPrint3');
+    html2canvas(page1)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF({
+          orientation: 'landscape'
+        });
+        pdf.addImage(imgData, 'JPEG',0, 0);
+        pdf.save('page3.pdf')  
         });
     ;
   }
@@ -114,12 +104,12 @@ export default class Export extends Component {
     <div>
       <ButtonGroup className="Button1">
         <Button type="submit" bsStyle="primary" form="weekForm">Set Date</Button>
-        <Button onClick={this.makePDF} bsStyle="primary">Export as PDF</Button>
+        <Button onClick={this.printDocument} bsStyle="primary">Export as PDF</Button>
       </ButtonGroup>
       <form id="weekForm" onSubmit={this.handleSubmit}>
         <FormControl bsStyle="small" className="week-button" type="text" name="week" onChange={this.handleChange} value={this.state.week}/>
       </form>
-      <div id="divToPrint" className="mt4">
+        <div id="divToPrint" className="mt4">
           <div id="master-header">
             <div class= "logo-master">
               <img src={logo} alt="logo"/>
@@ -146,6 +136,8 @@ export default class Export extends Component {
               <MChart6/>
             </div>
           </div>
+        </div>
+        <div id="divToPrint2" className="mt4">
           <div class = "MasterTitle">
             <p className = "MasterText">
               Finance
@@ -177,6 +169,8 @@ export default class Export extends Component {
               <RDMChart2/>
             </div>
           </div>
+        </div>
+        <div id="divToPrint3" className="mt4">
           <div class = "MasterTitle">
             <p className = "MasterText">
               Business Development
