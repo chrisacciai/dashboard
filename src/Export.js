@@ -72,29 +72,29 @@ export default class Export extends Component {
           orientation: 'landscape'
         });
         pdf.addImage(imgData, 'JPEG',0, 0);
-        pdf.save('page1.pdf')  
+        pdf.save('DashboardPage1.pdf')  
         });
     ;
     const page2 = document.getElementById('divToPrint2');
-    html2canvas(page1)
+    html2canvas(page2)
       .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF({
+        const imgData2 = canvas.toDataURL('image/png');
+        const pdf2 = new jsPDF({
           orientation: 'landscape'
         });
-        pdf.addImage(imgData, 'JPEG',0, 0);
-        pdf.save('page2.pdf')  
+        pdf2.addImage(imgData2, 'JPEG',0, 0);
+        pdf2.save('DashboardPage2.pdf')  
         });
     ;
     const page3 = document.getElementById('divToPrint3');
-    html2canvas(page1)
+    html2canvas(page2)
       .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF({
+        const imgData3 = canvas.toDataURL('image/png');
+        const pdf3 = new jsPDF({
           orientation: 'landscape'
         });
-        pdf.addImage(imgData, 'JPEG',0, 0);
-        pdf.save('page3.pdf')  
+        pdf3.addImage(imgData3, 'JPEG',0, 0);
+        pdf3.save('DashboardPage3.pdf')  
         });
     ;
   }
