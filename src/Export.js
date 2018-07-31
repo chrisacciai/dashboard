@@ -87,7 +87,7 @@ export default class Export extends Component {
         });
     ;
     const page3 = document.getElementById('divToPrint3');
-    html2canvas(page2)
+    html2canvas(page3)
       .then((canvas) => {
         const imgData3 = canvas.toDataURL('image/png');
         const pdf3 = new jsPDF({
@@ -210,8 +210,8 @@ export default class Export extends Component {
               </div>
               <MHRChart2/>
             </div>
+          </div>
         </div>
-      </div>
     </div>);
   }
 }
