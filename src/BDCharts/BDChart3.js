@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, Tooltip} from 'recharts';
 import {Table, FormControl, ButtonGroup, Panel, Button} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -209,6 +209,7 @@ export default class BD_Chart3 extends Component {
                 <Line type="monotone" dataKey="pv" stroke="#00C49F" activeDot={{r: 8}}>
                   <LabelList dataKey='pv' position='top'/>
                 </Line>
+                <Tooltip/>
                 </LineChart>
               </ResponsiveContainer>
             </div>

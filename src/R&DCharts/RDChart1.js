@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
+import {ResponsiveContainer, PieChart, Pie, Tooltip, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -105,6 +105,7 @@ export default class RD_Chart1 extends Component {
                   <Button onClick={this.show.bind(this)}>Chart View</Button>
                   <Button onClick={this.hide.bind(this)}>Edit Data</Button>
                   <Button onClick={this.show.bind(this)} type="submit" bsStyle="primary" form="form12">Submit Data</Button> 
+                  <Tooltip/>
                 </ButtonGroup>
               </p>
             </div>

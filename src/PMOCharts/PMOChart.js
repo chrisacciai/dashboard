@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, PieChart, Pie, Cell, Legend} from 'recharts';
+import {ResponsiveContainer, Tooltip, PieChart, Pie, Cell, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -136,6 +136,7 @@ export default class PMOChart extends Component {
                   }
                 </Pie>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" />
+                <Tooltip/>
               </PieChart>
             </ResponsiveContainer>
           </div>

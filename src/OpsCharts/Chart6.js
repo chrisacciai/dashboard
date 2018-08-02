@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, Tooltip, AreaChart, Area, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -217,6 +217,7 @@ export default class Chart6 extends Component {
                 <Area type="monotone" dataKey="pv" stroke="#00C49F" fill="#00C49F" dot>
                   <LabelList dataKey='pv' position='top' formatter={toPercent} />
                 </Area>
+                <Tooltip/>
                 </AreaChart>
               </ResponsiveContainer>
             </div>

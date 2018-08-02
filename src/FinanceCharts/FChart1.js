@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, LabelList, Legend, Tooltip} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -183,6 +183,7 @@ export default class F_Chart1 extends Component {
                   <LabelList dataKey='uv' position='bottom' formatter={toDollars} />
                 </Line>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" iconSize='11'/>
+                <Tooltip/>
                 </LineChart>
               </ResponsiveContainer>
             </div>

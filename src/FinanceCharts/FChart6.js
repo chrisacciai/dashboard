@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, LineChart, Line, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
+import {ResponsiveContainer, LineChart, Tooltip, Line, ReferenceLine, XAxis, YAxis, CartesianGrid, LabelList} from 'recharts';
 import {Table, FormControl, ButtonGroup, Button, Panel} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -129,6 +129,7 @@ export default class F_Chart6 extends Component {
                   <LabelList dataKey='pv' position='bottom' />
                 </Line>
                 <ReferenceLine y={3.5} stroke="red"/>
+                <Tooltip/>
                 </LineChart>
               </ResponsiveContainer>
             </div>
