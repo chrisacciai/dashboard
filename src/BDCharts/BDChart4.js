@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList,Tooltip, Legend} from 'recharts';
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, LabelList, Legend} from 'recharts';
 import {Table, FormControl, ButtonGroup, Panel, Button} from 'react-bootstrap';
 import firebase from '../Firebase.js';
 
@@ -124,7 +124,6 @@ export default class BD_Chart4 extends Component {
                   <LabelList dataKey='uv' position='top' formatter={toPercent} />
                 </Bar>
                 <Legend align="center" layout="horizontal" verticalAlign="bottom" />
-                <Tooltip/>
                 </BarChart>
               </ResponsiveContainer>
             </div>

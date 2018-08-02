@@ -120,7 +120,8 @@ export default class RD_Chart1 extends Component {
           	          this.mapToColor()
                     }
                   </Pie>
-                  <Legend align="center" layout="horizontal" verticalAlign="bottom" />
+                  <Legend align="center" layout="horizontal" verticalAlign="bottom" />\
+                  <Tooltip/>
                 </PieChart>
               </ResponsiveContainer>
             </div>
